@@ -1,4 +1,4 @@
-# Pull content into topics \(topicpull\)
+# Pull content into topics \(`topicpull`\)
 
 The `topicpull` step pulls content into `xref` and `link` elements. This step is implemented in XSLT.
 

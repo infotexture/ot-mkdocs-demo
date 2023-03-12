@@ -6,7 +6,7 @@ Use the `dita.xsl.messages` extension point to add plug-in-specific messages to 
 
     ```
     <messages>
-      *<!-- See resources/messages.xml for the details. --\>*
+      *&lt;!-- See resources/messages.xml for the details. --&gt;*
       <message id="PrefixNumberLetter" type="error-severity">
         <reason>Message text</reason>
         <response>How to resolve</response>
@@ -45,7 +45,7 @@ Use the `dita.xsl.messages` extension point to add plug-in-specific messages to 
 
         **Note:** The `FATAL` value throws a fatal error message in XSLT and an exception in Java.
 
-        **Tip:** If the `@id` attribute of your message is equal to the `@id` of a default DITA-OT message, your message will override the default one.
+        **Tip:** If the `@id` attribute of your message is equal to the `@id` of a default DITA-OT message, your message will override the default one. An override cannot change the severity of the overridden message.
 
 2.  Create a plugin.xml file that contains the following content:
 
@@ -68,6 +68,15 @@ Add the following call in XSLT modules to generate a message when a specific con
 <xsl:call-template name="output-message">
   <xsl:with-param name="id">prefixnumberletter</xsl:with-param>
   <xsl:with-param name="msg">Message text and parameters.</xsl:with-param>
+</xsl:call-template>
+```
+
+You can also pass custom parameters to the template by using the `@msgparams` parameter. The value of `@msgparams` is a semicolon separated list of strings, where each token consists of a percent sign prefixed parameter index, equals sign and parameter value.
+
+```
+<xsl:call-template name="output-message">
+  <xsl:with-param name="id">prefixnumberletter</xsl:with-param>
+  <xsl:with-param name="msgparams">%1=MyFirstValue;%2=MySecondValue</xsl:with-param>
 </xsl:call-template>
 ```
 

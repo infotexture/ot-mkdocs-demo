@@ -1,6 +1,6 @@
 # DITA 2.0 preview support
 
-DITA Open Toolkit 3.6 provides a preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest DRAFT versions of the DITA 2.0 DTD and RELAX NG grammar files from OASIS \(as of October 2020\).
+DITA Open Toolkit 4.0 provides a preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest drafts of the DITA 2.0 DTD and RELAX NG grammar files from OASIS \(as of November 7, 2022\).
 
 DITA documents that reference the draft grammar files can be parsed, and where features overlap with DITA 1.3, those features will work as expected.
 
@@ -21,9 +21,9 @@ DITA-OT 3.5 provided an initial preview of DITA 2.0 features.
 
 ## DITA-OT 3.6
 
-DITA-OT 3.6 adds support for additional DITA 2.0 features.
+DITA-OT 3.6 added support for additional DITA 2.0 features.
 
--   Where earlier DITA versions relied on the `object` to embed media in DITA source files, DITA 2.0 provides new `audio` and `video` elements that correspond to their HTML5 equivalents.
+-   Where earlier DITA versions relied on the `object` element to embed media in DITA source files, DITA 2.0 provides new `audio` and `video` elements that correspond to their HTML5 equivalents.
 -   For HTML5 compatibility, the new emphasis domain adds support for the `strong` and `em` elements in addition to the existing `b` and `i` elements in the highlighting domain.
 -   The troubleshooting domain has been updated with additional constructs that can be used to provide detailed diagnostic information.
 -   Several obsolete elements and attributes have been removed from DITA 2.0, including:
@@ -36,6 +36,69 @@ DITA-OT 3.6 adds support for additional DITA 2.0 features.
     -   `@refcols` on `simpletable`
     -   `@xtrc`
     -   `@xtrf`
+
+## DITA-OT 3.7
+
+DITA-OT 3.7 added support for additional DITA 2.0 features.
+
+-   The new “combine” chunk action can be used to merge content into new output documents.
+
+    When the `@chunk` attribute is set to `combine` on a map, branch, or map reference, all source DITA documents grouped by that reference will be combined into a single document in the output.
+
+    \(Support for the DITA 2.0 “split” chunk action has not yet been implemented.\)
+
+    **Note:** The new chunk action is only applied if the root map has a DITA 2.0 doctype, such as:
+
+    `<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA 2.0 Map//EN" "map.dtd">`
+
+    If the root map uses an unversioned \(or 1.x\) doctype, DITA 1.3 processing will be applied, and 2.0 chunk actions will be ignored. With a 2.0 root map, any 1.3 chunk actions are ignored.
+
+-   The new `keytext` element can be used to define variable text referenced by `@keyref`. Although the DITA 2.0 grammar files in this release support the use of `keytext` in authored files, DITA-OT 3.7 does not yet have processing support for the element.
+-   The new alternative titles domain and `titlealt` element \(separate from the `titlealts` element in DITA 1.3\) may be used when you need to use an alternate title, such as for a navigation title, search title, link title, subtitle, or title hint.
+-   The new `@appid-role` attribute is available on `resourceid`. The default is `context-sensitive-help`.
+-   The `@keyref` attribute was added to all elements in the highlighting domain and the new emphasis domain.
+-   The `@href`, `@format`, and `@scope` attributes are now used consistently for linking elements.
+-   Several obsolete elements and attributes have been removed from DITA 2.0, including:
+    -   `anchor`
+    -   `anchorref`
+    -   `data-about`
+    -   `hasInstance`
+    -   `hasKind`
+    -   `hasNarrower`
+    -   `hasPart`
+    -   `hasRelated`
+    -   `longquoteref`
+    -   `relatedSubjects`
+    -   `sectiondiv`
+    -   `subjectRel`
+    -   `subjectRelHeader`
+    -   `subjectRelTable`
+    -   `subjectRole`
+    -   `@anchorref` from `map`
+    -   `@copy-to`
+    -   `@href`, `@format`, `@type`, `@scope`, `@reftitle` from `lq` \(`@keyref` remains\)
+    -   `@locktitle`
+    -   `@longdescref`
+    -   `@mapkeyref`
+    -   `@print`
+    -   `@query`
+    -   `@specentry` from `stentry`
+    -   `@spectitle`
+
+## DITA-OT 4.0
+
+DITA-OT 4.0 adds support for additional DITA 2.0 features.
+
+-   The new “split” chunk action can be used to break content into new output documents. [\#3942](https://github.com/dita-ot/dita-ot/issues/3942)
+
+    When the `@chunk` attribute is set to `split` on a map, branch, or map reference, each topic from the referenced source document will be rendered as an individual document.
+
+    **Note:** The new chunk action is only applied if the root map has a DITA 2.0 doctype, such as:
+
+    `<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA 2.0 Map//EN" "map.dtd">`
+
+    If the root map uses an unversioned \(or 1.x\) doctype, DITA 1.3 processing will be applied, and 2.0 chunk actions will be ignored. With a 2.0 root map, any 1.3 chunk actions are ignored.
+
 
 **Note:** Other new or revised features proposed for DITA 2.0 are not yet supported. Additional features will be implemented in future versions of DITA-OT as the specification evolves.
 

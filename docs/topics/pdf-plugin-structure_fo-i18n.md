@@ -10,16 +10,3 @@ The best way to start editing a custom configuration is by making a copy of the 
 
 In order to apply a custom configuration to your publishing outputs, edit catalog.xml and uncomment the appropriate entry in the “I18N configuration override entries” section.
 
-**Related information**  
-
-
-[Custom artwork](../topics/pdf-plugin-structure_common-artwork.md)
-
-[Index configuration](../topics/pdf-plugin-structure_common-index.md)
-
-[Variable overrides](../topics/pdf-plugin-structure_common-vars.md)
-
-[Custom attributes](../topics/pdf-plugin-structure_fo-attrs.md)
-
-[Custom stylesheets](../topics/pdf-plugin-structure_fo-xsl.md)
-

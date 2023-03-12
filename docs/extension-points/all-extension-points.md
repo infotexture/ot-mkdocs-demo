@@ -366,6 +366,12 @@ The pre-defined extension points can be used to add new functionality to DITA-OT
 
     Runs an Ant target before the `mapref` step in the pre-processing stage.
 
+-   **dita.xsl.markdown**
+
+    Defined in plug-in [`org.lwdita`](extension-points-in-org.lwdita.md).
+
+    Markdown overrides XSLT import
+
 -   **depend.preprocess.move-meta-entries.pre**
 
     Defined in plug-in [`org.dita.base`](extension-points-in-org.dita.base.md).

@@ -61,10 +61,10 @@ In some cases, you may be responsible for maintaining transformation types that 
 There are several ways to do this. One fairly straightforward approach would be to create a new custom transformation type that is exactly the same, except for preprocessing. For example, if you have a local HTML variant called `myhtml` as above, instead of modifying that transformation directly, you could create a second transformation type called `myhtml-beta` that provides exactly the same support, but with the new map-first preprocessing:
 
 ```
-*<!-- Original "myhtml" is not modified, used for production --\>*
+*&lt;!-- Original "myhtml" is not modified, used for production --&gt;*
 <target name="dita2myhtml5" depends="myhtml.init,dita2html5"/>
 
-*<!-- "myhtml-beta" used to test and provide feedback on preprocess2 --\>*
+*&lt;!-- "myhtml-beta" used to test and provide feedback on preprocess2 --&gt;*
 <target name="dita2myhtml-beta" 
         depends="myhtml.init,
                  html5.init,

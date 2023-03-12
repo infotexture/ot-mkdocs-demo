@@ -4,7 +4,7 @@ Certain parameters are specific to the XHTML transformation.
 
 -   **args.xhtml.contenttarget**
 
-    Specifies the value of the @target attribute on the <base\> element in the TOC file.
+    Specifies the value of the @target attribute on the &lt;base&gt; element in the TOC file.
 
     The default value is contentwin. Change this value to use a different target name for the table of contents.
 
@@ -14,7 +14,7 @@ Certain parameters are specific to the XHTML transformation.
 
 -   **args.xhtml.toc.class**
 
-    Specifies the value of the @class attribute on the <body\> element in the TOC file.
+    Specifies the value of the @class attribute on the &lt;body&gt; element in the TOC file.
 
 -   **args.xhtml.toc.xsl**
 

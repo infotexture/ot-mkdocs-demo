@@ -97,6 +97,14 @@ Certain parameters are specific to the PDF transformation.
 
     **Note:** This parameter is deprecated in favor of the args.draft parameter.
 
+-   **theme**
+
+    Theme configuration file.
+
+-   **xep.dir**
+
+    RenderX installation directory.
+
 
 **Related information**  
 

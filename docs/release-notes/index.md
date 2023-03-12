@@ -1,164 +1,207 @@
-# DITA Open Toolkit 3.6 Release Notes
+# DITA Open Toolkit 4.0 Release Notes
 
-DITA Open Toolkit 3.6 includes performance enhancements such as processing in parallel and in memory, support for PDF changebars with Apache™ FOP, and an updated preview of features for the latest draft of the upcoming DITA 2.0 standard, including the `audio` and `video` elements, and the new emphasis domain.
+DITA Open Toolkit 4.0.2 is a maintenance release that fixes issues reported in DITA-OT 4.0, which includes a new plug-in for easier PDF customization, project file improvements, updates to LwDITA processing, and support for the split chunking feature in the latest drafts of the upcoming DITA 2.0 standard.
 
 DITA-OT releases follow [semantic versioning](https://semver.org) guidelines. Version numbers use the `major.minor.patch` syntax, where major versions may include incompatible API changes, minor versions add functionality in a backwards-compatible manner and patch versions are maintenance releases that include backwards-compatible bug fixes.
 
-**Tip:** Download the dita-ot-3.6.zip package from the project website at [dita-ot.org/download](https://www.dita-ot.org/download).
+**Tip:** Download the dita-ot-4.0.2.zip package from the project website at [dita-ot.org/download](https://www.dita-ot.org/download).
 
-## Requirements
+## Requirements: Java 17
 
-DITA-OT is designed to run on Java version 8u101 or later and built and tested with the Open Java Development Kit \(OpenJDK\). Compatible Java distributions are available from multiple sources:
+DITA-OT 4.0 is designed to run on Java version 17 or later and built and tested with the Open Java Development Kit \(OpenJDK\). Compatible Java distributions are available from multiple sources:
 
--   You can download the Oracle JRE or JDK from [oracle.com/technetwork/java](http://www.oracle.com/technetwork/java/javase/downloads) under commercial license.
--   OpenJDK is a free open-source implementation of Java available from [adoptopenjdk.net](https://adoptopenjdk.net).
--   Free OpenJDK distributions are also available from other vendors, including [Amazon Corretto](https://aws.amazon.com/corretto/), [Azul Zulu](https://www.azul.com/downloads/zulu/), and [Red Hat](https://developers.redhat.com/products/openjdk/download).
+-   You can download the Oracle JRE or JDK from [oracle.com/java](https://www.oracle.com/java/technologies/downloads/) under commercial license.
+-   Eclipse Temurin is the free OpenJDK distribution available from [adoptium.net](https://adoptium.net/temurin/releases/?version=17).
+-   Free OpenJDK distributions are also provided by [Amazon Corretto](https://aws.amazon.com/corretto/), [Azul Zulu](https://www.azul.com/downloads/), and [Red Hat](https://developers.redhat.com/products/openjdk/download).
 
-## DITA-OT 3.6 released December 19, 2020
+**Note:** The Java virtual machine is generally backwards compatible, so class files built with earlier versions should still run correctly with Java 17 and DITA-OT 4.0. If your DITA-OT installation contains plug-ins with custom Java code, you may need to recompile these with Java 17 — but in most cases, this step should not be necessary.
 
-DITA Open Toolkit Release 3.6 includes performance enhancements such as processing in parallel and in memory, support for PDF changebars with Apache FOP, and an updated preview of features for the latest draft of the upcoming DITA 2.0 standard, including the `audio` and `video` elements, and the new emphasis domain.
+## DITA-OT 4.0.2 released February 18, 2023
 
-### Parallel processing
+DITA Open Toolkit 4.0.2 is a maintenance release that includes the following bug fixes.
 
-Preprocessing module code can now be run in parallel by setting the parallel parameter to true. The performance benefits this option provides depend heavily on the source file set, the DITA features used in the project, and the computer doing the processing, but under the right circumstances, you may see notable improvements when this option is enabled.
+-   Earlier versions of DITA-OT did not respect key references defined on long descriptions within image elements. Processing has been updated to ensure that `@keyref` attributes on `longdescref` elements are resolved to the resource defined by the `@href` attribute on the key. [\#4071](https://github.com/dita-ot/dita-ot/issues/4071), [\#4080](https://github.com/dita-ot/dita-ot/issues/4080)
+-   If `@copy-to` attributes were used to create duplicate versions of topics, previous versions did not resolve key references to content inside the topic copies correctly. Key reference processing has been corrected to ensure that topic IDs for copied topics are properly adjusted when calculating link targets. [\#4076](https://github.com/dita-ot/dita-ot/issues/4076), [\#4110](https://github.com/dita-ot/dita-ot/issues/4110)
+-   In certain cases, when a context map resource was passed to the dita command with the --resource option or the args.resources parameter, the resource map was overwritten with its temporary version from preprocessing. These maps are now copied and processed to the temporary files folder instead of being overwritten in-place, and the key values they contain are correctly resolved from the copies in the temporary folder. [\#4104](https://github.com/dita-ot/dita-ot/issues/4104), [\#4112](https://github.com/dita-ot/dita-ot/issues/4112)
+-   In earlier versions, the DITA-OT logging configuration mistakenly enabled full debug logging for all Java packages in any of the installed plug-ins. This error has been corrected to preserve the default `INFO` level for custom plug-ins, and only enable debug logging for Java code in DITA-OT itself. [\#4106](https://github.com/dita-ot/dita-ot/issues/4106), [\#4114](https://github.com/dita-ot/dita-ot/issues/4114)
+-   Content key references in map titles were not resolved if they pointed to phrase elements that contained another `ph` element. Key references are now handled correctly, even when `@conkeyref` targets contain nested phrase elements. [\#4117](https://github.com/dita-ot/dita-ot/issues/4117), [\#4120](https://github.com/dita-ot/dita-ot/issues/4120)
+-   Obsolete Travis configuration files have been removed from the DITA-OT repository. [\#4118](https://github.com/dita-ot/dita-ot/issues/4118)
 
-### In-memory processing
+For additional information on the issues resolved since the previous release, see the [4.0.2 milestone](https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.0.2+is%3Aclosed) and [changelog](https://github.com/dita-ot/dita-ot/compare/4.0.1...4.0.2) on GitHub.
 
-DITA-OT 3.6 introduces a new Store API with preview support for in-memory processing. The Cache Store can be activated by setting the store-type parameter to memory. In-memory processing provides performance advantages in I/O bound environments such as cloud computing platforms, where processing time depends primarily on how long it takes to read and write temporary files. For more information, see [Store API – Processing in memory](../reference/store-api.md).
+## DITA-OT 4.0.1 released December 9, 2022
 
-### Additional performance improvements
+DITA Open Toolkit 4.0.2 is a maintenance release that includes the following bug fixes.
 
-DITA-OT 3.6 includes a series of related changes designed to improve the performance of DITA transformations.
+-   The `place-tbl-lbl` template that was originally used to define table titles in XHTML has been deprecated in HTML5 processing and will be removed in a future release. This template was carried over from XHTML code \(which still has a copy that is used\), but the copy in HTML5 is not called. [\#3435](https://github.com/dita-ot/dita-ot/issues/3435), [\#4056](https://github.com/dita-ot/dita-ot/issues/4056)
+-   In earlier versions, the args.xhtml.toc.class and args.html5.toc.class properties did not work. HTML processing has been updated to ensure that the value of the `@class` attribute is correctly set on the `body` element in the table of contents \(TOC\) files generated for XHTML and HTML5 output. [\#4015](https://github.com/dita-ot/dita-ot/issues/4015), [\#4065](https://github.com/dita-ot/dita-ot/issues/4065)
+-   The bundled Jackson data binding library was updated the latest version \(2.14.0\) to resolve a security vulnerability. [\#4016](https://github.com/dita-ot/dita-ot/issues/4016), [\#4058](https://github.com/dita-ot/dita-ot/issues/4058)
+-   When link targets included index terms, PDF output generated by earlier versions added the text of the index entries to the end of cross-reference link text. Processing has been updated to correctly filter `indexterm` elements when computing the target text for `xref` elements. [\#4017](https://github.com/dita-ot/dita-ot/issues/4017), [\#4030](https://github.com/dita-ot/dita-ot/issues/4030)
+-   In earlier releases, syntax diagrams with an `@id` attribute did not preserve the ID in HTML5 output. This is now fixed. [\#4021](https://github.com/dita-ot/dita-ot/issues/4021), [\#4057](https://github.com/dita-ot/dita-ot/issues/4057)
+-   A spelling mistake has been corrected in the DOTX034E message that appears when unordered list items are cross-referenced without specifying link text. [\#4029](https://github.com/dita-ot/dita-ot/issues/4029)
+-   In earlier versions, conditional processing did not work as expected when specialized attributes were used for flagging. The flagging module has been updated to work correctly with specialized attributes. [\#4043](https://github.com/dita-ot/dita-ot/issues/4043), [\#4053](https://github.com/dita-ot/dita-ot/issues/4053)
 
--   A new --repeat option can be passed to the dita command to run the process a certain number of times. This option can be used by plug-in developers to measure performance. \(Timings for the first transformation are often dominated by Java warm-up time.\) [\#3616](https://github.com/dita-ot/dita-ot/issues/3616)
+For additional information on the issues resolved since the previous release, see the [4.0.1 milestone](https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.0.1+is%3Aclosed) and [changelog](https://github.com/dita-ot/dita-ot/compare/4.0...4.0.1) on GitHub.
 
-    To run a conversion five times, for example, use --repeat=5. The duration of each execution will appear in the console when the final transformation is complete.
+## DITA-OT 4.0 released November 12, 2022
+
+DITA Open Toolkit Release 4.0 includes a new plug-in for easier PDF customization, project file improvements, updates to LwDITA processing, and support for the split chunking feature in the latest drafts of the upcoming DITA 2.0 standard.
+
+### New PDF theme plug-in
+
+DITA-OT 4.0 includes the `com.elovirta.pdf` plug-in, which extends the default PDF2 plug-in with a new theme parameter. The --theme option takes a path to a theme file and changes the styling of the PDF output without requiring changes to XSLT stylesheets.
+
+Themes can be used to adjust basic settings like cover page images, page sizes, numbering, font properties, background colors and borders, spacing, and running content like page headers and footers.
+
+To generate PDF output with a custom theme, pass the theme file to the dita command with the --theme option:
+
+```syntax-bash
+dita --project=samples/project-files/pdf.xml \
+     --theme=path/to/custom-theme-file.yaml
+```
+
+**Tip:** For information on the available theming options and a sample YAML theme, see [PDF themes](../topics/pdf-themes.md).
+
+### Project file improvements
+
+-   The re-usable `publication` element in DITA-OT project files can now be overridden with additional parameters \(or modified parameter settings\) by adding new `param` elements to the referencing element. [\#3682](https://github.com/dita-ot/dita-ot/issues/3682), [\#3907](https://github.com/dita-ot/dita-ot/issues/3907)
+
+    This allows common publications to be defined in one place, re-used in others, and overlaid with local variations when the common settings need to be adjusted in certain cases.
 
     ```
-    $ dita --input=docsrc/samples/sequence.ditamap --format=html5 --repeat=5
-    1 11281ms
-    2 4132ms
-    3 3690ms
-    4 4337ms
-    5 3634ms
+    <project xmlns="https://www.dita-ot.org/project">
+      <publication transtype="html5" id="common-html5">
+        <param name="nav-toc" value="partial"/>
+      </publication>
+      <deliverable>
+        <context>
+          <input href="root.ditamap"/>
+        </context>
+        <output href="./out"/>
+        <publication idref="common-html5">
+          <!-- Define publication-specific parameter settings -->
+          <param name="nav-toc" value="full"/>
+        </publication>
+      </deliverable>
+    </project>
     ```
 
--   The DITA-OT Java code uses a new caching `DitaClass.getInstance(cls)` factory method rather than generating `DitaClass` instances directly. This allows previously created instances to be re-used, which reduces the number of instances that need to be created. [\#3569](https://github.com/dita-ot/dita-ot/issues/3569)
--   The Java code for several preprocessing modules has been refactored to use concurrent sets or queues. This helps to speed up certain operations during preprocessing, allowing builds to complete faster. [\#3570](https://github.com/dita-ot/dita-ot/issues/3570)
--   The Java code now uses a `BufferedWriter` to serialize `Job` objects, which significantly improves UTF-8 encoding performance when writing the .job.xml file. [\#3583](https://github.com/dita-ot/dita-ot/issues/3583)
+-   The `publication` element in DITA-OT project files now supports nested `profile` elements. When both context and publication contain profiles, they are applied in order: publication profiles first, context profiles second. [\#3690](https://github.com/dita-ot/dita-ot/issues/3690), [\#3895](https://github.com/dita-ot/dita-ot/issues/3895)
 
-### PDF changebars with Apache FOP
+    This allows publications to define filter criteria that are applied to the content of the individual publication \(in addition to those specified for the entire deliverable context\).
 
-For DITA-OT 3.4, the bundled Apache™ Formatting Objects Processor library was upgraded to version 2.4, which included support for changebars, but those features were not yet enabled in DITA-OT 3.4 pending further testing. DITA-OT 3.6 removes the FOP-specific overrides that disabled changebars in earlier versions, allowing the default PDF2 flagging routines to be applied when generating PDFs with FOP. For details, see [Generating revision bars](../topics/pdf2-creating-change-bars.md).
+    ```
+    <project xmlns="https://www.dita-ot.org/project">
+      <deliverable name="Name" id="site">
+        <context name="Site" id="site">
+          <input href="site.ditamap"/>
+          <profile>
+            <ditaval href="site.ditaval"/>
+          </profile>
+        </context>
+        <output href="./site"/>
+        <publication transtype="html5" id="sitePub" name="Site">
+          <profile>
+            <!-- Define publication-specific filters -->
+            <ditaval href="site-html5.ditaval"/>
+          </profile>
+        </publication>
+      </deliverable>
+    </project>
+    ```
 
-Plug-ins that implemented custom FOP flagging by overriding the org.dita.pdf2.fop/xsl/fo/flagging\_fop.xsl stylesheet in prior versions will need to be updated, as this file is no longer available in DITA-OT 3.6. [\#3511](https://github.com/dita-ot/dita-ot/issues/3511), [\#3591](https://github.com/dita-ot/dita-ot/issues/3591)
+
+### Lightweight DITA and Markdown updates
+
+The `org.lwdita` plug-in has been updated to version 3.3, which includes Markdown processing improvements.
+
+-   DITA-OT 4.0 includes processing updates to reflect recent changes to the latest drafts of the LwDITA profile from OASIS
+-   Add support for Markdown files without first-level headings
+-   Better support for [Python-Markdown Attribute Lists](https://python-markdown.github.io/extensions/attr_list/)
+-   Markdown input improvements:
+    -   Improve subscript and superscript support
+    -   Fix backslash escapes in code phrases \(applies only to `@format`=`markdown`, as MDITA does not support code phrases\)
+    -   Add support for table spanning
+-   In previous releases, standard Markdown syntax could be used to indicate a span of code by wrapping it with backtick quotes \(```\). These constructs were converted to DITA `codeph` elements on import, and rendered as `code` elements in HTML output. This support has been removed from MDITA processing to align with LwDITA, which does not support code phrase markup.
 
 ### Updated DITA 2.0 preview
 
-In addition to the [DITA 2.0 preview support](../reference/dita-v2-0-support.md) provided in DITA-OT 3.5, this release includes updated processing support for the latest DRAFT versions of the DITA 2.0 DTD and RELAX NG grammar files from OASIS \(as of October 2020\). [\#3586](https://github.com/dita-ot/dita-ot/issues/3586), [\#3601](https://github.com/dita-ot/dita-ot/issues/3601), [\#3617](https://github.com/dita-ot/dita-ot/issues/3617), [\#3652](https://github.com/dita-ot/dita-ot/issues/3652)
+In addition to the [DITA 2.0 preview support](../reference/dita-v2-0-support.md) provided in previous releases \(3.5, 3.6, and 3.7\), DITA-OT 4.0 includes updated processing support for the latest drafts of the DITA 2.0 DTD and RELAX NG grammar files from OASIS \(as of November 7, 2022\). [\#4040](https://github.com/dita-ot/dita-ot/issues/4040)
 
--   Where earlier DITA versions relied on the `object` to embed media in DITA source files, DITA 2.0 provides new `audio` and `video` elements that correspond to their HTML5 equivalents.
--   For HTML5 compatibility, the new emphasis domain adds support for the `strong` and `em` elements in addition to the existing `b` and `i` elements in the highlighting domain.
--   The troubleshooting domain has been updated with additional constructs that can be used to provide detailed diagnostic information.
--   Several obsolete elements and attributes have been removed from DITA 2.0, including:
-    -   `boolean`
-    -   `data-about`
-    -   `indextermref`
-    -   `@alt` on `image`
-    -   `@navtitle` on `topicref`
-    -   `@query` on `topicref`
-    -   `@refcols` on `simpletable`
-    -   `@xtrc`
-    -   `@xtrf`
+-   The new “split” chunk action can be used to break content into new output documents. [\#3942](https://github.com/dita-ot/dita-ot/issues/3942)
+
+    When the `@chunk` attribute is set to `split` on a map, branch, or map reference, each topic from the referenced source document will be rendered as an individual document.
+
+    **Note:** The new chunk action is only applied if the root map has a DITA 2.0 doctype, such as:
+
+    `<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA 2.0 Map//EN" "map.dtd">`
+
+    If the root map uses an unversioned \(or 1.x\) doctype, DITA 1.3 processing will be applied, and 2.0 chunk actions will be ignored. With a 2.0 root map, any 1.3 chunk actions are ignored.
+
 
 DITA documents that reference the draft grammar files can be parsed, and where features overlap with DITA 1.3, those features will work as expected.
 
 **Note:** Other new or revised features proposed for DITA 2.0 are not yet supported. Additional features will be implemented in future versions of DITA-OT as the specification evolves.
 
+### Code references now default to UTF-8 encoding
+
+The default character set for code references has been changed from the system default encoding to UTF-8.
+
+This allows a wider range of characters to be used without needing to specify the `@format` attribute on the `coderef` element as described in [character set definition](../reference/extended-functionality.md#coderef-charset) or change the default encoding in the [configuration.properties file](../parameters/configuration-properties-file.md). [\#4046](https://github.com/dita-ot/dita-ot/issues/4046)
+
+**Note:** If you have code references that require a different encoding, use either of these mechanisms to specify the character set explicitly.
+
 ### Enhancements and changes
 
-DITA Open Toolkit Release 3.6 includes the following enhancements and changes to existing features:
+DITA Open Toolkit Release 4.0 includes the following enhancements and changes to existing features:
 
--   The `@rotate` attribute on table `entry` elements is now respected when generating HTML5 output. The rotation is implemented by setting the CSS `writing-mode` property to `vertical-rl` to rotate the cell content. This property is rendered correctly in Mozilla Firefox, but unevenly supported by other browsers. The `rotate` class is passed to HTML5 output, so custom plug-ins can implement alternative presentation rules in CSS if necessary. [\#3448](https://github.com/dita-ot/dita-ot/issues/3448), [\#3541](https://github.com/dita-ot/dita-ot/issues/3541), [\#3651](https://github.com/dita-ot/dita-ot/issues/3651)
--   User-facing text for the dita command line interface has been extracted to a strings file to facilitate editing. The cli\_en\_US.properties is provided in the resources folder as a basis for customization and localization. [\#3495](https://github.com/dita-ot/dita-ot/issues/3495), [\#3523](https://github.com/dita-ot/dita-ot/issues/3523)
--   The new `Store` implementation that supports in-memory processing includes an immutable document reader method that can be used to request a document that doesn't need to change during processing. This approach facilitates caching and helps to speed up processing. [\#3506](https://github.com/dita-ot/dita-ot/issues/3506), [\#3548](https://github.com/dita-ot/dita-ot/issues/3548)
--   In earlier versions, variations in reference capitalization could cause unexpected results when building output on case-sensitive file systems. DITA-OT now warns when file references use incorrect case. \(For example, if maps reference Topic.dita, but the filename on disk is actually topic.dita.\) In strict processing mode, this is considered a fatal error; in lax processing mode, the file reference is rewritten to use the same case as the file system. [\#3535](https://github.com/dita-ot/dita-ot/issues/3535)
--   The --filter option can now be passed to the dita multiple times in a single command-line invocation to apply conditions from several DITAVAL files at once. [\#3556](https://github.com/dita-ot/dita-ot/issues/3556)
--   The bundled Apache Formatting Objects Processor \(FOP\) has been upgraded to version 2.5, which includes security updates to various embedded libraries. [\#3558](https://github.com/dita-ot/dita-ot/issues/3558), [\#3630](https://github.com/dita-ot/dita-ot/issues/3630)
--   The deprecated `msgprefix` XSL variable \(“DOTX”\) has been removed. This variable was originally deprecated in DITA-OT 2.3, but still defined in several stylesheets. Importing the common XSL module output-message.xsl no longer requires this variable to be defined. [\#3562](https://github.com/dita-ot/dita-ot/issues/3562)
--   The S9api message listener from the Saxon API is now used to forward log messages to the `DITAOTLogger`. This allows message levels and error codes to be passed from XSLT to Java code for improved debugging. [\#3564](https://github.com/dita-ot/dita-ot/issues/3564)
--   HTML5 output now includes additional metadata to indicate that the content was produced using DITA Open Toolkit. [\#3594](https://github.com/dita-ot/dita-ot/issues/3594)
+-   When [publishing with project files](../topics/using-project-files.md), separate temporary folders are now created for each deliverable in the project. This facilitates debugging and troubleshooting, as it makes it easier to inspect the temporary files that have been created for each deliverable. [\#3757](https://github.com/dita-ot/dita-ot/issues/3757), [\#3898](https://github.com/dita-ot/dita-ot/issues/3898)
+-   The legacy attribute set reflection in PDF2 has been replaced with code that generates new attribute sets directly. This change is backwards-compatible as the old attribute set reflection code has been retained, but PDF2 now uses the new attribute set generation mechanism everywhere reflection was used. Custom plug-ins that still use reflection should be updated to the new approach, as the legacy code may be removed in a future version. [\#3827](https://github.com/dita-ot/dita-ot/issues/3827), [\#3829](https://github.com/dita-ot/dita-ot/issues/3829)
+-   Attribute generation routines in XSLT stylesheets have been refactored from the old XSLT 1.0 style `xsl:value-of select="…"` to the modern XSLT 2 notation: `xsl:attribute select="…"/`. [\#3830](https://github.com/dita-ot/dita-ot/issues/3830)
+-   Many Ant targets refer to `skip` properties that can be used to skip preprocessing steps. In earlier releases, these properties were not set or named consistently; these properties are now generated automatically with more consistent naming and behavior. [\#3851](https://github.com/dita-ot/dita-ot/issues/3851)
+-   When an included file uses a character set that is neither the system default nor matches the explicit character set definition in the include, reading the file may fail. A new DOTJ084E error message makes it easier to debug character set encoding issues like this in source files. [\#3891](https://github.com/dita-ot/dita-ot/issues/3891)
+-   Grammar caching and validation has been added for RELAX NG–based DITA topics and maps. Together these enhancements make publishing faster and more reliable for RNG-based content. [\#3253](https://github.com/dita-ot/dita-ot/issues/3253), [\#3661](https://github.com/dita-ot/dita-ot/issues/3661), [\#3926](https://github.com/dita-ot/dita-ot/issues/3926)
+-   Many XSLT files have been updated to use `#current` for the processing mode. This simplifies the code and makes it easier to read and maintain. [\#3974](https://github.com/dita-ot/dita-ot/issues/3974)
 
-    ```language-html
-    <meta name="generator" content="DITA-OT"/>
-    ```
+### Bug fixes
 
--   Up to version 3.5, DITA-OT included the [Dublin Core Metadata Element Set](https://dublincore.org/specifications/dublin-core/dcmi-terms) in both XHTML and HTML5 output. For DITA-OT 3.6, this capability was extracted to a separate plugin, and Dublin Core metadata is no longer generated in the default HTML5 output. [\#3595](https://github.com/dita-ot/dita-ot/issues/3595)
+DITA Open Toolkit Release 4.0 provides fixes for the following bugs:
 
-    If necessary, the [org.dita.html5.dublin-core](https://github.com/dita-ot/org.dita.html5.dublin-core/) plug-in can be installed from the plug-in registry at [dita-ot.org/plugins](https://www.dita-ot.org/plugins) to add Dublin Core metadata to HTML5. To install the plug-in, run the following command:
-
-    ```syntax-bash
-    dita install org.dita.html5.dublin-core
-    ```
-
--   In XHTML output, previous versions failed to distinguish *Notice* note types from regular notes, prefixing both with **Note**. Support has been backported from HTML5 to XHTML to prefix notices with **Notice** as expected. [\#3599](https://github.com/dita-ot/dita-ot/issues/3599), [\#3600](https://github.com/dita-ot/dita-ot/issues/3600)
--   Unused code for flagging and key processing has been removed along with related files that have been deprecated since version 2.1, including the base flag.xsl stylesheet, the generated keydef.xml file, and schemekeydef.xml. [\#3602](https://github.com/dita-ot/dita-ot/issues/3602), [\#3603](https://github.com/dita-ot/dita-ot/issues/3603)
--   Remaining inline style attributes were removed from HTML5 code, which prevented custom plug-ins from overriding the presentation of the corresponding elements, including:
-
-    -   `line-through` and `overline` elements
-    -   syntax diagrams
-    -   long quote citations
-    -   Boolean states
-    These changes move the default presentation rules to CSS to allow users to override these styles in custom stylesheets. The output is visually equivalent to the results generated by previous toolkit versions. [\#3632](https://github.com/dita-ot/dita-ot/issues/3632)
-
-    **Important:** In publishing environments that do not use the default common CSS files, these styles may need to be implemented in custom stylesheets.
-
-
-### Bugs
-
-DITA Open Toolkit Release 3.6 provides fixes for the following bugs:
-
--   Folder names in development build archives previously included the “`+`” plus sign, which caused errors when running from the unpacked directory. The snapshot folder name syntax has been updated to use the “`@`” at sign instead, which allows builds to run directly from the extracted folder. [\#2414](https://github.com/dita-ot/dita-ot/issues/2414), [\#3623](https://github.com/dita-ot/dita-ot/issues/3623)
-
--   The license text for the beta DITA 2.0 grammar file plug-in was missing in DITA-OT 3.5 and is now included in the distribution package. [\#3608](https://github.com/dita-ot/dita-ot/issues/3608), [\#3649](https://github.com/dita-ot/dita-ot/issues/3649)
-
--   The Java code has been refactored to anticipate cases where resources are missing or incorrectly defined.
-    -   The `File.toURI()` method has been updated to ensure that the generated URI for a directory will always end in a trailing slash. This prevents unexpected errors in cases when the `File` input points to a path that doesn’t exist. [\#3621](https://github.com/dita-ot/dita-ot/issues/3621), [\#3624](https://github.com/dita-ot/dita-ot/issues/3624), [\#3626](https://github.com/dita-ot/dita-ot/issues/3626)
-    -   The `JobSourceSet` has been fixed to handle cases where the `src` input is `null`. [\#3625](https://github.com/dita-ot/dita-ot/issues/3625)
--   In DITA-OT 3.5.4, the HTMLHelp stylesheet map2hhcImpl.xsl included an invalid code remnant left over from previous edits. The unnecessary line has been removed. [\#3627](https://github.com/dita-ot/dita-ot/issues/3627), [\#3634](https://github.com/dita-ot/dita-ot/issues/3634)
+-   In earlier releases, unexpected or invalid markup in a plugin.xml file might throw errors, but the installation would still show as successful. This has been fixed, and plug-in installation will now fail when the integration process does not work. [\#2641](https://github.com/dita-ot/dita-ot/issues/2641), [\#3825](https://github.com/dita-ot/dita-ot/issues/3825)
+-   In earlier releases, the `@frame`=`"none"` attribute on tables was not properly handled for PDF output. This issue has been fixed, and the table border is now handled correctly. [\#3303](https://github.com/dita-ot/dita-ot/issues/3303), [\#3852](https://github.com/dita-ot/dita-ot/issues/3852), [\#3854](https://github.com/dita-ot/dita-ot/issues/3854)
+-   In 3.7 and some earlier releases, including namespaced elements such as `m:math` or `svg:svg` in a topic that is chunked would result in build failures. The chunking process now handles these elements without errors. [\#3684](https://github.com/dita-ot/dita-ot/issues/3684)
+-   The `FINALOUTPUTTYPE` XSLT parameter has been removed from maplinkImpl.xsl and mappullImpl.xsl; this parameter is a legacy of very early code and has never been used by DITA-OT. [\#4018](https://github.com/dita-ot/dita-ot/issues/4018)
+-   In DITA-OT 3.7.4, publishing failed with an IllegalArgumentException when images were referenced with an HTTP URI scheme. Processing has been corrected to set the missing `@scope` attribute to `external` per [DITA 1.3 specification: The scope attribute](http://docs.oasis-open.org/dita/dita/v1.3/errata02/os/complete/part3-all-inclusive/langRef/attributes/thescopeattribute.html#thescopeattribute). [\#4032](https://github.com/dita-ot/dita-ot/issues/4032), [\#4039](https://github.com/dita-ot/dita-ot/issues/4039)
 
 ### Contributors
 
-DITA Open Toolkit Release 3.6 includes [code contributions](https://github.com/dita-ot/dita-ot/graphs/contributors) by the following people:
+DITA Open Toolkit Release 4.0 includes [code contributions](https://github.com/dita-ot/dita-ot/graphs/contributors) by the following people:
 
 1.  Jarno Elovirta
-2.  Roger Sheen
+2.  Radu Coravu
 3.  Robert D Anderson
-4.  Radu Coravu
-5.  David Bertalan
+4.  Toshihiko Makita
+5.  Eric Sirois
+6.  Chris Papademetrious
+7.  Julien Lacour
+8.  Roger Sheen
 
-For the complete list of changes since the previous release, see the [changelog](https://github.com/dita-ot/dita-ot/compare/3.5...3.6) on GitHub.
+For the complete list of changes since the previous release, see the [changelog](https://github.com/dita-ot/dita-ot/compare/3.7.4...4.0) on GitHub.
 
 ### Documentation updates
 
-The documentation for DITA Open Toolkit Release 3.6 provides corrections and improvements to existing topics, along with new information in the following topics:
+The documentation for DITA Open Toolkit Release 4.0 provides corrections and improvements to existing topics, along with new information in the following topics:
 
--   [Store API – Processing in memory](../reference/store-api.md)
+-   [PDF themes](../topics/pdf-themes.md)
+-   [Migrating to release 4.0](../topics/migrating-to-4.0.md)
 -   [DITA 2.0 preview support](../reference/dita-v2-0-support.md)
--   [Migrating to release 3.6](../topics/migrating-to-3.6.md)
--   [Speeding up builds](../topics/reducing-processing-time.md)
--   [Common parameters](../parameters/parameters-base.md)
--   [Using the dita command](../topics/build-using-dita-command.md)
--   [Arguments and options for the dita command](../parameters/dita-command-arguments.md)
 
-For additional information on documentation issues resolved in DITA Open Toolkit Release 3.6, see the [3.6 milestone](https://github.com/dita-ot/docs/issues?q=milestone%3A3.6+is%3Aclosed) in the documentation repository.
+For additional information on documentation issues resolved in DITA Open Toolkit Release 4.0, see the [4.0 milestone](https://github.com/dita-ot/docs/issues?q=milestone%3A4.0+is%3Aclosed) in the documentation repository.
 
-DITA Open Toolkit Release 3.6 includes [documentation contributions](https://github.com/dita-ot/docs/graphs/contributors) by the following people:
+DITA Open Toolkit Release 4.0 includes [documentation contributions](https://github.com/dita-ot/docs/graphs/contributors) by the following people:
 
 1.  Roger Sheen
 2.  Jarno Elovirta
-3.  Lief Erickson
-4.  Heston Hoffman
 
-For the complete list of documentation changes since the previous release, see the [changelog](https://github.com/dita-ot/docs/compare/3.5...3.6).
+For the complete list of documentation changes since the previous release, see the [changelog](https://github.com/dita-ot/docs/compare/3.7.4...4.0).
 

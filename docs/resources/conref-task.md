@@ -17,9 +17,9 @@ Custom plug-ins developed for a previous major version may require changes to wo
     /absolute/path/to/dita-ot-dir/docsrc/samples
 
 -   **Plug-In Info**
-    -   <plug-in-id\> is the unique ID of the plug-in, as defined in the plug-in’s configuration file \(plugin.xml\).
+    -   &lt;plug-in-id&gt; is the unique ID of the plug-in, as defined in the plug-in’s configuration file \(plugin.xml\).
     -   plug-in-zip is the filename or URL of the plug-in’s distribution ZIP file \(optional\).
-    -   the optional <plug-in\> argument is one of the following:
+    -   the optional &lt;plug-in&gt; argument is one of the following:
         -   the unique ID of the plug-in as defined in the plug-in registry at [dita-ot.org/plugins](https://www.dita-ot.org/plugins) \(or a local registry\)
         -   the remote URL of the plug-in’s distribution ZIP file
         -   the name of a local ZIP file
@@ -29,14 +29,14 @@ Custom plug-ins developed for a previous major version may require changes to wo
     -   **Note:** In earlier versions of DITA-OT \(2.4–3.4\), use the double-hyphen option syntax dita --uninstall. In DITA-OT 2.0–2.3, use the single-hyphen form: dita
 
 
-1.  Download the dita-ot-3.6.zip package from the project website at [dita-ot.org/download](https://www.dita-ot.org/download).
+1.  Download the dita-ot-4.0.2.zip package from the project website at [dita-ot.org/download](https://www.dita-ot.org/download).
 
 2.  Open a command prompt or terminal session.
 
     -   input-file is the DITA map or DITA file that you want to process.
-    -   format is the output format \(transformation type\). This argument corresponds to the common parameter transtype. Use the same values as for the transtype build parameter, for example html5 or pdf.
+    -   format is the output format \(transformation type\). This argument corresponds to the common parameter [transtype](../parameters/parameters-base.md#transtype). Use the same values as for the transtype build parameter, for example html5 or pdf.
 
-    -   format is the output format \(transformation type\). This argument corresponds to the common parameter transtype. Use the same values as for the transtype build parameter, for example html5 or pdf.
+    -   format is the output format \(transformation type\). This argument corresponds to the common parameter [transtype](../parameters/parameters-base.md#transtype). Use the same values as for the transtype build parameter, for example html5 or pdf.
 
         You can create plug-ins to add new output formats; by default, the following values are available:
 
@@ -58,7 +58,9 @@ Custom plug-ins developed for a previous major version may require changes to wo
 
             Specifies the path of the output directory; the path can be absolute or relative to the current directory.
 
-            This argument corresponds to the common parameter output.dir. By default, the output is written to the out subdirectory of the current directory.
+            This option corresponds to the common parameter [output.dir](../parameters/parameters-base.md#output.dir).
+
+            By default, the output is written to the out subdirectory of the current directory.
 
         -   **--filter=files**
 
@@ -113,7 +115,8 @@ Custom plug-ins developed for a previous major version may require changes to wo
             This option can be used by plug-in developers to measure performance. To run a conversion five times, for example, use --repeat=5. The duration of each execution will appear in the console when the final transformation is complete.
 
             ```
-            $ dita --input=docsrc/samples/sequence.ditamap --format=html5 --repeat=5
+            $ dita --input=docsrc/samples/sequence.ditamap --format=html5 \
+                   --repeat=5
             1 11281ms
             2 4132ms
             3 3690ms
@@ -123,7 +126,11 @@ Custom plug-ins developed for a previous major version may require changes to wo
 
         -   **--resource=file -r file**
 
-            Convert partial documentation sets by processing input with additional resources.
+            Specifies resource files.
+
+            This argument corresponds to the common parameter [args.resources](../parameters/parameters-base.md#args.resources).
+
+            Resource files can be used to convert partial documentation sets by processing input with additional information.
 
             For example, to process a single topic file with a map that contains key definitions, use a command like this:
 
@@ -141,7 +148,9 @@ Custom plug-ins developed for a previous major version may require changes to wo
 
             Specifies the location of the temporary directory.
 
-            This argument corresponds to the common parameter dita.temp.dir.
+            This option corresponds to the common parameter [dita.temp.dir](../parameters/parameters-base.md#dita.temp.dir).
+
+            The temporary directory is where DITA-OT writes intermediate files that are generated during the transformation process.
 
         -   **--verbose -v**
 

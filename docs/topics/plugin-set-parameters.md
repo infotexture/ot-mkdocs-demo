@@ -23,8 +23,8 @@ To accomplish this, you can create a new plug-in. In the Ant script that defines
   <target name="dita2draft.pdf.init">
     <property name="customization.dir"
               location="${dita.plugin.com.example.draft.pdf.dir}/cfg"/>
-    **<property name="args.draft" value="yes"/\>**
-    **<property name="args.artlbl" value="yes"/\>**
+    **&lt;property name="args.draft" value="yes"/&gt;**
+    **&lt;property name="args.artlbl" value="yes"/&gt;**
   </target>
   <target name="dita2draft.pdf"
           depends="dita2draft.pdf.init, dita2production.pdf, dita2pdf2"/>

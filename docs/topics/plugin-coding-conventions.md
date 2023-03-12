@@ -49,7 +49,7 @@ The Saxon project has announced plans to remove XSLT 1.0 support from the Saxon-
 
 > …we’re dropping XSLT 1.0 backwards compatibility mode from Saxon-HE, and hope to eliminate it entirely in due course.
 
-> [*https://www.xml.com/news/release-saxon-98/*](https://www.xml.com/news/release-saxon-98/)
+> [**https://www.xml.com/news/release-saxon-98/**](https://www.xml.com/news/release-saxon-98/)
 
 DITA-OT 3.0 and 3.0.1 included Saxon-HE 9.8.0.5, which rejects XSLT stylesheets that specify `version="1.0"`. Plug-ins with XSLT templates specifying version 1.0 will fail with the message “XSLT 1.0 compatibility mode is not available in this configuration.”
 
@@ -159,13 +159,33 @@ The `ditafileset` resource collection can be used to select different types of f
 |`<ditafileset format="ditamap"/>`|Selects all DITA maps in the temporary directory.|
 |`<ditafileset format="image"/>`|Selects images of all known types in the temporary directory.|
 
+## Match elements with their `@class` attribute
+
+Use `@class` attributes to match elements in XPATH expressions instead of element names.
+
+For example, instead of:
+
+```
+<xsl:template match="p"/>
+```
+
+use:
+
+```
+<xsl:template match="*[contains(@class,' topic/p ')]"/>
+```
+
+Specialization-aware processing uses these classes to distinguish the general class of elements to which the current element belongs.
+
+**Tip:** Matching classes instead of elements ensures that the expression also applies to any specialized elements as well as to their more general ancestors. This means you can define new markup without necessarily requiring new processing rules.
+
 ## Validating plug-ins
 
 DITA-OT includes a RELAX NG schema file that can be used to validate the plugin.xml files that define the capabilities of each plug-in.
 
 To ensure the syntax of your custom plug-in is correct, include an `xml-model` processing instruction at the beginning of the plugin.xml file, immediately after the XML prolog:
 
-`xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"`
+`xml-model href="https://www.dita-ot.org/rng/plugin.rnc" type="application/relax-ng-compact-syntax"`
 
 If your authoring environment does not apply this schema automatically, point your editor to dita-ot-dir/resources/plugin.rnc to associate the schema with your plug-in file.
 

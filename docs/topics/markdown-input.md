@@ -41,11 +41,5 @@ This converts all input files \(both DITA XML and Markdown\) to [Normalized DITA
 **Related information**  
 
 
-[Standard DITA XML](../topics/dita-xml-input.md)
-
-[Preview support for Lightweight DITA](../topics/lwdita-input.md)
-
-[Markdown DITA syntax reference](../topics/markdown-dita-syntax-reference.md)
-
 [Markdown plugin](https://www.oxygenxml.com/events/2015/dita-ot_day.html#Markdown_plugin)
 

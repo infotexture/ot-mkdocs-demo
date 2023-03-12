@@ -1,4 +1,4 @@
-# Resolve map references \(mapref\)
+# Resolve map references \(`mapref`\)
 
 The `mapref` step resolves references from one DITA map to another. This step is implemented in XSLT.
 

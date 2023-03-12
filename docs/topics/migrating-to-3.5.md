@@ -108,7 +108,7 @@ For example, if your plug-in previously used the `fullditatopicfile` to select r
       destdir="${output.dir}"
       includesfile="${dita.temp.dir}${file.separator}${fullditatopicfile}"
       style="${args.xsl}">
-  <!-- ⋮ -->
+  [...]
 </xslt>
 ```
 
@@ -119,21 +119,21 @@ With DITA-OT 2.4 or newer, use the `ditafileset` element instead:
       destdir="${output.dir}"
       style="${args.xsl}">
   <ditafileset format="dita" processingRole="normal"/>
-  <!-- ⋮ -->
+  [...]
 </xslt>
 ```
 
 If your plug-in previously used the `user.input.file.listfile` to process the start map like this:
 
 ```
-<xslt …
+<xslt [...]
       includesfile="${dita.temp.dir}${file.separator}${user.input.file.listfile}"/>
 ```
 
 Use the `ditafileset` element as follows:
 
 ```
-<xslt … >
+<xslt [...] >
   <ditafileset input="true" format="ditamap"/>
 </xslt>
 ```

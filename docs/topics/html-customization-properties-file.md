@@ -34,8 +34,3 @@ You can also use a .properties file to reference a set of build parameters when 
 
 **Note:** For an example of HTML output generated using this method, see the HTML5 version of the DITA-OT documentation included in the installation folder under doc/index.html.
 
-**Related information**  
-
-
-[Setting parameters for custom HTML](../topics/html-customization-parameters.md)
-

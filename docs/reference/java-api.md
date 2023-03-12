@@ -28,7 +28,7 @@ By default, running DITA-OT via the API will write a debug log to the temporary 
 
 The processor cleans the temporary directory by default, but this can be disabled to simplify debugging in cases where the processor failed.
 
-**Tip:** See the *DITA-OT Java API documentation* in the doc/api/ folder of the DITA-OT distribution package for information on the packages, classes, interfaces and methods provided by the Java API.
+**Tip:** See the **DITA-OT Java API documentation** in the doc/api/ folder of the DITA-OT distribution package for information on the packages, classes, interfaces and methods provided by the Java API.
 
 ## Downloading DITA-OT from Maven Central
 

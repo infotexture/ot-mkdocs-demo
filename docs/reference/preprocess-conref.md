@@ -1,4 +1,4 @@
-# Resolve content references \(conref\)
+# Resolve content references \(`conref`\)
 
 The `conref` step resolves content references, processing only the DITA maps or topics that use the `@conref` attribute. This step is implemented in XSLT.
 

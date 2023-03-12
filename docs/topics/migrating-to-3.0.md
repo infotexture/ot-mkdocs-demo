@@ -10,7 +10,7 @@ The Saxon project has announced plans to remove XSLT 1.0 support from the Saxon-
 
 > …we’re dropping XSLT 1.0 backwards compatibility mode from Saxon-HE, and hope to eliminate it entirely in due course.
 
-> [*https://www.xml.com/news/release-saxon-98/*](https://www.xml.com/news/release-saxon-98/)
+> [**https://www.xml.com/news/release-saxon-98/**](https://www.xml.com/news/release-saxon-98/)
 
 DITA-OT 3.0 and 3.0.1 included Saxon-HE 9.8.0.5, which rejects XSLT stylesheets that specify `version="1.0"`. Plug-ins with XSLT templates specifying version 1.0 will fail with the message “XSLT 1.0 compatibility mode is not available in this configuration.”
 

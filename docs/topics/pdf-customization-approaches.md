@@ -20,11 +20,11 @@ The original Idiom plug-in used its own extension mechanism to provide overrides
 
 Files in the org.dita.pdf2/Customization folder can override their default counterparts, allowing users to adjust certain aspects of PDF output without changing any of the plug-in’s default files, or specifying additional parameters when generating output.
 
-**Important:** While this approach is slightly better than editing default files in place, it can still cause problems when upgrading the toolkit to a new version. Since the Customization folder is located within the org.dita.pdf2 plug-in’s parent directory, users must be take care to preserve the contents of this folder when upgrading to new toolkit versions.
+**Important:** While this approach is slightly better than editing default files in place, it can still cause problems when upgrading the toolkit to a new version. Since the Customization folder is located within the org.dita.pdf2 plug-in’s parent directory, users must take care to preserve the contents of this folder when upgrading to new toolkit versions.
 
 Although recent versions of DITA-OT still support this mechanism to ensure backwards compatibility, this practice is deprecated in favor of custom PDF plug-ins.
 
-**Tip:** Users who have used the Customization folder to modify the default PDF output are encouraged to create a custom PDF plug-in instead. In many cases, this may be as simple as copying the contents of the Customization folder to a new subfolder in the plugins folder and creating the necessary plugin.xml file and an Ant script to define the transformation type as described in the following example.
+**Tip:** Users who have used the Customization folder to modify the default PDF output are encouraged to create a custom PDF plug-in instead. In many cases, this may be as simple as copying the contents of the Customization folder to a new subfolder in the plugins folder and creating the necessary plugin.xml file and an Ant script to define the transformation type.
 
 ## Specifying an external customization directory
 
@@ -36,7 +36,7 @@ It can also be useful in environments where corporate policy, CMS permissions, o
 
 **Tip:** Users who specify external customization directories via customization.dir are encouraged to create a custom PDF plug-in if possible.
 
-## Combining custom plug-ins & customization directories
+## Combining custom plug-ins &amp; customization directories
 
 A common custom plug-in may be used to store base overrides that are applicable to all company publications, and the customization.dir parameter can be passed at build time to override individual settings as necessary for a given project or publication.
 
@@ -52,4 +52,6 @@ However, the use of multiple customization mechanisms can make it difficult to d
 
 
 [Custom PDF plug-ins](../topics/pdf-customization-plugins.md)
+
+[PDF themes](../topics/pdf-themes.md)
 

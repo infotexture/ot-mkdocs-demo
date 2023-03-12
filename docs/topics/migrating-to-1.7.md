@@ -33,11 +33,11 @@ Core TOC generation has been moved to a separate XSLT stylesheet xsl/map2htmtoc/
 
 ## HTML and extended transformation types
 
-Flagging logic has been pulled out of the core X/HTML code and moved to a preprocess step. This significantly simplifies and optimizes the X/HTML code, while making flagging logic available to any other transformation type. The new preprocess step implements all flagging logic; for each active flag, it adds a DITA-OT specific hint into the intermediate topics \(implemented as a specialization of the DITA <foreign\> element\). As part of this change, all flagging-related templates in the XHTML code \(such as start-flagit and gen-style\) are deprecated.
+Flagging logic has been pulled out of the core X/HTML code and moved to a preprocess step. This significantly simplifies and optimizes the X/HTML code, while making flagging logic available to any other transformation type. The new preprocess step implements all flagging logic; for each active flag, it adds a DITA-OT specific hint into the intermediate topics \(implemented as a specialization of the DITA &lt;foreign&gt; element\). As part of this change, all flagging-related templates in the XHTML code \(such as start-flagit and gen-style\) are deprecated.
 
 If you override the X/HTML transforms, you may need to update your overrides to use the new flagging logic. In most cases this just means deleting calls to the deprecated templates; in some cases, the calls can be replaced with 2 lines to process flags in new places. You should compare your override to the updated XHTML code and update as needed. See [XHTML migration for flagging updates in DITA-OT 1.7](../reference/flagging-migration.md) for details.
 
-Plug-ins that provide support for new transforms need to ensure that they properly support the DITA <foreign\> element, which should be ignored by default; if so, this change will have no immediate impact. Support for flagging new transformation types may be more easily added based on this update, because there is no need to re-implement flagging logic, but this is not required. See [Flagging \(flag-module\)](../reference/preprocess-flagging.md) for details on how to add flagging support.
+Plug-ins that provide support for new transforms need to ensure that they properly support the DITA &lt;foreign&gt; element, which should be ignored by default; if so, this change will have no immediate impact. Support for flagging new transformation types may be more easily added based on this update, because there is no need to re-implement flagging logic, but this is not required. See [Flagging \(flag-module\)](../reference/preprocess-flagging.md) for details on how to add flagging support.
 
 ## PDF
 

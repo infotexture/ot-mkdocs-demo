@@ -14,16 +14,3 @@ The variables that control `note` graphics all follow the form
 
 where \{type\} contains a possible value for the `note` `@type` attribute and \{path to image file\} is the path to the note icon image.
 
-**Related information**  
-
-
-[Index configuration](../topics/pdf-plugin-structure_common-index.md)
-
-[Variable overrides](../topics/pdf-plugin-structure_common-vars.md)
-
-[Custom attributes](../topics/pdf-plugin-structure_fo-attrs.md)
-
-[Internationalization configuration](../topics/pdf-plugin-structure_fo-i18n.md)
-
-[Custom stylesheets](../topics/pdf-plugin-structure_fo-xsl.md)
-

@@ -25,34 +25,23 @@ For example, the DITA-OT documentation includes a simple header banner with the 
 
     ```
     .header {
-      font-size: 18pt;
-      margin: 0;
+      margin-bottom: 1rem;
       padding: 0 12px;
     }
     
     .header p {
-      color: #1d365d;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      line-height: 1.3;
-      margin: 0;
+      color: var(--headings-color);
+      font-size: 1.5rem;
+      margin: 0 0 16px;
     }
     
     .header hr {
       border: 0;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--secondary-light);
       height: 0;
     }
     ```
 
 
 **Tip:** For an example of HTML output generated using this method, see the HTML5 version of the DITA-OT documentation included in the installation folder under doc/index.html.
-
-**Related information**  
-
-
-[Adding navigation to topics](../topics/html-customization-navigation.md)
-
-[Adding custom CSS](../topics/html-customization-css.md)
-
-[Handling content outside the map directory](../parameters/generate-copy-outer.md)
 

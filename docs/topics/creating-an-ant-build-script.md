@@ -72,7 +72,7 @@ The following Ant build script generates CHM and PDF output for the sample DITA 
 </project>
 ```
 
-In addition to the mandatory parameters \(args.input and transtype\), the chm and pdf targets each specify some optional parameters:
+In addition to the mandatory parameters \(args.input and transtype\), the `chm` and `pdf` targets each specify some optional parameters:
 
 -   The args.gen.task.lbl property is set to YES, which ensures that headings are automatically generated for the sections of task topics.
 -   The output.dir property specifies where DITA-OT writes the output of the transformations.
@@ -85,8 +85,6 @@ Another resource for learning about Ant scripts are the files in the dita-ot-dir
 
 **Related information**  
 
-
-[Building output using Ant](../topics/building-with-ant.md)
 
 [Migrating Ant builds to use the dita command](../topics/migrating-ant-to-dita.md)
 

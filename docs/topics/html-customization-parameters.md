@@ -5,8 +5,6 @@ For simple branded HTML pages, you can adjust the look and feel of the default o
 **Related information**  
 
 
-[Customizing HTML with a .properties file](../topics/html-customization-properties-file.md)
-
 [XHTML transformation](../topics/dita2xhtml.md)
 
 [Common parameters](../parameters/parameters-base.md)

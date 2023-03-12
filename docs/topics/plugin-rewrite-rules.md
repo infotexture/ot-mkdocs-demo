@@ -10,8 +10,8 @@ For example, set the result.rewrite-rule.xsl parameter to specify a bundled XSLT
   <target name="dita2rewrite.pdf.init">
     <property name="customization.dir"
               location="${dita.plugin.com.example.rewrite.pdf.dir}/cfg"/>
-    **<property name="result.rewrite-rule.xsl" 
-              value="$\{dita.plugin.com.example.rewrite.pdf.dir\}/custom-rules.xsl"/\>**
+    **&lt;property name="result.rewrite-rule.xsl" 
+              value="$\{dita.plugin.com.example.rewrite.pdf.dir\}/custom-rules.xsl"/&gt;**
   </target>
   <target name="dita2rewrite.pdf"
           depends="dita2rewrite.pdf.init, dita2production.pdf, dita2pdf2"/>

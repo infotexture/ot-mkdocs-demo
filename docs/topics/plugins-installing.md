@@ -5,12 +5,12 @@ Use the dita install subcommand to install plug-ins.
 1.  At the command-line prompt, enter the following command:
 
     ```syntax-bash
-    dita install <plug-in\>
+    dita install &lt;plug-in&gt;
     ```
 
     where:
 
-    -   the optional <plug-in\> argument is one of the following:
+    -   the optional &lt;plug-in&gt; argument is one of the following:
         -   the unique ID of the plug-in as defined in the plug-in registry at [dita-ot.org/plugins](https://www.dita-ot.org/plugins) \(or a local registry\)
         -   the remote URL of the plug-in’s distribution ZIP file
         -   the name of a local ZIP file

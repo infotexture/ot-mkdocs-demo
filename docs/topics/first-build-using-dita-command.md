@@ -18,7 +18,7 @@ The DITA-OT client is a command-line tool with no graphical user interface. To v
     where:
 
     -   input-file is the DITA map or DITA file that you want to process.
-    -   format is the output format \(transformation type\). This argument corresponds to the common parameter transtype. Use the same values as for the transtype build parameter, for example html5 or pdf.
+    -   format is the output format \(transformation type\). This argument corresponds to the common parameter [transtype](../parameters/parameters-base.md#transtype). Use the same values as for the transtype build parameter, for example html5 or pdf.
 
     If processing is successful, nothing is printed in the terminal window. The built output is written to the specified output directory \(by default, in the out subdirectory of the current directory\).
 

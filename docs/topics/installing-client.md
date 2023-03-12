@@ -4,17 +4,17 @@ The DITA-OT distribution package can be installed on Linux, macOS, and Windows. 
 
 -   Ensure that you have a Java Runtime Environment \(JRE\) or Java Development Kit \(JDK\).
 
-    DITA-OT is designed to run on Java version 8u101 or later and built and tested with the Open Java Development Kit \(OpenJDK\). Compatible Java distributions are available from multiple sources:
+    DITA-OT 4.0 is designed to run on Java version 17 or later and built and tested with the Open Java Development Kit \(OpenJDK\). Compatible Java distributions are available from multiple sources:
 
-    -   You can download the Oracle JRE or JDK from [oracle.com/technetwork/java](http://www.oracle.com/technetwork/java/javase/downloads) under commercial license.
-    -   OpenJDK is a free open-source implementation of Java available from [adoptopenjdk.net](https://adoptopenjdk.net).
-    -   Free OpenJDK distributions are also available from other vendors, including [Amazon Corretto](https://aws.amazon.com/corretto/), [Azul Zulu](https://www.azul.com/downloads/zulu/), and [Red Hat](https://developers.redhat.com/products/openjdk/download).
+    -   You can download the Oracle JRE or JDK from [oracle.com/java](https://www.oracle.com/java/technologies/downloads/) under commercial license.
+    -   Eclipse Temurin is the free OpenJDK distribution available from [adoptium.net](https://adoptium.net/temurin/releases/?version=17).
+    -   Free OpenJDK distributions are also provided by [Amazon Corretto](https://aws.amazon.com/corretto/), [Azul Zulu](https://www.azul.com/downloads/), and [Red Hat](https://developers.redhat.com/products/openjdk/download).
 -   If you want to generate HTML Help, ensure that you have HTML Help Workshop installed.
 
     You can download the Help Workshop from [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/windows/desktop/ms669985%28v=vs.85%29.aspx).
 
 
-1.  Download the dita-ot-3.6.zip package from the project website at [dita-ot.org/download](https://www.dita-ot.org/download).
+1.  Download the dita-ot-4.0.2.zip package from the project website at [dita-ot.org/download](https://www.dita-ot.org/download).
 
 2.  Extract the contents of the package to the directory where you want to install DITA-OT.
 

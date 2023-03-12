@@ -1,6 +1,6 @@
 # Customizing PDF output
 
-You can adjust various aspects of PDF output by changing parameter settings. For more complex customizations, you can create custom DITA-OT plug-ins.
+You can adjust various aspects of PDF output by changing parameter settings or using a theme file. For more complex customizations, you can create custom DITA-OT plug-ins.
 
 For example:
 
@@ -14,4 +14,6 @@ For example:
 
 
 [Custom PDF plug-ins](../topics/pdf-customization-plugins.md)
+
+[Books](../reference/books.md)
 

@@ -18,7 +18,7 @@ Various topics, sections and elements in the docs are profiled by audience:
 <li id="novice-variables-last" audience="novice">
   <p id="common-format-info">
     <varname>format</varname> is the output format (transformation type). This argument corresponds to the
-    common parameter <parmname>transtype</parmname>. Use the same values as for the
+    common parameter <xref keyref="parameters-base/transtype"/>. Use the same values as for the
       <parmname>transtype</parmname> build parameter, for example <option>html5</option> or
       <option>pdf</option>.</p>
 </li>
@@ -42,7 +42,7 @@ A dedicated subject scheme map defines several series of permissible values for 
 
 ## Branch filtering: re-using profiled content
 
-*Installing DITA-OT* pulls a subset of the build description from *using the dita command*, filtered to display only content deemed suitable for novice users under [Building output](../topics/first-build-using-dita-command.md):
+**Installing DITA-OT** pulls a subset of the build description from **using the dita command**, filtered to display only content deemed suitable for novice users under [Building output](../topics/first-build-using-dita-command.md):
 
 ```
 <topicref href="using-dita-command.dita"
@@ -106,7 +106,7 @@ This key definition defines the maintenance release version:
 <keydef keys="maintenance-version">
   <topicmeta>
     <keywords>
-      <keyword>3.6</keyword>
+      <keyword>4.0.2</keyword>
     </keywords>
   </topicmeta>
 </keydef>

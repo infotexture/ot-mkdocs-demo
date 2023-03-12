@@ -19,12 +19,12 @@ To implement extension functions, you must do the following:
 
     ```language-xml
     <jar destfile="${basedir}/target/lib/example-saxon.jar">
-      ⋮
+      [...]
       <service type="net.sf.saxon.lib.ExtensionFunctionDefinition">
         <provider classname="com.example.saxon.functions.Add"/>
         <provider classname="com.example.saxon.functions.Subtract"/>
       </service>
-      ⋮
+      [...]
     </jar>
     ```
 

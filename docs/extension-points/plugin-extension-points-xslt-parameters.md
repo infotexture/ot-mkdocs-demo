@@ -69,7 +69,7 @@ The following two files represent a complete \(albeit simple\) plug-in that pass
 
 ```
 <dummy xmlns:if="ant:if" xmlns:unless="ant:unless">
-  *<!-- Any Ant code allowed in xslt task is possible. Example: --\>*
+  *&lt;!-- Any Ant code allowed in xslt task is possible. Example: --&gt;*
   <param name="paramNameinXSLT" expression="${antProperty}"
          if:set="antProperty"/>
 </dummy>

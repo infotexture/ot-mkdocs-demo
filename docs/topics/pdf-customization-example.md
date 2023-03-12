@@ -97,14 +97,14 @@ The print-pdf transformation has the following characteristics:
 
     ```
     <?xml version="1.0" encoding="UTF-8"?>
-    <vars xmlns="http://www.idiominc.com/opentopic/vars">
+    <variables>
       <!-- Remove dot from list number -->
       <variable id="Ordered List Number">
         <param ref-name="number"/>
       </variable>
       <!-- Change unordered list bullet to an em dash -->
       <variable id="Unordered List bullet">&#x2014;</variable>
-    </vars>
+    </variables>
     ```
 
 

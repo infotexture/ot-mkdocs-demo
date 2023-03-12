@@ -16,7 +16,7 @@ The open-source publishing engine for content authored in the Darwin Information
 
 ### DOST
 
-**Note:** Deprecated acronym for “**D**ITA **O**pen ***S**ource* **T**oolkit”. Use DITA-OT instead.
+**Note:** Deprecated acronym for “**D**ITA **O**pen *__S__ource* **T**oolkit”. Use DITA-OT instead.
 
 ## extension point
 

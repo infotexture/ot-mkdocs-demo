@@ -38,12 +38,12 @@ The files might look like the following:
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin id="com.example.samplejava">
-  *<!-- Add the JAR file to the DITA-OT CLASSPATH --\>*
-  **<feature extension="dita.conductor.lib.import" 
-           file="com.example.sampleValidation.jar"/\>**
-  *<!-- Integrate the Ant code --\>*
+  *&lt;!-- Add the JAR file to the DITA-OT CLASSPATH --&gt;*
+  **&lt;feature extension="dita.conductor.lib.import" 
+           file="com.example.sampleValidation.jar"/&gt;**
+  *&lt;!-- Integrate the Ant code --&gt;*
   <feature extension="ant.import" file="calljava-antcode.xml"/>
-  *<!-- Define the Ant target to call, and when \(before conref\) --\>*
+  *&lt;!-- Define the Ant target to call, and when \(before conref\) --&gt;*
   <feature extension="depend.preprocess.conref.pre" 
            value="validateWithJava"/>
 </plugin>

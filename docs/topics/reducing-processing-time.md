@@ -28,6 +28,12 @@ For all but large source sets, the Java virtual machine \(JVM\) will not have en
 
 DITA-OT 2.0 to 2.3 require Java 7, and DITA-OT 2.4 and newer require Java 8. However, using a newer version of Java may further reduce processing time, depending on your operating system.
 
+## Re-enable Java file caching
+
+As of Java 12, the file canonicalization cache is no longer enabled by default \(see [JDK-8207005](https://bugs.openjdk.org/browse/JDK-8207005)\). On Windows, this results in significantly longer build times, and slight increases on Linux. To re-enable file caching, add `-Dsun.io.useCanonCaches=true` to the Java invocation command in the dita.bat and ant.bat wrapper scripts.
+
+**Note:** As of DITA-OT 3.7.3, this system property is set by default in the bundled wrapper scripts.
+
 **Collected links**  
 
 

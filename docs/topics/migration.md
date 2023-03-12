@@ -1,6 +1,6 @@
 # Migrating customizations
 
-If you have XSL transformation overrides, plug-ins or other customizations written prior to DITA-OT 3.6, you may need to make changes to ensure your overrides work properly with the latest toolkit versions.
+If you have XSL transformation overrides, plug-ins or other customizations written prior to DITA-OT 4.0, you may need to make changes to ensure your overrides work properly with the latest toolkit versions.
 
 In some cases, you may be able to remove old code that is no longer needed. In other cases, you may need to refactor your code to point to the modified extension points, templates or modes in recent toolkit versions.
 
@@ -14,6 +14,8 @@ Custom plug-ins developed for a previous major version may require changes to wo
 
 **Related information**  
 
+
+[Making the migration leap: jumping across versions to the latest DITA-OT - Robert D. Anderson](https://www.oxygenxml.com/events/2022/dita-ot_day.html#Making_the_migration_leap)
 
 [Gotcha! Upgrading PDF plugins to DITA-OT 2.x](https://www.oxygenxml.com/events/2016/dita-ot_day.html#Upgrading_PDF_plugins_to_DITA_OT_2.x)
 

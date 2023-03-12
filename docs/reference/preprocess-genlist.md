@@ -1,4 +1,4 @@
-# Generate lists \(gen-list\)
+# Generate lists \(`gen-list`\)
 
 The `gen-list` step examines the input files and creates lists of topics, images, document properties, or other content. These lists are used by later steps in the pipeline. This step is implemented in Java.
 

@@ -29,7 +29,7 @@ The logging behavior varies depending on whether you use the dita command or Ant
 
 ## Using other Ant loggers
 
-You also can use other Ant loggers; see [Listeners & Loggers](https://ant.apache.org/manual/listeners.html) in the Ant documentation for more information.
+You also can use other Ant loggers; see [Listeners &amp; Loggers](https://ant.apache.org/manual/listeners.html) in the Ant documentation for more information.
 
 For example, you can use the **AnsiColorLogger** to colorize the messages written on the screen.
 

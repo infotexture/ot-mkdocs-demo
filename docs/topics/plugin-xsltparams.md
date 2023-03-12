@@ -6,7 +6,7 @@ You can pass parameters from the Ant build to existing XSLT steps in both the pr
 
     ```
     <dummy>
-      *<!-- Any Ant code allowed in xslt task is possible. Example: --\>*
+      *&lt;!-- Any Ant code allowed in xslt task is possible. Example: --&gt;*
       <param name="paramNameinXSLT" expression="${antProperty}" 
              if="antProperty"/>
     </dummy>

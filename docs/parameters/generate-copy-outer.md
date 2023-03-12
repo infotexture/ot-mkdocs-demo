@@ -59,12 +59,3 @@ The index.html file is in the maps directory, the HTML files for the topics are 
 
 **Tip:** If args.csspath is not set, the default CSS files \(and any custom CSS files specified via args.css\) will be copied to the root level of the output folder. To copy CSS files to an output subfolder named css, set args.csspath to css.
 
-**Related information**  
-
-
-[Adding navigation to topics](../topics/html-customization-navigation.md)
-
-[Adding custom CSS](../topics/html-customization-css.md)
-
-[Adding custom headers and footers](../topics/html-customization-header.md)
-

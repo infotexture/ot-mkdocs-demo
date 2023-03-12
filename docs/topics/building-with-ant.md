@@ -20,8 +20,6 @@ You can build output by using an Ant build script to provide the DITA-OT paramet
 **Related information**  
 
 
-[Creating an Ant build script](../topics/creating-an-ant-build-script.md)
-
 [Migrating Ant builds to use the dita command](../topics/migrating-ant-to-dita.md)
 
 [Ant](../topics/ant.md)

@@ -27,12 +27,13 @@ Though the exact syntax differs slightly, the basic structure of project files i
 
         -   an `id` used to refer to this context from other projects
         -   a series of `input` files \(DITA maps\)
-        -   a `profile` with a series of DITAVAL files used to filter the content
+        -   a `profile` with a series of DITAVAL files used to filter the content of all publications in the deliverable
     -   an `output` location \(relative to the CLI --output directory\)
 
     -   a `publication` that defines:
         -   an output format via `transtype`, and
         -   a series of parameters to set for this transformation type, specified via `name` and either `href`, `path`, or `value`
+        -   a `profile` with any additional DITAVAL files used to filter the content of the publication \(in addition to those specified for the deliverable context\)
 
 **Tip:**
 
@@ -51,14 +52,18 @@ Though the exact syntax differs slightly, the basic structure of project files i
       <deliverable id="pdf">
         <context name="User Guide">
           <input href="../../userguide-book.ditamap"/>
+          <profile>
+            <ditaval href="../../resources/pdf.ditaval"/>
+          </profile>
         </context>
         <output href="."/>
         <publication transtype="pdf2">
           <param name="args.chapter.layout" value="BASIC"/>
           <param name="args.gen.task.lbl" value="YES"/>
-          <param name="include.rellinks" value="friend"/>
+          <param name="include.rellinks" value="#default external"/>
           <param name="outputFile.base" value="userguide"/>
           <param name="processing-mode" value="strict"/>
+          <param name="theme" path="../themes/dita-ot-docs-theme.yaml"/>
         </publication>
       </deliverable>
     </project>

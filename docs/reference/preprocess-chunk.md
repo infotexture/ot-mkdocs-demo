@@ -1,6 +1,6 @@
-# Chunk topics \(chunk\)
+# Chunk topics \(`chunk`\)
 
-The `chunk` step breaks apart and assembles referenced DITA content based on the @chunk attribute in maps. This step is implemented in Java.
+The `chunk` step breaks apart and assembles referenced DITA content based on the `@chunk` attribute in maps. This step is implemented in Java.
 
 DITA-OT has implemented processing for the following values of the `@chunk` attribute:
 

@@ -14,6 +14,6 @@ You can determine the DITA Open Toolkit version number from a command prompt.
 The DITA-OT version number appears on the console:
 
 ```
-DITA-OT version 3.6
+DITA-OT version 4.0.2
 ```
 

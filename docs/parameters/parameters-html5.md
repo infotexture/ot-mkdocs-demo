@@ -84,7 +84,7 @@ The HTML5 transformation shares common parameters with other HTML-based transfor
 
 -   **args.html5.contenttarget**
 
-    Specifies the value of the @target attribute on the <base\> element in the TOC file.
+    Specifies the value of the @target attribute on the &lt;base&gt; element in the TOC file.
 
 -   **args.html5.toc**
 
@@ -92,7 +92,7 @@ The HTML5 transformation shares common parameters with other HTML-based transfor
 
 -   **args.html5.toc.class**
 
-    Specifies the value of the @class attribute on the <body\> element in the TOC file.
+    Specifies the value of the @class attribute on the &lt;body&gt; element in the TOC file.
 
 -   **args.html5.toc.xsl**
 
@@ -100,7 +100,7 @@ The HTML5 transformation shares common parameters with other HTML-based transfor
 
 -   **args.indexshow**
 
-    Specifies whether the content of <indexterm\> elements are rendered in the output. The allowed values are yes and no; the default value is no.
+    Specifies whether the content of &lt;indexterm&gt; elements are rendered in the output. The allowed values are yes and no; the default value is no.
 
 -   **args.outext**
 

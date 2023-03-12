@@ -25,8 +25,8 @@ The toolkit uses the following severity scale:
 
 Plug-ins may be used to add additional messages to the toolkit; for more information, see [Rebuilding the DITA-OT documentation](rebuilding-docs.md).
 
-|Individual cells in this table may be used to push additional explanations for any existing error message into the generated message topic.|
-|-------------------------------------------------------------------------------------------------------------------------------------------|
+|Individual cells in this table may be used to push additional explanations for any existing error message into the generated message topic error-messages.xml.|
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |To add additional explanation to any message, add the explanation to this table in a single cell, and set the following attributes on the `stentry` tag: -   `conkeyref="error-messages/MESSAGEID-extra"` -- for example, use the following to add additional info to message DOTX001F: `conkeyref="error-messages/DOTX001F-extra"`
 -   `conaction="pushreplace"`
 
@@ -98,9 +98,7 @@ Plug-ins may be used to add additional messages to the toolkit; for more informa
  If this is a non-DITA element, it needs to be placed inside a `foreign` element so that is not validated against DITA rules.
 
 |
-|Ensure that the DITAVAL file exists. If more than one DITAVAL file is specified, ensure that the paths are delimited using the file path separator character appropriate for your operating system \(semicolon ‘`;`’ on Windows, or colon ‘`:`’ on macOS or Linux\).
-
-|
+|Ensure that the DITAVAL file exists. If more than one DITAVAL file is specified, ensure that the paths are delimited using the file path separator character appropriate for your operating system \(semicolon ‘`;`’ on Windows, or colon ‘`:`’ on macOS or Linux\).|
 |This build uses generated text, such as the phrase "Related information" \(which is generated above many link groups\). The toolkit was unable to locate the string %1 for your specified language, so the string will appear in the default language. This generally indicates that the toolkit’s strings need to be updated to support your language, or that your language setting is incorrect.|
 |The Eclipse help system requires a title in the project files generated from your map. Please add a title to your input map to get valid Eclipse help output.|
 |Eclipse uses anchor references to connect with other TOC files. For this to work in content generated from a DITA map, the anchorref element must reference either an existing Eclipse TOC XML file, or another DITA map \(which will presumably also be converted to an Eclipse TOC\).|
@@ -120,7 +118,7 @@ Plug-ins may be used to add additional messages to the toolkit; for more informa
 |The conref attribute must be a URI reference to a DITA element. Please see the topic on [URI-based addressing](http://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/archSpec/base/uri-based-addressing.html#uri-based-addressing) in the DITA specification for details on the expected syntax.|
 |The conref attribute must be a URI reference to a DITA element. Please see the topic on [URI-based addressing](http://docs.oasis-open.org/dita/dita/v1.3/os/part1-base/archSpec/base/uri-based-addressing.html#uri-based-addressing) in the DITA specification for details on the expected syntax. Note that the name of the file in this message may have be changed to use a standard dita topic file extension \('.dita' or '.xml'\), instead of the original extension used by the file; it may also include a path to the temporary directory rather than to the original.|
 |This warning is intended to catch instances where a non-DITA format setting unexpectedly cascades to a DITA topic, which will prevent the topic from being processed. To remove this message, set the format attribute directly on the indicated reference. Note that the name of the file in this message may have be changed to use a standard dita topic file extension \('.dita' or '.xml'\), instead of the original extension used by the file; it may also include a path to the temporary directory rather than to the original.|
-|Found a value such as <xref href=""\>link text</xref\>. The empty href attribute is not serving a purpose and has caused problems with some tools in the past; you should remove the attribute entirely or specify a value.|
+|Found a value such as &lt;xref href=""&gt;link text&lt;/xref&gt;. The empty href attribute is not serving a purpose and has caused problems with some tools in the past; you should remove the attribute entirely or specify a value.|
 |The type attribute in DITA is intended to describe the type of the target; for example, a reference to a concept topic may use type="concept". Generally, this attribute is optional, and the DITA-OT build will automatically determine the value during processing. In this case, the type attribute lists a more general type than what is actually found. This is not an error but may result in unexpected sorting for links to this topic.|
 |The type attribute in DITA is intended to describe the type of the target; for example, a reference to a concept topic may use type="concept". Generally, this attribute is optional, and the DITA-OT build will automatically determine the value during processing. In this case, the specified type value does not match the target, which may cause your links to sort inappropriately.|
 |DITA-OT is only able to dynamically retrieve titles when the target is a local \(not peer or external\) DITA resource.|

@@ -11,13 +11,13 @@ With the registry, you can now search the list of available plug-ins at [dita-ot
 Search the registry for a plug-in and install it by providing the plug-in name to the dita command.
 
 ```syntax-bash
-dita --install=<plugin-name\>
+dita --install=&lt;plugin-name&gt;
 ```
 
 If the registry includes multiple versions of the same plug-in, you can specify the version to install as follows:
 
 ```syntax-bash
-dita --install=<plugin-name\>@<plugin-version\>
+dita --install=&lt;plugin-name&gt;@&lt;plugin-version&gt;
 ```
 
 If the plug-in requires other plug-ins, those are also installed recursively.
@@ -55,7 +55,7 @@ The version entries for each plug-in are stored in a file that is named after th
 |`homepage`|no|Plug-in homepage URL|
 |`license`|no|License in [SPDX](https://spdx.org/licenses/) format|
 
-**Tip:** To calculate the SHA-256 checksum for the `cksum` key, use `shasum -a 256 <plugin-file\>` on macOS or Linux. With Windows PowerShell, use `[Get-FileHash](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6) <plugin-file\> | Format-List`.
+**Tip:** To calculate the SHA-256 checksum for the `cksum` key, use `shasum -a 256 &lt;plugin-file&gt;` on macOS or Linux. With Windows PowerShell, use `[Get-FileHash](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6) &lt;plugin-file&gt; | Format-List`.
 
 |Key|Mandatory|Description|
 |---|---------|-----------|
@@ -97,15 +97,15 @@ When you have multiple versions of a plug-in, include an entry for each version,
 [
   {
     "name": "org.example.myplugin",
-     ⋮
+     [...]
     "vers": "1.0.1",
-     ⋮
+     [...]
   }**,**
   {
     "name": "org.example.myplugin",
-     ⋮
+     [...]
     "vers": "2.1.0",
-     ⋮
+     [...]
   }
 ]
 ```

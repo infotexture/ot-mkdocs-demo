@@ -16,9 +16,41 @@ The contents of the config/configuration.properties file are added to the DITA-O
 
     **Warning:** This property can only be set in configuration.properties and should not be modified.
 
+-   **filter-attributes**
+
+    Specifies additional attributes to be used for filtering, in addition to those defined in the DITA specification. The value is a comma-separated list of attribute QNames in Clark notation.
+
+    For example, to permit filtering by `@importance` and `@status` attributes, set:
+
+    ```language-properties
+    filter-attributes = importance, status
+    ```
+
+-   **flag-attributes**
+
+    Specifies additional attributes to be used for flagging, in addition to those defined in the DITA specification. The value is a comma-separated list of attribute QNames in Clark notation.
+
+    For example, to enable flagging based on a custom `@cms:review` attribute, set:
+
+    ```language-properties
+    flag-attributes = {http://www.cms.com/}review
+    ```
+
+    With this setting, a DITAVAL file could be used to flag content marked as `new` with a purple background:
+
+    ```language-xml
+    <val xmlns:cms="http://www.cms.com/">
+      <prop action="flag" att="cms:review" val="new" backcolor="purple"/>
+    </val>
+    ```
+
 -   **cli.color**
 
     Specifies whether the dita command prints colored output on the command line console. When set to true, error messages in dita command output will appear in red on terminals that support [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code), such as on Linux or macOS. Set to false to disable the color. \(Colored output is not supported on Windows consoles such as cmd.exe or PowerShell\).
+
+-   **default.coderef-charset**
+
+    Specifies the default character set for code references.
 
 -   **plugindirs**
 

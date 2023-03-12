@@ -50,13 +50,17 @@ Each transformation requires you to specify at least the file to transform and t
 
 -   **--input=file -i file**
 
-    Specifies the master file for your documentation project. This argument corresponds to the common parameter args.input. Typically this is a DITA map, however it also can be a DITA topic if you want to transform a single DITA file. The path can be absolute, relative to args.input.dir, or relative to the current directory if args.input.dir is not defined.
+    Specifies the main file for your documentation project.
+
+    This argument corresponds to the common parameter [args.input](parameters-base.md#args.input).
+
+    Typically this is a DITA map, however it also can be a DITA topic if you want to transform a single DITA file. The path can be absolute, relative to args.input.dir, or relative to the current directory if args.input.dir is not defined.
 
 -   **--format=name -f name**
 
     Specifies the output format \(transformation type\).
 
-    This argument corresponds to the common parameter transtype.
+    This argument corresponds to the common parameter [transtype](parameters-base.md#transtype).
 
     To list the formats that are currently available in your environment, use dita transtypes.
 
@@ -80,7 +84,7 @@ Each transformation requires you to specify at least the file to transform and t
 
 -   **install \{ ID \| URL \| file \} --install=\{ ID \| URL \| file \}**
 
-    Install a single plug-in IDfrom the registry at [dita-ot.org/plugins](https://www.dita-ot.org/plugins) \(or a local registry\), from a remote URL, or a local ZIP file.
+    Install a single plug-in ID from the registry at [dita-ot.org/plugins](https://www.dita-ot.org/plugins) \(or a local registry\), from a remote URL, or a local ZIP file.
 
 -   **install --install**
 
@@ -119,7 +123,9 @@ Each transformation requires you to specify at least the file to transform and t
 
     Specifies the path of the output directory; the path can be absolute or relative to the current directory.
 
-    This argument corresponds to the common parameter output.dir. By default, the output is written to the out subdirectory of the current directory.
+    This option corresponds to the common parameter [output.dir](parameters-base.md#output.dir).
+
+    By default, the output is written to the out subdirectory of the current directory.
 
 -   **--filter=files**
 
@@ -174,7 +180,8 @@ Each transformation requires you to specify at least the file to transform and t
     This option can be used by plug-in developers to measure performance. To run a conversion five times, for example, use --repeat=5. The duration of each execution will appear in the console when the final transformation is complete.
 
     ```
-    $ dita --input=docsrc/samples/sequence.ditamap --format=html5 --repeat=5
+    $ dita --input=docsrc/samples/sequence.ditamap --format=html5 \
+           --repeat=5
     1 11281ms
     2 4132ms
     3 3690ms
@@ -184,7 +191,11 @@ Each transformation requires you to specify at least the file to transform and t
 
 -   **--resource=file -r file**
 
-    Convert partial documentation sets by processing input with additional resources.
+    Specifies resource files.
+
+    This argument corresponds to the common parameter [args.resources](parameters-base.md#args.resources).
+
+    Resource files can be used to convert partial documentation sets by processing input with additional information.
 
     For example, to process a single topic file with a map that contains key definitions, use a command like this:
 
@@ -202,7 +213,9 @@ Each transformation requires you to specify at least the file to transform and t
 
     Specifies the location of the temporary directory.
 
-    This argument corresponds to the common parameter dita.temp.dir.
+    This option corresponds to the common parameter [dita.temp.dir](parameters-base.md#dita.temp.dir).
+
+    The temporary directory is where DITA-OT writes intermediate files that are generated during the transformation process.
 
 -   **--verbose -v**
 

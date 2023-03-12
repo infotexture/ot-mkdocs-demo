@@ -69,12 +69,3 @@ If you prefer to maintain this content in DITA in the future, you can generate D
 
 This converts all input files \(both LwDITA formats and DITA XML\) to [Normalized DITA](dita2dita.md). You can then copy the generated DITA files from the output folder to your project and replace references to the lightweight topics with their DITA equivalents.
 
-**Related information**  
-
-
-[Standard DITA XML](../topics/dita-xml-input.md)
-
-[Markdown content](../topics/markdown-input.md)
-
-[Markdown DITA syntax reference](../topics/markdown-dita-syntax-reference.md)
-

@@ -1,4 +1,4 @@
-# Flagging \(flag-module\)
+# Flagging \(`flag-module`\)
 
 Beginning with DITA-OT 1.7, flagging support is implemented as a common `flag-module` preprocessing step. The module evaluates the DITAVAL against all flagging attributes, and adds DITA-OT–specific hints to the topic when flags are active. Any extended transformation type may use these hints to support flagging without adding logic to interpret the DITAVAL.
 
@@ -38,7 +38,7 @@ When a flag is active, relevant sections of the DITAVAL itself are copied into t
 
 For most transformation types, the `foreign` element should be ignored by default, because arbitrary non-DITA content may not mix well unless coded for ahead of time. If the `foreign` element is ignored by default, or if a rule is added to specifically ignore `ditaval-startprop` and `ditaval-endprop`, then the added elements will have no impact on a transform. If desired, flagging support may be integrated at any time in the future.
 
-The processing described above runs as part of the common preprocess, so any transform that uses the default preprocess will get the topic updates. To support generating flags as images, XSLT based transforms can use default fallthrough processing in most cases. For example, if a paragraph is flagged, the first child of `p` will contain the start flag information; adding a rule to handle images in `ditaval-startprop` will cause the image to appear at the start of the paragraph content.
+The processing described above runs as part of the common preprocess, so any transform that uses the default preprocess will get the topic updates. To support generating flags as images, XSLT-based transforms can use default fallthrough processing in most cases. For example, if a paragraph is flagged, the first child of `p` will contain the start flag information; adding a rule to handle images in `ditaval-startprop` will cause the image to appear at the start of the paragraph content.
 
 In some cases fallthrough processing will not result in valid output; for those cases, the flags must be explicitly processed. This is done in the XHTML transform for elements like `ol`, because fallthrough processing would place images in between `ol` and `li`. To handle this, the code processes `ditaval-startprop` before starting the element, and `ditaval-endprop` at the end. Fallthrough processing is then disabled for those elements as children of `ol`.
 
@@ -49,16 +49,16 @@ Assume the following DITAVAL file is in use during a build. This DITAVAL will be
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <val>
-  *<!-- Define what happens in the case of conflicting styles --\>*
+  *&lt;!-- Define what happens in the case of conflicting styles --&gt;*
   <style-conflict background-conflict-color="red"/>
 
-  *<!-- Define two flagging properties that give styles \(no image\) --\>*
+  *&lt;!-- Define two flagging properties that give styles \(no image\) --&gt;*
   <prop action="flag" att="audience" style="underline" val="user"
         backcolor="green"/>
   <prop action="flag" att="platform" style="overline" val="win"
         backcolor="blue"/>
 
-  *<!-- Define a property that includes start and end image flags --\>*
+  *&lt;!-- Define a property that includes start and end image flags --&gt;*
   <prop action="flag" att="platform" val="linux" style="overline"
         backcolor="blue">
     <startflag imageref="startlin.png">
@@ -67,7 +67,7 @@ Assume the following DITAVAL file is in use during a build. This DITAVAL will be
       <alt-text>End linux</alt-text></endflag>
   </prop>
 
-  *<!-- Define a revision that includes start and end image flags --\>*
+  *&lt;!-- Define a revision that includes start and end image flags --&gt;*
   <revprop action="flag" style="double-underline" val="rev2">
     <startflag imageref="start_rev.gif">
       <alt-text>START</alt-text></startflag>
@@ -90,18 +90,18 @@ The resulting file after the flagging step looks like this; for clarity, newline
 
 ```
 <p audience="user" class="- topic/p ">
-  **<ditaval-startprop**
+  **&lt;ditaval-startprop**
       **class="+ topic/foreign ditaot-d/ditaval-startprop "**
-      **outputclass="background-color:green;text-decoration:underline;"\>**
-    **<prop action="flag" att="audience" style="underline" val="user"
-          backcolor="green"/\>**
-  **</ditaval-startprop\>**
+      **outputclass="background-color:green;text-decoration:underline;"&gt;**
+    **&lt;prop action="flag" att="audience" style="underline" val="user"
+          backcolor="green"/&gt;**
+  **&lt;/ditaval-startprop&gt;**
   Simple user; includes style but no images
-  **<ditaval-endprop**
-      **class="+ topic/foreign ditaot-d/ditaval-endprop "\>**
-    **<prop action="flag" att="audience" style="underline" val="user"
-          backcolor="green"/\>**
-  **</ditaval-endprop\>**
+  **&lt;ditaval-endprop**
+      **class="+ topic/foreign ditaot-d/ditaval-endprop "&gt;**
+    **&lt;prop action="flag" att="audience" style="underline" val="user"
+          backcolor="green"/&gt;**
+  **&lt;/ditaval-endprop&gt;**
 </p>
 ```
 
@@ -119,25 +119,25 @@ The resulting file after the flagging step looks like this; for clarity, newline
 
 ```
 <p audience="user" platform="win" class="- topic/p ">
-  **<ditaval-startprop**
+  **&lt;ditaval-startprop**
            **class="+ topic/foreign ditaot-d/ditaval-startprop "**
-           **outputclass="background-color:red;"\>**
-    **<style-conflict background-conflict-color="red"/\>**
-    **<prop action="flag" att="audience" style="underline" val="user"
-          backcolor="green"/\>**
-    **<prop action="flag" att="platform" style="overline" val="win"
-          backcolor="blue"/\>**
-  **</ditaval-startprop\>**
+           **outputclass="background-color:red;"&gt;**
+    **&lt;style-conflict background-conflict-color="red"/&gt;**
+    **&lt;prop action="flag" att="audience" style="underline" val="user"
+          backcolor="green"/&gt;**
+    **&lt;prop action="flag" att="platform" style="overline" val="win"
+          backcolor="blue"/&gt;**
+  **&lt;/ditaval-startprop&gt;**
 
   Conflicting styles (still no images)
 
-  **<ditaval-endprop**
-           **class="+ topic/foreign ditaot-d/ditaval-endprop "\>**
-    **<prop action="flag" att="platform" style="overline" val="win"
-          backcolor="blue"/\>**
-    **<prop action="flag" att="audience" style="underline" val="user"
-          backcolor="green"/\>****
-  </ditaval-endprop\>**
+  **&lt;ditaval-endprop**
+           **class="+ topic/foreign ditaot-d/ditaval-endprop "&gt;**
+    **&lt;prop action="flag" att="platform" style="overline" val="win"
+          backcolor="blue"/&gt;**
+    **&lt;prop action="flag" att="audience" style="underline" val="user"
+          backcolor="green"/&gt;****
+  &lt;/ditaval-endprop&gt;**
 </p>
 ```
 
@@ -157,32 +157,32 @@ The resulting file after the flagging step looks like this; for clarity, newline
 
 ```
 <ol platform="linux" rev="rev2" class="- topic/ol ">
-  **<ditaval-startprop**
+  **&lt;ditaval-startprop**
            **class="+ topic/foreign ditaot-d/ditaval-startprop "**
            **outputclass="background-color:blue;**
                         **text-decoration:underline;**
-                        **text-decoration:overline;"\>**
-    **<prop action="flag" att="platform" val="linux" style="overline"
-          backcolor="blue"\>**
-      **<startflag imageref="startlin.png"\>**
-        **<alt-text\>Start linux</alt-text\></startflag\></prop\>**
-    **<revprop action="flag" style="double-underline" val="rev2"\>**
-      **<startflag imageref="start\_rev.gif"\>**
-        **<alt-text\> </alt-text\></startflag\></revprop\>**
-  **</ditaval-startprop\>**
+                        **text-decoration:overline;"&gt;**
+    **&lt;prop action="flag" att="platform" val="linux" style="overline"
+          backcolor="blue"&gt;**
+      **&lt;startflag imageref="startlin.png"&gt;**
+        **&lt;alt-text&gt;Start linux&lt;/alt-text&gt;&lt;/startflag&gt;&lt;/prop&gt;**
+    **&lt;revprop action="flag" style="double-underline" val="rev2"&gt;**
+      **&lt;startflag imageref="start\_rev.gif"&gt;**
+        **&lt;alt-text&gt; &lt;/alt-text&gt;&lt;/startflag&gt;&lt;/revprop&gt;**
+  **&lt;/ditaval-startprop&gt;**
   <li class="- topic/li ">
     Generate images for platform="linux" and rev="2"
   </li>
-  **<ditaval-endprop**
-           **class="+ topic/foreign ditaot-d/ditaval-endprop "\>**
-    **<revprop action="flag" style="double-underline" val="rev2"\>**
-      **<endflag imageref="end\_rev.gif"\>**
-        **<alt-text\>END</alt-text\></endflag\></revprop\>**
-    **<prop action="flag" att="platform" val="linux" style="overline"**
-                                                   **backcolor="blue"\>**
-      **<endflag imageref="endlin.png"\>**
-        **<alt-text\>End linux</alt-text\></endflag\></prop\>**
-  **</ditaval-endprop\>**
+  **&lt;ditaval-endprop**
+           **class="+ topic/foreign ditaot-d/ditaval-endprop "&gt;**
+    **&lt;revprop action="flag" style="double-underline" val="rev2"&gt;**
+      **&lt;endflag imageref="end\_rev.gif"&gt;**
+        **&lt;alt-text&gt;END&lt;/alt-text&gt;&lt;/endflag&gt;&lt;/revprop&gt;**
+    **&lt;prop action="flag" att="platform" val="linux" style="overline"**
+                                                   **backcolor="blue"&gt;**
+      **&lt;endflag imageref="endlin.png"&gt;**
+        **&lt;alt-text&gt;End linux&lt;/alt-text&gt;&lt;/endflag&gt;&lt;/prop&gt;**
+  **&lt;/ditaval-endprop&gt;**
 </ol>
 ```
 

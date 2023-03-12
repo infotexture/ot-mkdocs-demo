@@ -32,11 +32,5 @@ You may also find this approach useful as you develop a custom stylesheet. Once 
 **Related information**  
 
 
-[Adding navigation to topics](../topics/html-customization-navigation.md)
-
-[Adding custom headers and footers](../topics/html-customization-header.md)
-
-[Handling content outside the map directory](../parameters/generate-copy-outer.md)
-
 [Bundling CSS in a custom HTML plug-in](../topics/html-customization-plugin-bundle-css.md)
 

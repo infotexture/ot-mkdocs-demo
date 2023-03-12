@@ -134,7 +134,7 @@ They are used to generate [`section`](http://docs.oasis-open.org/dita/v1.2/os/sp
 
 ## Hard line breaks
 
-A line break that is preceded by two or more spaces is parsed as a hard line break. Because DITA doesn't have a `<br>` element for line break, hard line breaks are converted into `linebreak` processing instructions.
+A line break that is preceded by two or more spaces is parsed as a hard line break. Because DITA doesn't have a `br` element for line break, hard line breaks are converted into `linebreak` processing instructions.
 
 ```
 foo··
@@ -156,7 +156,7 @@ The format of local link targets is detected based on file extension. The follow
 |`.md`|`markdown`|
 |`.markdown`|`markdown`|
 
-All other link targets use `format` from file extension and are treated as non-DITA files. Absolute links targets are treated as external scope links:
+All other link targets use `format` from file extension and are treated as non-DITA files. Absolute link targets are treated as external scope links:
 
 ```
 [Markdown](test.md)
@@ -394,9 +394,5 @@ workflow: review
 **Related information**  
 
 
-[Standard DITA XML](../topics/dita-xml-input.md)
-
-[Markdown content](../topics/markdown-input.md)
-
-[Preview support for Lightweight DITA](../topics/lwdita-input.md)
+[DITA and Markdown and Docker, oh my…](https://www.oxygenxml.com/events/2022/dita-ot_day.html#DITA_and_Markdown_and_Docker)
 

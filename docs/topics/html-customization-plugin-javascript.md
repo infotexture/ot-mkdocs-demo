@@ -49,6 +49,24 @@ The html5-javascript transformation includes a custom page footer file with a Ja
 
     The division wrapper will be discarded when generating HTML files, and the contents will be inserted into the `footer` element of each page.
 
+    The file contents must be well-formed XML. If your JavaScript snippets include attributes without values \(such as the `async` script attribute\), use valid XML syntax to define the empty attribute:
+
+    Instead of:
+
+    ```
+    <script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </script>
+    ```
+
+    use:
+
+    ```
+    <script>
+      <script id="MathJax-script" **async=""** src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </script>
+    ```
+
 5.  In the com.example.html5-javascript root directory, add an Ant script \(build\_html5-javascript.xml\) to define the transformation type and set the path to the JavaScript footer file created in the previous step.
 
     ```
@@ -64,6 +82,8 @@ The html5-javascript transformation includes a custom page footer file with a Ja
       </target>
     </project>
     ```
+
+    **Note:** When defining the path to the footer file from the Ant script, use the plug-in directory property with the plugin-id as shown in the example above: `${dita.plugin.plugin-id.dir}`.
 
 
 **Tip:** The files for this sample plug-in are included in the DITA-OT installation directory under docsrc/samples/plugins/com.example.html5-javascript/ and on [GitHub](https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.html5-javascript).

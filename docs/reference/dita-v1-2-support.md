@@ -1,6 +1,6 @@
 # DITA 1.2 support
 
-DITA Open Toolkit 3.6 supports the DITA 1.2 specification. While 1.2 is no longer the latest version of DITA, the grammar files \(DTD and XML Schema\) are still included with DITA-OT and content explicitly created for 1.2 continues to work as intended.
+DITA Open Toolkit 4.0 supports the DITA 1.2 specification. While 1.2 is no longer the latest version of DITA, the grammar files \(DTD and XML Schema\) are still included with DITA-OT and content explicitly created for 1.2 continues to work as intended.
 
 Highlights of DITA 1.2 support in the toolkit include:
 

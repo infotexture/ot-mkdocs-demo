@@ -13,7 +13,7 @@ In some cases, you might receive a message stating the build has failed due to a
 
 ## UnsupportedClassVersionError
 
-If you receive a `java.lang.UnsupportedClassVersionError` error message with an `Unsupported major.minor version` and a list of Java classes, make sure your system meets the minimum Java requirements as listed in the *Release Notes* and installation instructions.
+If you receive a `java.lang.UnsupportedClassVersionError` error message with an `Unsupported major.minor version` and a list of Java classes, make sure your system meets the minimum Java requirements as listed in the **Release Notes** and installation instructions.
 
 ## Unable to locate tools.jar
 
@@ -26,7 +26,7 @@ If a Java Runtime Environment \(JRE\) is used when building output via Ant, the 
 
 [Other parameters](../parameters/parameters-other.md)
 
-[DITA Open Toolkit 3.6 Release Notes](../release-notes/index.md)
+[DITA Open Toolkit 4.0 Release Notes](../release-notes/index.md)
 
 [Installing DITA Open Toolkit](../topics/installing-client.md)
 

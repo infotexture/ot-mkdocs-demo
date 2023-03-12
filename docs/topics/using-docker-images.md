@@ -10,47 +10,33 @@ Docker containers are designed as stateless machines that can be quickly created
 
 When a container is stopped, any changes made within the container are lost, so source files and generated output should be stored outside the container. These resources are attached to the container by mounting directories from the host machine.
 
-To run the DITA-OT image, you will need to install Docker and log in to the GitHub Package Registry.
+To run the DITA-OT image, you will need to install Docker and be able to access the GitHub Container Registry.
 
 -   To download Docker Desktop, you may be prompted to sign in with your Docker ID \(or sign up to create one\).
--   To retrieve docker images from the GitHub Package Registry, you will also need a GitHub account.
 
 1.  Install Docker for your operating system.
 
-    -   [Install Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/)
-    -   [Install Docker Desktop on Mac](https://docs.docker.com/docker-for-mac/install)
+    -   [Install Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/)
+    -   [Install Docker Desktop on Mac](https://docs.docker.com/desktop/mac/install/)
     -   On macOS, you can also install Docker Desktop via [Homebrew](https://brew.sh):
 
         ```syntax-bash
-        $ brew cask install docker
+        $ brew install homebrew/cask/docker
         Downloading…
         ```
 
+    -   When you first run the Docker Desktop application, you may be prompted to grant privileged access to allow Docker to install its networking components and links to the Docker apps. Grant this access and accept the service agreement to proceed.
     -   On Linux, install Docker Community Edition \(CE\) via your operating system’s package manager, for example:
 
         ```syntax-bash
         $ sudo apt-get install docker-ce
         ```
 
-2.  Log in to the GitHub Package Registry.
-
-    1.  In your [GitHub profile settings](https://github.com/settings/tokens), create a new personal access token with the `read:packages` and `repo` scopes.
-
-        For more information, see [Creating a personal access token for the command line](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line).
-
-    2.  On the command line, run the docker command to log in with your GitHub credentials.
-
-        ```syntax-bash
-        docker login docker.pkg.github.com -u USERNAME -p PASSWORD/TOKEN
-        ```
-
-        For more information, see [Authenticating to GitHub Package Registry](https://help.github.com/en/articles/configuring-docker-for-use-with-github-package-registry#authenticating-to-github-package-registry).
-
-3.  To build output, map a host directory to a container volume and specify options for the dita command.
+2.  To build output, map a host directory to a container volume and specify options for the dita command.
 
     ```syntax-bash
     $ docker run -it \
-      -v /Users/username/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:3.6 \
+      -v /Users/username/source:/src ghcr.io/dita-ot/dita-ot:4.0.2 \
       -i /src/input.ditamap \
       -o /src/out \
       -f html5 -v
@@ -67,7 +53,7 @@ To run the DITA-OT image, you will need to install Docker and log in to the GitH
 
     ```
     > C:\Users\username> docker run -it ^
-      -v /c/Users/username/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:3.6 ^
+      -v /c/Users/username/source:/src ghcr.io/dita-ot/dita-ot:4.0.2 ^
       -i /src/input.ditamap ^
       -o /src/out ^
       -f html5 -v
@@ -78,6 +64,8 @@ To run the DITA-OT image, you will need to install Docker and log in to the GitH
 
 **Related information**  
 
+
+[DITA and Markdown and Docker, oh my…](https://www.oxygenxml.com/events/2022/dita-ot_day.html#DITA_and_Markdown_and_Docker)
 
 [Using the Open Toolkit Through Docker Containers](https://www.oxygenxml.com/events/2016/dita-ot_day.html#Using_the_Open_Toolkit_Through_Docker_Containers)
 

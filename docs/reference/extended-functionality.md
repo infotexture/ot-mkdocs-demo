@@ -24,6 +24,8 @@ default.coderef-charset = ISO-8859-1
 
 The character set values are those supported by the Java [Charset](https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html) class.
 
+**Note:** As of DITA-OT 4.0, the default character set for code references has been changed from the system default encoding to UTF-8.
+
 ## Line range extraction
 
 Code references can be limited to extract only a specified line range by defining the `line-range` pointer in the URI fragment. The format is:

@@ -11,7 +11,7 @@ You can generate output using the dita command-line tool. Build parameters can b
     where:
 
     -   input-file is the DITA map or DITA file that you want to process.
-    -   format is the output format \(transformation type\). This argument corresponds to the common parameter transtype. Use the same values as for the transtype build parameter, for example html5 or pdf.
+    -   format is the output format \(transformation type\). This argument corresponds to the common parameter [transtype](../parameters/parameters-base.md#transtype). Use the same values as for the transtype build parameter, for example html5 or pdf.
 
         You can create plug-ins to add new output formats; by default, the following values are available:
 
@@ -33,7 +33,9 @@ You can generate output using the dita command-line tool. Build parameters can b
 
             Specifies the path of the output directory; the path can be absolute or relative to the current directory.
 
-            This argument corresponds to the common parameter output.dir. By default, the output is written to the out subdirectory of the current directory.
+            This option corresponds to the common parameter [output.dir](../parameters/parameters-base.md#output.dir).
+
+            By default, the output is written to the out subdirectory of the current directory.
 
         -   **--filter=files**
 
@@ -88,7 +90,8 @@ You can generate output using the dita command-line tool. Build parameters can b
             This option can be used by plug-in developers to measure performance. To run a conversion five times, for example, use --repeat=5. The duration of each execution will appear in the console when the final transformation is complete.
 
             ```
-            $ dita --input=docsrc/samples/sequence.ditamap --format=html5 --repeat=5
+            $ dita --input=docsrc/samples/sequence.ditamap --format=html5 \
+                   --repeat=5
             1 11281ms
             2 4132ms
             3 3690ms
@@ -98,7 +101,11 @@ You can generate output using the dita command-line tool. Build parameters can b
 
         -   **--resource=file -r file**
 
-            Convert partial documentation sets by processing input with additional resources.
+            Specifies resource files.
+
+            This argument corresponds to the common parameter [args.resources](../parameters/parameters-base.md#args.resources).
+
+            Resource files can be used to convert partial documentation sets by processing input with additional information.
 
             For example, to process a single topic file with a map that contains key definitions, use a command like this:
 
@@ -116,7 +123,9 @@ You can generate output using the dita command-line tool. Build parameters can b
 
             Specifies the location of the temporary directory.
 
-            This argument corresponds to the common parameter dita.temp.dir.
+            This option corresponds to the common parameter [dita.temp.dir](../parameters/parameters-base.md#dita.temp.dir).
+
+            The temporary directory is where DITA-OT writes intermediate files that are generated during the transformation process.
 
         -   **--verbose -v**
 

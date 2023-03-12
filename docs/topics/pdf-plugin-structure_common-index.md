@@ -10,16 +10,3 @@ The best way to start editing a custom index file is by making a copy of the ori
 
 In order to apply a custom index definition to your publishing outputs, edit catalog.xml and uncomment the appropriate entry in the “Index configuration override entries” section.
 
-**Related information**  
-
-
-[Custom artwork](../topics/pdf-plugin-structure_common-artwork.md)
-
-[Variable overrides](../topics/pdf-plugin-structure_common-vars.md)
-
-[Custom attributes](../topics/pdf-plugin-structure_fo-attrs.md)
-
-[Internationalization configuration](../topics/pdf-plugin-structure_fo-i18n.md)
-
-[Custom stylesheets](../topics/pdf-plugin-structure_fo-xsl.md)
-

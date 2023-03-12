@@ -7,15 +7,15 @@ Each subsequent declaration in the Dockerfile modifies this parent image, so you
 1.  Create a new Dockerfile and specify the official DITA-OT image in the FROM directive.
 
     ```
-    # Use the latest official DITA-OT image as parent:   ↓
-    FROM docker.pkg.github.com/dita-ot/dita-ot/dita-ot:3.6
+    # Use the latest DITA-OT image ↓ as parent:
+    FROM ghcr.io/dita-ot/dita-ot:4.0.2
     ```
 
 2.  You can extend your image with a `RUN` declaration that runs the dita command from the container to install a custom plug-in, and specify the filename or URL of the plug-in’s distribution ZIP file.
 
     ```
     # Install a custom plug-in from a remote location:
-    RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/3.4.1.zip
+    RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip
     ```
 
 3.  You can also install custom plug-ins from the main DITA-OT plug-in registry at [dita-ot.org/plugins](https://www.dita-ot.org/plugins), or from your company plug-in registry.
@@ -29,11 +29,11 @@ Each subsequent declaration in the Dockerfile modifies this parent image, so you
 The docsrc/samples folder in the DITA-OT installation directory contains a complete example:
 
 ```
-# Use the latest official DITA-OT image as parent:   ↓
-FROM docker.pkg.github.com/dita-ot/dita-ot/dita-ot:3.6
+# Use the latest DITA-OT image ↓ as parent:
+FROM ghcr.io/dita-ot/dita-ot:4.0.2
 
 # Install a custom plug-in from a remote location:
-RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/3.4.1.zip
+RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip
 
 # Install from the registry at dita-ot.org/plugins:
 RUN dita --install org.dita-community.pdf-page-break
@@ -44,11 +44,16 @@ RUN dita --install org.dita-community.pdf-page-break
 You can build a Docker image from this example by running the following command from the dita-ot-dir/docsrc/samples directory:
 
 ```syntax-bash
-$ docker image build -t sample-docker-image:1.0 .
-Sending build context to Docker daemon  2.048kB
-Step 1/3 : FROM docker.pkg.github.com/dita-ot/dita-ot/dita-ot:3.6
- ---> 9abb96827538
-Step 2/3 : RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/3.4.1.zip
+$ docker image build -t sample-docker-image:1.0 docker/
+[+] Building 81.5s (4/6)                                                                                                                                                           
+ => [internal] load build definition from Dockerfile                                                                                                                          0.0s
+ => => transferring dockerfile: 367B                                                                                                                                          0.0s
+ => [internal] load .dockerignore                                                                                                                                             0.0s
+ => => transferring context: 2B                                                                                                                                               0.0s
+ => [internal] load metadata for ghcr.io/dita-ot/dita-ot:4.0.2
+ => [1/3] FROM ghcr.io/dita-ot/dita-ot:4.0.2@sha256:&lt;hash&gt;
+ => => resolve ghcr.io/dita-ot/dita-ot:4.0.2@sha256:&lt;hash&gt;
+Step 2/3 : RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip
  ---> Running in d510f874cae0
 Added net.infotexture.dita-bootstrap
 Removing intermediate container d510f874cae0

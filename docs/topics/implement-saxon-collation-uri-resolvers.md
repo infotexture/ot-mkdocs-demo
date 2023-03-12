@@ -62,11 +62,11 @@ To implement a custom collation URI resolver:
 
     ```language-xml
     <jar destfile="${basedir}/target/lib/example-saxon.jar">
-      ⋮
+      [...]
       <service type="org.dita.dost.module.saxon.DelegatingCollationUriResolver">
         <provider classname="org.example.i18n.saxon.MyCollationUriResolver"/>
       </service>
-      ⋮
+      [...]
     </jar>
     ```
 

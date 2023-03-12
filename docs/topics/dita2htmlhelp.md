@@ -2,7 +2,7 @@
 
 The htmlhelp transformation generates HTML output, CSS files, and the control files that are needed to produce a Microsoft Compiled HTML Help \(.chm\) file.
 
-In addition to the HTML output and CSS files, this transformation returns the following files, where mapname is the name of the master DITA map.
+In addition to the HTML output and CSS files, this transformation returns the following files, where mapname is the name of the root map.
 
 |File name|Description|
 |---------|-----------|

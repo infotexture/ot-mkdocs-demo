@@ -1,4 +1,4 @@
-# Resolve topic fragments and code references \(topic-fragment\)
+# Resolve topic fragments and code references \(`topic-fragment`\)
 
 The `topic-fragment` step expands content references to elements in the same topic and resolves references made with the `coderef` element. This step is implemented in SAX pipes.
 

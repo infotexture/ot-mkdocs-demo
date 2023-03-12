@@ -46,7 +46,7 @@ All four parameters are set in the Ant script \(build\_html5-custom-css.xml\).
     /* These custom styles extend or override DITA Open Toolkit default styles. */
     
     body {
-      color: red;
+      color: #F00;
     }
     ```
 

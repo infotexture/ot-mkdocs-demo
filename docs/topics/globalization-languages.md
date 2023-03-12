@@ -1,6 +1,6 @@
 # Supported languages
 
-The following languages are supported for all PDF, XHTML, and HTML5-based transformation types.
+The following languages are supported for PDF and HTML-based output.
 
 **Note:** While language codes listed below use the conventional capitalization style of "aa-BB" and "aa-Script-BB", DITA-OT processing is not case sensitive when reading these values from the `@xml:lang` attribute.
 
@@ -58,5 +58,5 @@ The following languages are supported for all PDF, XHTML, and HTML5-based transf
 **Related information**  
 
 
-[How to add support for new languages in HTML](../topics/plugin-addgeneratedtext.md)
+[How to add or modify generated text strings](../topics/plugin-addgeneratedtext.md)
 

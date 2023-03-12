@@ -8,7 +8,7 @@ Certain parameters apply to all transformations that DITA Open Toolkit supports.
 
 -   **args.draft**
 
-    Specifies whether the content of <draft-comment\> and <required-cleanup\> elements is included in the output. The allowed values are yes and no; the default value is no.
+    Specifies whether the content of &lt;draft-comment&gt; and &lt;required-cleanup&gt; elements is included in the output. The allowed values are yes and no; the default value is no.
 
     Corresponds to the XSLT parameter DRAFT in most XSLT modules.
 
@@ -48,9 +48,11 @@ Certain parameters apply to all transformations that DITA Open Toolkit supports.
 
 -   **args.input**
 
-    Specifies the master file for your documentation project.
+    Specifies the main file for your documentation project.
 
-    Typically this is a DITA map, however it also can be a DITA topic if you want to transform a single DITA file. The path can be absolute, relative to args.input.dir, or relative to the directory where your project’s Ant build script resides if args.input.dir is not defined.
+    This parameter corresponds to the command-line argument [--input](dita-command-arguments.md#input).
+
+    Typically this is a DITA map, however it also can be a DITA topic if you want to transform a single DITA file. The path can be absolute, relative to args.input.dir, or relative to the current directory if args.input.dir is not defined.
 
 -   **args.input.dir**
 
@@ -66,13 +68,29 @@ Certain parameters apply to all transformations that DITA Open Toolkit supports.
 
     -   none – No links are included.
     -   all – All links are included.
-    -   noparent – Parent links are not included.
-    -   nofamily – Parent, child, next, and previous links are not included.
-    For PDF output, the default value is nofamily. For all other formats, the default value is all.
+    -   noparent – Ancestor and parent links are not included.
+    -   nofamily – Parent, ancestor, child, descendant, sibling, next, previous, and cousin links are not included.
+    For PDF output, the default value is nofamily. Other formats include all link roles except `ancestor` links.
 
 -   **args.resources**
 
     Specifies resource files.
+
+    This parameter corresponds to the command-line option [--resource](dita-command-arguments.md#resource).
+
+    Resource files can be used to convert partial documentation sets by processing input with additional information.
+
+    For example, to process a single topic file with a map that contains key definitions, use a command like this:
+
+    ```syntax-bash
+    dita --input=topic.dita --format=html5 --args.resources=keys.ditamap
+    ```
+
+    To convert a chapter map to HTML5 and insert related links from relationship tables in a separate map, use:
+
+    ```syntax-bash
+    dita --input=chapter.ditamap --format=html5 --args.resources=reltables.ditamap
+    ```
 
 -   **args.tablelink.style**
 
@@ -81,6 +99,78 @@ Certain parameters apply to all transformations that DITA Open Toolkit supports.
     Specifying NUMBER results in "Table 5"; specifying TITLE results in the title of the table. Corresponds to the XSLT parameter TABLELINK.
 
     **Note:** Support for PDF was added in DITA-OT 2.0. By default PDF uses the value NUMTITLE, which is not supported for other transformation types; this results in "Table 5. Title".
+
+-   **build-step.branch-filter**
+
+    Run process branch-filter The allowed values are true and false; the default value is true.
+
+-   **build-step.chunk**
+
+    Run process chunk The allowed values are true and false; the default value is true.
+
+-   **build-step.clean-preprocess**
+
+    Run process clean-preprocess The allowed values are true and false; the default value is true.
+
+-   **build-step.clean-temp**
+
+    Run process clean-temp The allowed values are true and false; the default value is true.
+
+-   **build-step.coderef**
+
+    Run process coderef The allowed values are true and false; the default value is true.
+
+-   **build-step.conref**
+
+    Run process conref The allowed values are true and false; the default value is true.
+
+-   **build-step.copy-flag**
+
+    Run process copy-flag The allowed values are true and false; the default value is true.
+
+-   **build-step.copy-html**
+
+    Run process copy-html The allowed values are true and false; the default value is true.
+
+-   **build-step.copy-image**
+
+    Run process copy-image The allowed values are true and false; the default value is true.
+
+-   **build-step.keyref**
+
+    Run process keyref The allowed values are true and false; the default value is true.
+
+-   **build-step.map-profile**
+
+    Run process map-profile The allowed values are true and false; the default value is true.
+
+-   **build-step.maplink**
+
+    Run process maplink The allowed values are true and false; the default value is true.
+
+-   **build-step.mapref**
+
+    Run process mapref The allowed values are true and false; the default value is true.
+
+-   **build-step.move-meta-entries**
+
+    Run process move-meta-entries The allowed values are true and false; the default value is true.
+
+-   **build-step.normalize-codeblock**
+
+    Run process normalize-codeblock The allowed values are true and false; the default value is true.
+
+-   **build-step.profile**
+
+    Run process profile The allowed values are true and false; the default value is false.
+
+-   **build-step.topic-profile**
+
+    Run process topic-profile The allowed values are true and false; the default value is false.
+
+-   **build-step.topicpull**
+
+    Run process topicpull The allowed values are true and false; the default value is true.
 
 -   **clean.temp**
 
@@ -102,13 +192,15 @@ Certain parameters apply to all transformations that DITA Open Toolkit supports.
 
     Specifies a filter file to be used to include, exclude, or flag content.
 
-    **Note:** Deprecated in favor of the args.filter parameter.
+    **Note:** This parameter is deprecated in favor of the args.filter parameter.
 
 -   **dita.temp.dir**
 
     Specifies the location of the temporary directory.
 
-    The temporary directory is where DITA-OT writes temporary files that are generated during the transformation process.
+    This parameter corresponds to the command-line option [--temp](dita-command-arguments.md#temp).
+
+    The temporary directory is where DITA-OT writes intermediate files that are generated during the transformation process.
 
 -   **filter-stage**
 
@@ -155,11 +247,13 @@ Certain parameters apply to all transformations that DITA Open Toolkit supports.
     -   fail – Fail quickly if files are going to be generated or copied outside of the directory.
     -   warn \(default\) – Complete the operation if files will be generated or copied outside of the directory, but log a warning.
     -   quiet – Quietly finish without generating warnings or errors.
-    **Warning:** Microsoft HTML Help Compiler cannot produce HTML Help for documentation projects that use outer content. The content files must reside in or below the directory containing the master DITA map file, and the map file cannot specify ".." at the start of the `@href` attributes for `topicref` elements.
+    **Warning:** Microsoft HTML Help Compiler cannot produce HTML Help for documentation projects that use outer content. The content files must reside in or below the directory containing the root map file, and the map file cannot specify ".." at the start of the `@href` attributes for `topicref` elements.
 
 -   **output.dir**
 
     Specifies the name and location of the output directory.
+
+    This parameter corresponds to the command-line option [--output](dita-command-arguments.md#output).
 
     By default, the output is written to DITA-dir/out.
 
@@ -207,6 +301,8 @@ Certain parameters apply to all transformations that DITA Open Toolkit supports.
 -   **transtype**
 
     Specifies the output format \(transformation type\).
+
+    This parameter corresponds to the command-line argument [--format](dita-command-arguments.md#format).
 
     You can create plug-ins to add new output formats; by default, the following values are available:
 

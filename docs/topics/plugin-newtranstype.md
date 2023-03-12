@@ -13,7 +13,7 @@ When a transformation type is defined, the build expects Ant code to be integrat
     ```
     <plugin id="plugin-id">
       <transtype name="new-transtype"/>
-      **<feature extension="dita.transtype.print" value="new-transtype"/\>**
+      **&lt;feature extension="dita.transtype.print" value="new-transtype"/&gt;**
       <feature extension="ant.import" file="ant-file"/>
     </plugin>
     ```
@@ -53,7 +53,7 @@ If your custom transformation type supports custom parameters, they can be defin
 While the org.dita.html5 plug-in was separated from `common-html` in version 2.4, the following example shows how earlier versions of that plug-in used the `transtype` element to extend the common HTML transformation with a new html5 transformation type and define a new nav-toc parameter with three possible values:
 
 ```
-**<transtype name="html5" extends="common-html" desc="HTML5"\>**
+**&lt;transtype name="html5" extends="common-html" desc="HTML5"&gt;**
   <param name="nav-toc" type="enum" 
          desc="Specifies whether to generate navigation in topic pages.">
     <val default="true" desc="No TOC">none</val>

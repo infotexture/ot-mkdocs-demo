@@ -1,6 +1,6 @@
 # DITA-OT release history
 
-*Release Notes* archives contain information on the changes in earlier versions.
+**Release Notes** archives contain information on the changes in earlier versions.
 
 When migrating customizations, identify the version of the toolkit you're currently using \(base version\) and the version of the toolkit you want to migrate to \(target version\). Then, review all of the migration changes described in *all* of the versions from the base through the target. For instance, if you're currently on 2.2 and want to move to 3.3, you should review all of the changes in 2.3 through 3.3. You may want to start at the oldest version and read forward so you can chronologically follow the changes, since it is possible that files or topics have had multiple changes.
 
@@ -8,6 +8,12 @@ When migrating customizations, identify the version of the toolkit you're curren
 
 
 [Migrating customizations](../topics/migration.md)
+
+[DITA-OT 4.0 Release Notes](https://www.dita-ot.org/4.0/release-notes/)
+
+[DITA-OT 3.7 Release Notes](https://www.dita-ot.org/3.7/release-notes/)
+
+[DITA-OT 3.6 Release Notes](https://www.dita-ot.org/3.6/release-notes/)
 
 [DITA-OT 3.5 Release Notes](https://www.dita-ot.org/3.5/release-notes/)
 

@@ -15,25 +15,19 @@ As of DITA-OT 2.2, the nav-toc parameter can be used in HTML5 transformations to
     For example, the DITA-OT documentation stylesheet includes the following rules to place the table of contents on the left side of the browser viewport and highlight the current topic in bold:
 
     ```
-    nav[role='toc'] {
-      float: left;
-      width: 300px;
+    /* Style ToC nav as sidebar on desktop */
+    @media screen and (min-width: 992px) {
+      nav.toc {
+        float: left;
+        width: 300px;
+      }
     }
     
-    nav[role='toc'] li.active > a {
-      font-weight: bold;
+    nav.toc li.active > a {
+      font-weight: var(--font-weight-bold);
     }
     ```
 
 
 **Tip:** For an example of HTML output generated using this method, see the HTML5 version of the DITA-OT documentation included in the installation folder under doc/index.html.
-
-**Related information**  
-
-
-[Adding custom CSS](../topics/html-customization-css.md)
-
-[Adding custom headers and footers](../topics/html-customization-header.md)
-
-[Handling content outside the map directory](../parameters/generate-copy-outer.md)
 

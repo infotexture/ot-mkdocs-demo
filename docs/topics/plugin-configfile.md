@@ -8,7 +8,7 @@ DITA-OT includes a RELAX NG schema file that can be used to validate the plugin
 
 To ensure the syntax of your custom plug-in is correct, include an `xml-model` processing instruction at the beginning of the plugin.xml file, immediately after the XML prolog:
 
-`xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"`
+`xml-model href="https://www.dita-ot.org/rng/plugin.rnc" type="application/relax-ng-compact-syntax"`
 
 If your authoring environment does not apply this schema automatically, point your editor to dita-ot-dir/resources/plugin.rnc to associate the schema with your plug-in file.
 
@@ -84,7 +84,7 @@ The `plugin` element can contain the following child elements:
     <feature extension="org.dita.example.extension-point" value="c"/>
     ```
 
--   **`meta`**
+-   **`metadata`**
 
     An optional element that defines metadata.
 
@@ -96,7 +96,7 @@ The `plugin` element can contain the following child elements:
     |**value**|Metadata value|Yes|
 
     ```language-xml
-    <meta type="foo" value="bar"/>
+    <metadata type="foo" value="bar"/>
     ```
 
 -   **`require`**
@@ -149,14 +149,14 @@ The `plugin` element can contain the following child elements:
 
     ```language-xml
     <transtype name="base" abstract="true" desc="Common">
-      <!-- ⋮ -->
+      [...]
       <param name="link-crawl"
              desc="Specifies whether to crawl only topic links found in maps, or all discovered topic links."
              type="enum">
         <val>map</val>
         <val default="true">topic</val>
       </param>
-      <!-- ⋮ -->
+      [...]
     </transtype>
     
     ```

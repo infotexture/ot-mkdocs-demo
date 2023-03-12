@@ -11,3 +11,5 @@ In most cases, PDF output should be customized by creating custom DITA-OT plug-i
 
 [Plug-in coding conventions](../topics/plugin-coding-conventions.md)
 
+[PDF themes](../topics/pdf-themes.md)
+

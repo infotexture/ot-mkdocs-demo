@@ -110,7 +110,7 @@ Certain parameters apply to all HTML-based transformation types: HTML5, XHTML, H
 
 -   **args.indexshow**
 
-    Specifies whether the content of <indexterm\> elements are rendered in the output. The allowed values are yes and no; the default value is no.
+    Specifies whether the content of &lt;indexterm&gt; elements are rendered in the output. The allowed values are yes and no; the default value is no.
 
 -   **args.outext**
 
@@ -128,7 +128,7 @@ Certain parameters apply to all HTML-based transformation types: HTML5, XHTML, H
 
 -   **args.xhtml.contenttarget**
 
-    Specifies the value of the @target attribute on the <base\> element in the TOC file.
+    Specifies the value of the @target attribute on the &lt;base&gt; element in the TOC file.
 
 -   **args.xhtml.toc**
 
@@ -136,7 +136,7 @@ Certain parameters apply to all HTML-based transformation types: HTML5, XHTML, H
 
 -   **args.xhtml.toc.class**
 
-    Specifies the value of the @class attribute on the <body\> element in the TOC file.
+    Specifies the value of the @class attribute on the &lt;body&gt; element in the TOC file.
 
 -   **args.xhtml.toc.xsl**
 

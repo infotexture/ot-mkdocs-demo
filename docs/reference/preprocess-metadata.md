@@ -1,4 +1,4 @@
-# Move metadata \(move-meta-entries\) and pull content into maps \(mappull\)
+# Move metadata \(`move-meta-entries`\) and pull content into maps \(`mappull`\)
 
 The `move-meta-entries` step pushes metadata back and forth between maps and topics. For example, index entries and copyrights in the map are pushed into affected topics, so that the topics can be processed later in isolation while retaining all relevant metadata. This step is implemented in Java.
 
