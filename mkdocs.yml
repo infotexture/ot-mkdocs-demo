@@ -1,5 +1,21 @@
 site_name: DITA-OT MkDocs Demo
 
+copyright: '&copy; 2023 infotexture · Roger Sheen'
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/infotexture
+      name: infotexture on GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/infotexture
+      name: infotexture on LinkedIn
+    - icon: fontawesome/brands/mastodon 
+      link: https://indieweb.social/@infotexture
+      name: infotexture on Mastodon
+    - icon: fontawesome/brands/twitter 
+      link: https://twitter.com/infotexture
+      name: infotexture on Twitter
+
 theme:
   name: material
   features:
