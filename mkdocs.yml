@@ -1,10 +1,10 @@
 site_name: DITA-OT MkDocs Demo
 
 theme:
-  font: false
   name: material
   features:
     - navigation.footer
+  font: false
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
