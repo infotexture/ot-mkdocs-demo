@@ -30,7 +30,9 @@
   {% endif %}
 
   <!-- Main navigation item with nested items -->
-  {% if nav_item.children %}
+  <!-- ↓ add section-index customization -->
+  {% if nav_item.children and not nav_item.url %}
+  <!-- ↑ end section-index customization -->
 
     <!-- Determine whether to render item as a section -->
     {% if "navigation.sections" in features and level == 1 + (
@@ -76,8 +78,16 @@
           id="{{ path }}_label"
           tabindex="0"
         >
-          {{ nav_item.title }}
+        <!-- nav_item.title moved ↓ -->
           <span class="md-nav__icon md-icon"></span>
+          <!-- ↓ add section-index customization -->
+          {% if nav_item.url %}
+            <a href="{{ nav_item.url | url }}" class="md-nav__link{% if nav_item == page %} md-nav__link--active{% endif %}"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          {% endif %}
+            {{ nav_item.title }}
+          {% if nav_item.url %}</a>{% endif %}
+          <!-- ↑ end section-index customization -->
         </label>
 
       <!-- Render link to index page + toggle -->
@@ -105,7 +115,16 @@
       >
         <label class="md-nav__title" for="{{ path }}">
           <span class="md-nav__icon md-icon"></span>
+          <!-- ↓ add section-index customization -->
+          {% if nav_item.url %}
+            <a href="{{ nav_item.url | url }}" class="md-nav__link{% if nav_item == page %} md-nav__link--active{% endif %}"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          {% endif %}
+          <!-- ↑ end section-index customization -->
           {{ nav_item.title }}
+          <!-- ↓ add section-index customization -->
+          {% if nav_item.url %}</a>{% endif %}
+          <!-- ↑ end section-index customization -->
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
 
@@ -140,8 +159,16 @@
       <!-- Render table of contents, if not empty -->
       {% if toc %}
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          {{ nav_item.title }}
+        <!-- nav_item.title moved ↓ -->
           <span class="md-nav__icon md-icon"></span>
+          <!-- ↓ add section-index customization -->
+          {% if nav_item.url %}
+            <a href="{{ nav_item.url | url }}" class="md-nav__link{% if nav_item == page %} md-nav__link--active{% endif %}"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          {% endif %}
+            {{ nav_item.title }}
+          {% if nav_item.url %}</a>{% endif %}
+          <!-- ↑ end section-index customization -->
         </label>
       {% endif %}
       <a
