@@ -1,0 +1,4917 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../topics/release-history/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
+    
+    
+      
+        <title>Release Notes - DITA-OT MkDocs Demo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.240905d7.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dita-open-toolkit-40-release-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DITA-OT MkDocs Demo" class="md-header__button md-logo" aria-label="DITA-OT MkDocs Demo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DITA-OT MkDocs Demo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Release Notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DITA-OT MkDocs Demo" class="md-nav__button md-logo" aria-label="DITA-OT MkDocs Demo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DITA-OT MkDocs Demo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        DITA Open Toolkit 4.0
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Release Notes</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/release-history/" class="md-nav__link">
+        Release history
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/installing-client/">Installing DITA-OT</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installing DITA-OT
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/prerequisite-software/" class="md-nav__link">
+        Prerequisite software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/determining-version-of-ditaot/" class="md-nav__link">
+        Checking the version
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/first-build-using-dita-command/" class="md-nav__link">
+        Building output
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/installing-via-homebrew/" class="md-nav__link">
+        Installing via Homebrew
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/building-output/">Building output</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Building output
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/build-using-dita-command/">Using the dita command</a>
+          
+            <label for="__nav_4_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Using the dita command
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/using-dita-properties-file/" class="md-nav__link">
+        Using a properties file
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-ant-to-dita/" class="md-nav__link">
+        Migrating Ant builds
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_3" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/using-project-files/">Using a project file</a>
+          
+            <label for="__nav_4_1_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Using a project file
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/project-files-xml/" class="md-nav__link">
+        XML project files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/project-files-json/" class="md-nav__link">
+        JSON project files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/project-files-yaml/" class="md-nav__link">
+        YAML project files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/using-docker-images/">Using Docker images</a>
+          
+            <label for="__nav_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Using Docker images
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/creating-docker-images/" class="md-nav__link">
+        Custom images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/using-github-actions/" class="md-nav__link">
+        Using GitHub Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/publishing-with-ant/">Using Ant</a>
+          
+            <label for="__nav_4_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Using Ant
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/ant/" class="md-nav__link">
+        Ant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/building-with-ant/" class="md-nav__link">
+        Building output using Ant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/creating-an-ant-build-script/" class="md-nav__link">
+        Creating an Ant build script
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/java-api/" class="md-nav__link">
+        Using the Java API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/input-formats/">Authoring formats</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Authoring formats
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita-xml-input/" class="md-nav__link">
+        Standard DITA XML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/markdown-input/" class="md-nav__link">
+        Markdown content
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/lwdita-input/" class="md-nav__link">
+        Lightweight DITA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/markdown-dita-syntax-reference/" class="md-nav__link">
+        Markdown DITA syntax
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/output-formats/">Output formats</a>
+          
+            <label for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Output formats
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita2pdf/" class="md-nav__link">
+        PDF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita2html5/" class="md-nav__link">
+        HTML5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita2eclipsehelp/" class="md-nav__link">
+        Eclipse help
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita2htmlhelp/" class="md-nav__link">
+        HTML Help
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita2markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita2dita/" class="md-nav__link">
+        Normalized DITA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita2xhtml/" class="md-nav__link">
+        XHTML
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../parameters/">Parameters</a>
+          
+            <label for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Parameters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/dita-command-arguments/" class="md-nav__link">
+        DITA command arguments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../parameters/parameters_intro/">DITA-OT parameters</a>
+          
+            <label for="__nav_7_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          DITA-OT parameters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/parameters-base/" class="md-nav__link">
+        Common
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/parameters-pdf/" class="md-nav__link">
+        PDF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/parameters-base-html/" class="md-nav__link">
+        HTML-based output
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/parameters-html5/" class="md-nav__link">
+        HTML5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/parameters-xhtml/" class="md-nav__link">
+        XHTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/parameters-htmlhelp/" class="md-nav__link">
+        HTML Help
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/parameters-eclipsehelp/" class="md-nav__link">
+        Eclipse Help
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/parameters-other/" class="md-nav__link">
+        Other
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../parameters/configuration-properties/">Configuration properties</a>
+          
+            <label for="__nav_7_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration properties
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/local-properties-file/" class="md-nav__link">
+        local.properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/plugin-properties-file/" class="md-nav__link">
+        plugin.properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/configuration-properties-file/" class="md-nav__link">
+        configuration.properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/internal-ant-properties/" class="md-nav__link">
+        Internal Ant properties
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/html-customization/">Customizing HTML</a>
+          
+            <label for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Customizing HTML
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/html-customization-parameters/">Setting HTML parameters</a>
+          
+            <label for="__nav_8_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          Setting HTML parameters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/html-customization-navigation/" class="md-nav__link">
+        Adding navigation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/html-customization-css/" class="md-nav__link">
+        Adding custom CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/html-customization-header/" class="md-nav__link">
+        Headers and footers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/generate-copy-outer/" class="md-nav__link">
+        Handling content outside the map directory
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/html-customization-properties-file/" class="md-nav__link">
+        Using a properties file
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/pdf-customization/">Customizing PDF</a>
+          
+            <label for="__nav_9">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Customizing PDF
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/pdf-customization-approaches/" class="md-nav__link">
+        Customization approaches
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/pdf2-creating-change-bars/" class="md-nav__link">
+        Generating revision bars
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/pdf-themes/">PDF themes</a>
+          
+            <label for="__nav_9_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_3">
+          <span class="md-nav__icon md-icon"></span>
+          PDF themes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/sample-pdf-theme/" class="md-nav__link">
+        Sample theme file
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/theme/Page-settings/" class="md-nav__link">
+        Page settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/theme/Header-and-footer/" class="md-nav__link">
+        Header and footer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/theme/Styles/" class="md-nav__link">
+        Styles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/theme/Variables/" class="md-nav__link">
+        Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/theme/Extending-themes/" class="md-nav__link">
+        Extending themes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/theme/Syntactic-sugar/" class="md-nav__link">
+        Syntactic sugar
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/adding-plugins/">Adding plug-ins</a>
+          
+            <label for="__nav_10">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Adding plug-ins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugins-installing/" class="md-nav__link">
+        Installing plug-ins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugins-removing/" class="md-nav__link">
+        Removing plug-ins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugins-registry/" class="md-nav__link">
+        Plug-in registry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/rebuilding-docs/" class="md-nav__link">
+        Rebuilding documentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/custom-plugins/">Creating plug-ins</a>
+          
+            <label for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Creating plug-ins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-benefits/" class="md-nav__link">
+        Plug-in benefits
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-configfile/" class="md-nav__link">
+        Plug-in descriptor file
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-coding-conventions/" class="md-nav__link">
+        Coding conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_4" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/plugin-dependencies/">Plug-in dependencies</a>
+          
+            <label for="__nav_11_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_4">
+          <span class="md-nav__icon md-icon"></span>
+          Plug-in dependencies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/referencing-other-plugins/" class="md-nav__link">
+        Referencing files from other plug-ins
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_5" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/plugin-use-cases/">Plug-in use cases</a>
+          
+            <label for="__nav_11_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_5">
+          <span class="md-nav__icon md-icon"></span>
+          Plug-in use cases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-set-parameters/" class="md-nav__link">
+        Setting parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-anttarget/" class="md-nav__link">
+        Adding a new Ant target
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-antpreprocess/" class="md-nav__link">
+        Adding a pre-processing step
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-newtranstype/" class="md-nav__link">
+        Adding a new output format
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-xsltparams/" class="md-nav__link">
+        Adding new parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-overridestyle/" class="md-nav__link">
+        Overriding XSLT steps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-javalib/" class="md-nav__link">
+        Adding a Java library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-messages/" class="md-nav__link">
+        Adding new messages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-newextensions/" class="md-nav__link">
+        New extension points
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-xmlcatalog/" class="md-nav__link">
+        Extending an XML catalog file
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/plugin-rewrite-rules/" class="md-nav__link">
+        Rewriting file names
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_5_12" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/implement-saxon-customizations/">Saxon customizations</a>
+          
+            <label for="__nav_11_5_12">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_5_12_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_5_12">
+          <span class="md-nav__icon md-icon"></span>
+          Saxon customizations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/implement-saxon-extension-functions/" class="md-nav__link">
+        Saxon extensions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/implement-saxon-collation-uri-resolvers/" class="md-nav__link">
+        Custom collation URI resolvers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_6" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/html-customization-plugins/">Custom HTML plug-ins</a>
+          
+            <label for="__nav_11_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_6">
+          <span class="md-nav__icon md-icon"></span>
+          Custom HTML plug-ins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/html-customization-plugin-bundle-css/" class="md-nav__link">
+        Bundling custom CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/html-customization-plugin-webfont/" class="md-nav__link">
+        Embedding web fonts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/html-customization-plugin-javascript/" class="md-nav__link">
+        Inserting JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_7" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/pdf-customization-plugins/">Custom PDF plug-ins</a>
+          
+            <label for="__nav_11_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_7">
+          <span class="md-nav__icon md-icon"></span>
+          Custom PDF plug-ins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/pdf-customization-plugin-types/" class="md-nav__link">
+        Types of PDF plug-ins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_7_2" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/pdf-plugin-structure/">PDF plug-in structure</a>
+          
+            <label for="__nav_11_7_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          PDF plug-in structure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/pdf-plugin-structure_common-artwork/" class="md-nav__link">
+        Custom artwork
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/pdf-plugin-structure_common-index/" class="md-nav__link">
+        Index configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/pdf-plugin-structure_common-vars/" class="md-nav__link">
+        Variable overrides
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/pdf-plugin-structure_fo-attrs/" class="md-nav__link">
+        Custom attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/pdf-plugin-structure_fo-i18n/" class="md-nav__link">
+        Internationalization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/pdf-plugin-structure_fo-xsl/" class="md-nav__link">
+        Custom stylesheets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/pdf-customization-example/" class="md-nav__link">
+        Simple PDF plug-in
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/pdf-customization-resources/" class="md-nav__link">
+        PDF plug-in resources
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_8" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/globalization/">Globalizing DITA content</a>
+          
+            <label for="__nav_11_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_8">
+          <span class="md-nav__icon md-icon"></span>
+          Globalizing DITA content
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/globalization-support/" class="md-nav__link">
+        Globalization support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/globalization-languages/" class="md-nav__link">
+        Supported languages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_8_3" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/plugin-addgeneratedtext/">Customizing generated text</a>
+          
+            <label for="__nav_11_8_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_8_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          Customizing generated text
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/adding-new-strings/" class="md-nav__link">
+        Adding new strings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/overriding-strings/" class="md-nav__link">
+        Overriding strings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/adding-new-languages/" class="md-nav__link">
+        Adding new languages
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_9" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/migration/">Migrating customizations</a>
+          
+            <label for="__nav_11_9">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_9">
+          <span class="md-nav__icon md-icon"></span>
+          Migrating customizations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-4.0/" class="md-nav__link">
+        To 4.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-3.7/" class="md-nav__link">
+        To 3.7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-3.6/" class="md-nav__link">
+        To 3.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-3.5/" class="md-nav__link">
+        To 3.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-3.4/" class="md-nav__link">
+        To 3.4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-3.3/" class="md-nav__link">
+        To 3.3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-3.2/" class="md-nav__link">
+        To 3.2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-3.1/" class="md-nav__link">
+        To 3.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-3.0/" class="md-nav__link">
+        To 3.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-2.5/" class="md-nav__link">
+        To 2.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-2.4/" class="md-nav__link">
+        To 2.4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-2.3/" class="md-nav__link">
+        To 2.3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-2.2/" class="md-nav__link">
+        To 2.2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-2.1/" class="md-nav__link">
+        To 2.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-2.0/" class="md-nav__link">
+        To 2.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-1.8/" class="md-nav__link">
+        To 1.8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_9_17" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/migrating-to-1.7/">To 1.7</a>
+          
+            <label for="__nav_11_9_17">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_9_17_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_9_17">
+          <span class="md-nav__icon md-icon"></span>
+          To 1.7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/flagging-migration/" class="md-nav__link">
+        Flagging updates
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-1.6/" class="md-nav__link">
+        To 1.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/migrating-to-1.5.4/" class="md-nav__link">
+        To 1.5.4
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/troubleshooting-overview/">Troubleshooting</a>
+          
+            <label for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/logging/" class="md-nav__link">
+        Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/enabling-debug-mode/" class="md-nav__link">
+        Enabling debug mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/error-messages/" class="md-nav__link">
+        DITA-OT error messages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/other-errors/" class="md-nav__link">
+        Other error messages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita-command-help/" class="md-nav__link">
+        Command line help
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/increasing-the-jvm/" class="md-nav__link">
+        Increasing Java memory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/reducing-processing-time/" class="md-nav__link">
+        Speeding up builds
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/">Reference</a>
+          
+            <label for="__nav_13">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_1" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/architecture/">DITA-OT architecture</a>
+          
+            <label for="__nav_13_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_13_1">
+          <span class="md-nav__icon md-icon"></span>
+          DITA-OT architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/processing-structure/" class="md-nav__link">
+        Processing structure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/map-first-preprocessing/" class="md-nav__link">
+        Map-first preprocessing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/processing-pipeline-modules/" class="md-nav__link">
+        Processing modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/processing-order/" class="md-nav__link">
+        Processing order
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/store-api/" class="md-nav__link">
+        Store API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_1_6" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/preprocessing/">Pre-processing modules</a>
+          
+            <label for="__nav_13_1_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_13_1_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_13_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Pre-processing modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-genlist/" class="md-nav__link">
+        Generate lists (gen-list)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-debugfilter/" class="md-nav__link">
+        Debug and filter (debug-filter)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-mapref/" class="md-nav__link">
+        Resolve map references (mapref)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-branch-filter/" class="md-nav__link">
+        Branch filtering (branch-filter)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-keyref/" class="md-nav__link">
+        Resolve key references (keyref)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-copy-to/" class="md-nav__link">
+        Copy topics (copy-to)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-conrefpush/" class="md-nav__link">
+        Conref push (conrefpush)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-conref/" class="md-nav__link">
+        Resolve content references (conref)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-profile/" class="md-nav__link">
+        Filter conditional content (profile)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-topic-fragment/" class="md-nav__link">
+        Resolve topic fragments and code references (topic-fragment)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-chunk/" class="md-nav__link">
+        Chunk topics (chunk)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-metadata/" class="md-nav__link">
+        Move metadata (move-meta-entries) and pull content into maps (mappull)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-maplink/" class="md-nav__link">
+        Map-based linking (maplink)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-topicpull/" class="md-nav__link">
+        Pull content into topics (topicpull)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-flagging/" class="md-nav__link">
+        Flagging (flag-module)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-clean-map/" class="md-nav__link">
+        Map cleanup (clean-map)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/preprocess-copyfiles/" class="md-nav__link">
+        Copy related files (copy-files)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_1_7" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/html-based-processing/">HTML-based processing modules</a>
+          
+            <label for="__nav_13_1_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_13_1_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_13_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          HTML-based processing modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/common-html-processing/" class="md-nav__link">
+        Common HTML-based processing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/xhtml-processing/" class="md-nav__link">
+        XHTML processing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/html5-processing/" class="md-nav__link">
+        HTML5 processing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/eclipsehelp-processing/" class="md-nav__link">
+        Eclipse help processing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/htmlhelp-processing/" class="md-nav__link">
+        HTML Help processing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_1_8" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/pdf-transform/">PDF processing modules</a>
+          
+            <label for="__nav_13_1_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_13_1_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_13_1_8">
+          <span class="md-nav__icon md-icon"></span>
+          PDF processing modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pdf-transformation-history/" class="md-nav__link">
+        History of the PDF transformation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_2" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/dita-spec-support/">DITA specification support</a>
+          
+            <label for="__nav_13_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_13_2">
+          <span class="md-nav__icon md-icon"></span>
+          DITA specification support
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/dita-v1-2-support/" class="md-nav__link">
+        DITA 1.2 support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/dita-v1-3-support/" class="md-nav__link">
+        DITA 1.3 support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/dita-v2-0-support/" class="md-nav__link">
+        DITA 2.0 preview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/implementation-dependent-features/" class="md-nav__link">
+        Implementation-dependent features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/extended-functionality/" class="md-nav__link">
+        Codeblock extensions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/docs-dita-features/" class="md-nav__link">
+        DITA features in docs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_3" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../extension-points/plugin-extension-points/">Extension points</a>
+          
+            <label for="__nav_13_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_13_3">
+          <span class="md-nav__icon md-icon"></span>
+          Extension points
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/all-extension-points/" class="md-nav__link">
+        All extension points
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/plugin-extension-points-general/" class="md-nav__link">
+        General extension points
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/plugin-extension-points-pre-processing/" class="md-nav__link">
+        Pre-processing extension points
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/plugin-extension-points-xslt-import/" class="md-nav__link">
+        XSLT-import extension points
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/plugin-extension-points-xslt-parameters/" class="md-nav__link">
+        XSLT-parameter extension points
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/plugin-extension-points-support/" class="md-nav__link">
+        Version and support information
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_3_7" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../extension-points/extension-points-by-plugin/">Plug-in extension points</a>
+          
+            <label for="__nav_13_3_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_13_3_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_13_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Plug-in extension points
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/extension-points-in-org.dita.base/" class="md-nav__link">
+        Common processing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/extension-points-in-org.dita.pdf2/" class="md-nav__link">
+        PDF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/extension-points-in-org.dita.xhtml/" class="md-nav__link">
+        HTML-based output
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/extension-points-in-org.dita.html5/" class="md-nav__link">
+        HTML5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/extension-points-in-org.dita.htmlhelp/" class="md-nav__link">
+        HTML Help
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/extension-points-in-org.dita.eclipsehelp/" class="md-nav__link">
+        Eclipse Help
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-points/extension-points-in-org.lwdita/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_4" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/license/">License</a>
+          
+            <label for="__nav_13_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_13_4">
+          <span class="md-nav__icon md-icon"></span>
+          License
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/third-party-software/" class="md-nav__link">
+        Third-party software
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_5" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/glossary/">Glossary</a>
+          
+            <label for="__nav_13_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_13_5">
+          <span class="md-nav__icon md-icon"></span>
+          Glossary
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-argument" class="md-nav__link">
+        argument
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-dita-open-toolkit" class="md-nav__link">
+        DITA Open Toolkit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-extension-point" class="md-nav__link">
+        extension point
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-option" class="md-nav__link">
+        option
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-output-format" class="md-nav__link">
+        output format
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-parameter" class="md-nav__link">
+        parameter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-plug-in" class="md-nav__link">
+        plug-in
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-processor" class="md-nav__link">
+        processor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-property" class="md-nav__link">
+        property
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-template-plugin" class="md-nav__link">
+        template
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-transformation-type" class="md-nav__link">
+        transformation type
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-variable" class="md-nav__link">
+        variable
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.md%23gloss-template-xslt" class="md-nav__link">
+        XSL template
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/dita-and-dita-ot-resources/">Resources</a>
+          
+            <label for="__nav_14">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topics/dita-ot-day-videos/">DITA-OT Day Videos</a>
+          
+            <label for="__nav_14_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_14_1">
+          <span class="md-nav__icon md-icon"></span>
+          DITA-OT Day Videos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita-ot-day-videos-intro-2022/" class="md-nav__link">
+        2022 Rotterdam
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita-ot-day-videos-intro-2019/" class="md-nav__link">
+        2019 Brussels
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita-ot-day-videos-intro-2018/" class="md-nav__link">
+        2018 Rotterdam
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita-ot-day-videos-intro-2017/" class="md-nav__link">
+        2017 Berlin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita-ot-day-videos-intro-2016/" class="md-nav__link">
+        2016 Munich
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita-ot-day-videos-intro-2015/" class="md-nav__link">
+        2015 Munich
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/dita-ot-day-videos-intro-2014/" class="md-nav__link">
+        2014 Munich
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/books/" class="md-nav__link">
+        Books
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-java-17" class="md-nav__link">
+    Requirements: Java 17
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dita-ot-402-released-february-18-2023" class="md-nav__link">
+    DITA-OT 4.0.2 released February 18, 2023
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dita-ot-401-released-december-9-2022" class="md-nav__link">
+    DITA-OT 4.0.1 released December 9, 2022
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dita-ot-40-released-november-12-2022" class="md-nav__link">
+    DITA-OT 4.0 released November 12, 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="DITA-OT 4.0 released November 12, 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-pdf-theme-plug-in" class="md-nav__link">
+    New PDF theme plug-in
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-file-improvements" class="md-nav__link">
+    Project file improvements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightweight-dita-and-markdown-updates" class="md-nav__link">
+    Lightweight DITA and Markdown updates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updated-dita-20-preview" class="md-nav__link">
+    Updated DITA 2.0 preview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-references-now-default-to-utf-8-encoding" class="md-nav__link">
+    Code references now default to UTF-8 encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements-and-changes" class="md-nav__link">
+    Enhancements and changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    Contributors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-updates" class="md-nav__link">
+    Documentation updates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="dita-open-toolkit-40-release-notes">DITA Open Toolkit 4.0 Release Notes</h1>
+<p>DITA Open Toolkit 4.0.2 is a maintenance release that fixes issues reported in DITA-OT 4.0, which includes a new plug-in for easier PDF customization, project file improvements, updates to LwDITA processing, and support for the split chunking feature in the latest drafts of the upcoming DITA 2.0 standard.</p>
+<p>DITA-OT releases follow <a href="https://semver.org">semantic versioning</a> guidelines. Version numbers use the <code>major.minor.patch</code> syntax, where major versions may include incompatible API changes, minor versions add functionality in a backwards-compatible manner and patch versions are maintenance releases that include backwards-compatible bug fixes.</p>
+<p><strong>Tip:</strong> Download the dita-ot-4.0.2.zip package from the project website at <a href="https://www.dita-ot.org/download">dita-ot.org/download</a>.</p>
+<h2 id="requirements-java-17">Requirements: Java 17</h2>
+<p>DITA-OT 4.0 is designed to run on Java version 17 or later and built and tested with the Open Java Development Kit (OpenJDK). Compatible Java distributions are available from multiple sources:</p>
+<ul>
+<li>You can download the Oracle JRE or JDK from <a href="https://www.oracle.com/java/technologies/downloads/">oracle.com/java</a> under commercial license.</li>
+<li>Eclipse Temurin is the free OpenJDK distribution available from <a href="https://adoptium.net/temurin/releases/?version=17">adoptium.net</a>.</li>
+<li>Free OpenJDK distributions are also provided by <a href="https://aws.amazon.com/corretto/">Amazon Corretto</a>, <a href="https://www.azul.com/downloads/">Azul Zulu</a>, and <a href="https://developers.redhat.com/products/openjdk/download">Red Hat</a>.</li>
+</ul>
+<p><strong>Note:</strong> The Java virtual machine is generally backwards compatible, so class files built with earlier versions should still run correctly with Java 17 and DITA-OT 4.0. If your DITA-OT installation contains plug-ins with custom Java code, you may need to recompile these with Java 17 — but in most cases, this step should not be necessary.</p>
+<h2 id="dita-ot-402-released-february-18-2023">DITA-OT 4.0.2 released February 18, 2023</h2>
+<p>DITA Open Toolkit 4.0.2 is a maintenance release that includes the following bug fixes.</p>
+<ul>
+<li>Earlier versions of DITA-OT did not respect key references defined on long descriptions within image elements. Processing has been updated to ensure that <code>@keyref</code> attributes on <code>longdescref</code> elements are resolved to the resource defined by the <code>@href</code> attribute on the key. <a href="https://github.com/dita-ot/dita-ot/issues/4071">#4071</a>, <a href="https://github.com/dita-ot/dita-ot/issues/4080">#4080</a></li>
+<li>If <code>@copy-to</code> attributes were used to create duplicate versions of topics, previous versions did not resolve key references to content inside the topic copies correctly. Key reference processing has been corrected to ensure that topic IDs for copied topics are properly adjusted when calculating link targets. <a href="https://github.com/dita-ot/dita-ot/issues/4076">#4076</a>, <a href="https://github.com/dita-ot/dita-ot/issues/4110">#4110</a></li>
+<li>In certain cases, when a context map resource was passed to the dita command with the --resource option or the args.resources parameter, the resource map was overwritten with its temporary version from preprocessing. These maps are now copied and processed to the temporary files folder instead of being overwritten in-place, and the key values they contain are correctly resolved from the copies in the temporary folder. <a href="https://github.com/dita-ot/dita-ot/issues/4104">#4104</a>, <a href="https://github.com/dita-ot/dita-ot/issues/4112">#4112</a></li>
+<li>In earlier versions, the DITA-OT logging configuration mistakenly enabled full debug logging for all Java packages in any of the installed plug-ins. This error has been corrected to preserve the default <code>INFO</code> level for custom plug-ins, and only enable debug logging for Java code in DITA-OT itself. <a href="https://github.com/dita-ot/dita-ot/issues/4106">#4106</a>, <a href="https://github.com/dita-ot/dita-ot/issues/4114">#4114</a></li>
+<li>Content key references in map titles were not resolved if they pointed to phrase elements that contained another <code>ph</code> element. Key references are now handled correctly, even when <code>@conkeyref</code> targets contain nested phrase elements. <a href="https://github.com/dita-ot/dita-ot/issues/4117">#4117</a>, <a href="https://github.com/dita-ot/dita-ot/issues/4120">#4120</a></li>
+<li>Obsolete Travis configuration files have been removed from the DITA-OT repository. <a href="https://github.com/dita-ot/dita-ot/issues/4118">#4118</a></li>
+</ul>
+<p>For additional information on the issues resolved since the previous release, see the <a href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.0.2+is%3Aclosed">4.0.2 milestone</a> and <a href="https://github.com/dita-ot/dita-ot/compare/4.0.1...4.0.2">changelog</a> on GitHub.</p>
+<h2 id="dita-ot-401-released-december-9-2022">DITA-OT 4.0.1 released December 9, 2022</h2>
+<p>DITA Open Toolkit 4.0.2 is a maintenance release that includes the following bug fixes.</p>
+<ul>
+<li>The <code>place-tbl-lbl</code> template that was originally used to define table titles in XHTML has been deprecated in HTML5 processing and will be removed in a future release. This template was carried over from XHTML code (which still has a copy that is used), but the copy in HTML5 is not called. <a href="https://github.com/dita-ot/dita-ot/issues/3435">#3435</a>, <a href="https://github.com/dita-ot/dita-ot/issues/4056">#4056</a></li>
+<li>In earlier versions, the args.xhtml.toc.class and args.html5.toc.class properties did not work. HTML processing has been updated to ensure that the value of the <code>@class</code> attribute is correctly set on the <code>body</code> element in the table of contents (TOC) files generated for XHTML and HTML5 output. <a href="https://github.com/dita-ot/dita-ot/issues/4015">#4015</a>, <a href="https://github.com/dita-ot/dita-ot/issues/4065">#4065</a></li>
+<li>The bundled Jackson data binding library was updated the latest version (2.14.0) to resolve a security vulnerability. <a href="https://github.com/dita-ot/dita-ot/issues/4016">#4016</a>, <a href="https://github.com/dita-ot/dita-ot/issues/4058">#4058</a></li>
+<li>When link targets included index terms, PDF output generated by earlier versions added the text of the index entries to the end of cross-reference link text. Processing has been updated to correctly filter <code>indexterm</code> elements when computing the target text for <code>xref</code> elements. <a href="https://github.com/dita-ot/dita-ot/issues/4017">#4017</a>, <a href="https://github.com/dita-ot/dita-ot/issues/4030">#4030</a></li>
+<li>In earlier releases, syntax diagrams with an <code>@id</code> attribute did not preserve the ID in HTML5 output. This is now fixed. <a href="https://github.com/dita-ot/dita-ot/issues/4021">#4021</a>, <a href="https://github.com/dita-ot/dita-ot/issues/4057">#4057</a></li>
+<li>A spelling mistake has been corrected in the DOTX034E message that appears when unordered list items are cross-referenced without specifying link text. <a href="https://github.com/dita-ot/dita-ot/issues/4029">#4029</a></li>
+<li>In earlier versions, conditional processing did not work as expected when specialized attributes were used for flagging. The flagging module has been updated to work correctly with specialized attributes. <a href="https://github.com/dita-ot/dita-ot/issues/4043">#4043</a>, <a href="https://github.com/dita-ot/dita-ot/issues/4053">#4053</a></li>
+</ul>
+<p>For additional information on the issues resolved since the previous release, see the <a href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.0.1+is%3Aclosed">4.0.1 milestone</a> and <a href="https://github.com/dita-ot/dita-ot/compare/4.0...4.0.1">changelog</a> on GitHub.</p>
+<h2 id="dita-ot-40-released-november-12-2022">DITA-OT 4.0 released November 12, 2022</h2>
+<p>DITA Open Toolkit Release 4.0 includes a new plug-in for easier PDF customization, project file improvements, updates to LwDITA processing, and support for the split chunking feature in the latest drafts of the upcoming DITA 2.0 standard.</p>
+<h3 id="new-pdf-theme-plug-in">New PDF theme plug-in</h3>
+<p>DITA-OT 4.0 includes the <code>com.elovirta.pdf</code> plug-in, which extends the default PDF2 plug-in with a new theme parameter. The --theme option takes a path to a theme file and changes the styling of the PDF output without requiring changes to XSLT stylesheets.</p>
+<p>Themes can be used to adjust basic settings like cover page images, page sizes, numbering, font properties, background colors and borders, spacing, and running content like page headers and footers.</p>
+<p>To generate PDF output with a custom theme, pass the theme file to the dita command with the --theme option:</p>
+<pre><code class="language-syntax-bash">dita --project=samples/project-files/pdf.xml \
+     --theme=path/to/custom-theme-file.yaml
+</code></pre>
+<p><strong>Tip:</strong> For information on the available theming options and a sample YAML theme, see <a href="../topics/pdf-themes/">PDF themes</a>.</p>
+<h3 id="project-file-improvements">Project file improvements</h3>
+<ul>
+<li>
+<p>The re-usable <code>publication</code> element in DITA-OT project files can now be overridden with additional parameters (or modified parameter settings) by adding new <code>param</code> elements to the referencing element. <a href="https://github.com/dita-ot/dita-ot/issues/3682">#3682</a>, <a href="https://github.com/dita-ot/dita-ot/issues/3907">#3907</a></p>
+<p>This allows common publications to be defined in one place, re-used in others, and overlaid with local variations when the common settings need to be adjusted in certain cases.</p>
+<p><code>&lt;project xmlns="https://www.dita-ot.org/project"&gt;
+  &lt;publication transtype="html5" id="common-html5"&gt;
+    &lt;param name="nav-toc" value="partial"/&gt;
+  &lt;/publication&gt;
+  &lt;deliverable&gt;
+    &lt;context&gt;
+      &lt;input href="root.ditamap"/&gt;
+    &lt;/context&gt;
+    &lt;output href="./out"/&gt;
+    &lt;publication idref="common-html5"&gt;
+      &lt;!-- Define publication-specific parameter settings --&gt;
+      &lt;param name="nav-toc" value="full"/&gt;
+    &lt;/publication&gt;
+  &lt;/deliverable&gt;
+&lt;/project&gt;</code></p>
+</li>
+<li>
+<p>The <code>publication</code> element in DITA-OT project files now supports nested <code>profile</code> elements. When both context and publication contain profiles, they are applied in order: publication profiles first, context profiles second. <a href="https://github.com/dita-ot/dita-ot/issues/3690">#3690</a>, <a href="https://github.com/dita-ot/dita-ot/issues/3895">#3895</a></p>
+<p>This allows publications to define filter criteria that are applied to the content of the individual publication (in addition to those specified for the entire deliverable context).</p>
+<p><code>&lt;project xmlns="https://www.dita-ot.org/project"&gt;
+  &lt;deliverable name="Name" id="site"&gt;
+    &lt;context name="Site" id="site"&gt;
+      &lt;input href="site.ditamap"/&gt;
+      &lt;profile&gt;
+        &lt;ditaval href="site.ditaval"/&gt;
+      &lt;/profile&gt;
+    &lt;/context&gt;
+    &lt;output href="./site"/&gt;
+    &lt;publication transtype="html5" id="sitePub" name="Site"&gt;
+      &lt;profile&gt;
+        &lt;!-- Define publication-specific filters --&gt;
+        &lt;ditaval href="site-html5.ditaval"/&gt;
+      &lt;/profile&gt;
+    &lt;/publication&gt;
+  &lt;/deliverable&gt;
+&lt;/project&gt;</code></p>
+</li>
+</ul>
+<h3 id="lightweight-dita-and-markdown-updates">Lightweight DITA and Markdown updates</h3>
+<p>The <code>org.lwdita</code> plug-in has been updated to version 3.3, which includes Markdown processing improvements.</p>
+<ul>
+<li>DITA-OT 4.0 includes processing updates to reflect recent changes to the latest drafts of the LwDITA profile from OASIS</li>
+<li>Add support for Markdown files without first-level headings</li>
+<li>Better support for <a href="https://python-markdown.github.io/extensions/attr_list/">Python-Markdown Attribute Lists</a></li>
+<li>Markdown input improvements:<ul>
+<li>Improve subscript and superscript support</li>
+<li>Fix backslash escapes in code phrases (applies only to <code>@format</code>=<code>markdown</code>, as MDITA does not support code phrases)</li>
+<li>Add support for table spanning</li>
+</ul>
+</li>
+<li>In previous releases, standard Markdown syntax could be used to indicate a span of code by wrapping it with backtick quotes (<code>``\). These constructs were converted to DITA</code>codeph<code>elements on import, and rendered as</code>code` elements in HTML output. This support has been removed from MDITA processing to align with LwDITA, which does not support code phrase markup.</li>
+</ul>
+<h3 id="updated-dita-20-preview">Updated DITA 2.0 preview</h3>
+<p>In addition to the <a href="../reference/dita-v2-0-support/">DITA 2.0 preview support</a> provided in previous releases (3.5, 3.6, and 3.7), DITA-OT 4.0 includes updated processing support for the latest drafts of the DITA 2.0 DTD and RELAX NG grammar files from OASIS (as of November 7, 2022). <a href="https://github.com/dita-ot/dita-ot/issues/4040">#4040</a></p>
+<ul>
+<li>
+<p>The new “split” chunk action can be used to break content into new output documents. <a href="https://github.com/dita-ot/dita-ot/issues/3942">#3942</a></p>
+<p>When the <code>@chunk</code> attribute is set to <code>split</code> on a map, branch, or map reference, each topic from the referenced source document will be rendered as an individual document.</p>
+<p><strong>Note:</strong> The new chunk action is only applied if the root map has a DITA 2.0 doctype, such as:</p>
+<p><code>&lt;!DOCTYPE map PUBLIC "-//OASIS//DTD DITA 2.0 Map//EN" "map.dtd"&gt;</code></p>
+<p>If the root map uses an unversioned (or 1.x) doctype, DITA 1.3 processing will be applied, and 2.0 chunk actions will be ignored. With a 2.0 root map, any 1.3 chunk actions are ignored.</p>
+</li>
+</ul>
+<p>DITA documents that reference the draft grammar files can be parsed, and where features overlap with DITA 1.3, those features will work as expected.</p>
+<p><strong>Note:</strong> Other new or revised features proposed for DITA 2.0 are not yet supported. Additional features will be implemented in future versions of DITA-OT as the specification evolves.</p>
+<h3 id="code-references-now-default-to-utf-8-encoding">Code references now default to UTF-8 encoding</h3>
+<p>The default character set for code references has been changed from the system default encoding to UTF-8.</p>
+<p>This allows a wider range of characters to be used without needing to specify the <code>@format</code> attribute on the <code>coderef</code> element as described in <a href="../reference/extended-functionality/#coderef-charset">character set definition</a> or change the default encoding in the <a href="../parameters/configuration-properties-file/">configuration.properties file</a>. <a href="https://github.com/dita-ot/dita-ot/issues/4046">#4046</a></p>
+<p><strong>Note:</strong> If you have code references that require a different encoding, use either of these mechanisms to specify the character set explicitly.</p>
+<h3 id="enhancements-and-changes">Enhancements and changes</h3>
+<p>DITA Open Toolkit Release 4.0 includes the following enhancements and changes to existing features:</p>
+<ul>
+<li>When <a href="../topics/using-project-files/">publishing with project files</a>, separate temporary folders are now created for each deliverable in the project. This facilitates debugging and troubleshooting, as it makes it easier to inspect the temporary files that have been created for each deliverable. <a href="https://github.com/dita-ot/dita-ot/issues/3757">#3757</a>, <a href="https://github.com/dita-ot/dita-ot/issues/3898">#3898</a></li>
+<li>The legacy attribute set reflection in PDF2 has been replaced with code that generates new attribute sets directly. This change is backwards-compatible as the old attribute set reflection code has been retained, but PDF2 now uses the new attribute set generation mechanism everywhere reflection was used. Custom plug-ins that still use reflection should be updated to the new approach, as the legacy code may be removed in a future version. <a href="https://github.com/dita-ot/dita-ot/issues/3827">#3827</a>, <a href="https://github.com/dita-ot/dita-ot/issues/3829">#3829</a></li>
+<li>Attribute generation routines in XSLT stylesheets have been refactored from the old XSLT 1.0 style <code>xsl:value-of select="…"</code> to the modern XSLT 2 notation: <code>xsl:attribute select="…"/</code>. <a href="https://github.com/dita-ot/dita-ot/issues/3830">#3830</a></li>
+<li>Many Ant targets refer to <code>skip</code> properties that can be used to skip preprocessing steps. In earlier releases, these properties were not set or named consistently; these properties are now generated automatically with more consistent naming and behavior. <a href="https://github.com/dita-ot/dita-ot/issues/3851">#3851</a></li>
+<li>When an included file uses a character set that is neither the system default nor matches the explicit character set definition in the include, reading the file may fail. A new DOTJ084E error message makes it easier to debug character set encoding issues like this in source files. <a href="https://github.com/dita-ot/dita-ot/issues/3891">#3891</a></li>
+<li>Grammar caching and validation has been added for RELAX NG–based DITA topics and maps. Together these enhancements make publishing faster and more reliable for RNG-based content. <a href="https://github.com/dita-ot/dita-ot/issues/3253">#3253</a>, <a href="https://github.com/dita-ot/dita-ot/issues/3661">#3661</a>, <a href="https://github.com/dita-ot/dita-ot/issues/3926">#3926</a></li>
+<li>Many XSLT files have been updated to use <code>#current</code> for the processing mode. This simplifies the code and makes it easier to read and maintain. <a href="https://github.com/dita-ot/dita-ot/issues/3974">#3974</a></li>
+</ul>
+<h3 id="bug-fixes">Bug fixes</h3>
+<p>DITA Open Toolkit Release 4.0 provides fixes for the following bugs:</p>
+<ul>
+<li>In earlier releases, unexpected or invalid markup in a plugin.xml file might throw errors, but the installation would still show as successful. This has been fixed, and plug-in installation will now fail when the integration process does not work. <a href="https://github.com/dita-ot/dita-ot/issues/2641">#2641</a>, <a href="https://github.com/dita-ot/dita-ot/issues/3825">#3825</a></li>
+<li>In earlier releases, the <code>@frame</code>=<code>"none"</code> attribute on tables was not properly handled for PDF output. This issue has been fixed, and the table border is now handled correctly. <a href="https://github.com/dita-ot/dita-ot/issues/3303">#3303</a>, <a href="https://github.com/dita-ot/dita-ot/issues/3852">#3852</a>, <a href="https://github.com/dita-ot/dita-ot/issues/3854">#3854</a></li>
+<li>In 3.7 and some earlier releases, including namespaced elements such as <code>m:math</code> or <code>svg:svg</code> in a topic that is chunked would result in build failures. The chunking process now handles these elements without errors. <a href="https://github.com/dita-ot/dita-ot/issues/3684">#3684</a></li>
+<li>The <code>FINALOUTPUTTYPE</code> XSLT parameter has been removed from maplinkImpl.xsl and mappullImpl.xsl; this parameter is a legacy of very early code and has never been used by DITA-OT. <a href="https://github.com/dita-ot/dita-ot/issues/4018">#4018</a></li>
+<li>In DITA-OT 3.7.4, publishing failed with an IllegalArgumentException when images were referenced with an HTTP URI scheme. Processing has been corrected to set the missing <code>@scope</code> attribute to <code>external</code> per <a href="http://docs.oasis-open.org/dita/dita/v1.3/errata02/os/complete/part3-all-inclusive/langRef/attributes/thescopeattribute.html#thescopeattribute">DITA 1.3 specification: The scope attribute</a>. <a href="https://github.com/dita-ot/dita-ot/issues/4032">#4032</a>, <a href="https://github.com/dita-ot/dita-ot/issues/4039">#4039</a></li>
+</ul>
+<h3 id="contributors">Contributors</h3>
+<p>DITA Open Toolkit Release 4.0 includes <a href="https://github.com/dita-ot/dita-ot/graphs/contributors">code contributions</a> by the following people:</p>
+<ol>
+<li>Jarno Elovirta</li>
+<li>Radu Coravu</li>
+<li>Robert D Anderson</li>
+<li>Toshihiko Makita</li>
+<li>Eric Sirois</li>
+<li>Chris Papademetrious</li>
+<li>Julien Lacour</li>
+<li>Roger Sheen</li>
+</ol>
+<p>For the complete list of changes since the previous release, see the <a href="https://github.com/dita-ot/dita-ot/compare/3.7.4...4.0">changelog</a> on GitHub.</p>
+<h3 id="documentation-updates">Documentation updates</h3>
+<p>The documentation for DITA Open Toolkit Release 4.0 provides corrections and improvements to existing topics, along with new information in the following topics:</p>
+<ul>
+<li><a href="../topics/pdf-themes/">PDF themes</a></li>
+<li><a href="../topics/migrating-to-4.0/">Migrating to release 4.0</a></li>
+<li><a href="../reference/dita-v2-0-support/">DITA 2.0 preview support</a></li>
+</ul>
+<p>For additional information on documentation issues resolved in DITA Open Toolkit Release 4.0, see the <a href="https://github.com/dita-ot/docs/issues?q=milestone%3A4.0+is%3Aclosed">4.0 milestone</a> in the documentation repository.</p>
+<p>DITA Open Toolkit Release 4.0 includes <a href="https://github.com/dita-ot/docs/graphs/contributors">documentation contributions</a> by the following people:</p>
+<ol>
+<li>Roger Sheen</li>
+<li>Jarno Elovirta</li>
+</ol>
+<p>For the complete list of documentation changes since the previous release, see the <a href="https://github.com/dita-ot/docs/compare/3.7.4...4.0">changelog</a>.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: DITA Open Toolkit 4.0" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                DITA Open Toolkit 4.0
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../topics/release-history/" class="md-footer__link md-footer__link--next" aria-label="Next: Release history" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                Release history
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 infotexture · Roger Sheen
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/infotexture" target="_blank" rel="noopener" title="infotexture on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/infotexture" target="_blank" rel="noopener" title="infotexture on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+    <a href="https://indieweb.social/@infotexture" target="_blank" rel="noopener me" title="infotexture on Mastodon" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/infotexture" target="_blank" rel="noopener" title="infotexture on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.19047be9.min.js"></script>
+      
+    
+  </body>
+</html>
