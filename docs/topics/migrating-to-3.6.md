@@ -1,16 +1,16 @@
 # Migrating to release 3.6
 
-DITA-OT 3.6 includes performance enhancements such as processing in parallel and in memory, support for PDF changebars with Apache™ FOP, and an updated preview of features for the latest draft of the upcoming DITA 2.0 standard, including the `audio` and `video` elements, and the new emphasis domain.
+DITA-OT 3.6 includes performance enhancements such as processing in parallel and in memory, support for PDF changebars with Apache™ FOP, and an updated preview of features for the latest draft of the upcoming DITA 2.0 standard, including the `<audio>` and `<video>` elements, and the new emphasis domain.
 
 **Note:** This topic provides a summary of changes in DITA-OT 3.6 that may require modifications to custom stylesheets or plug-ins. For more information on changes in this release, see the [DITA-OT 3.6 Release Notes](https://www.dita-ot.org/3.6/release-notes/).
 
 ## Parallel processing
 
-Preprocessing module code can now be run in parallel by setting the parallel parameter to true. The performance benefits this option provides depend heavily on the source file set, the DITA features used in the project, and the computer doing the processing, but under the right circumstances, you may see notable improvements when this option is enabled.
+Preprocessing module code can now be run in parallel by setting the **parallel** parameter to true. The performance benefits this option provides depend heavily on the source file set, the DITA features used in the project, and the computer doing the processing, but under the right circumstances, you may see notable improvements when this option is enabled.
 
 ## In-memory processing
 
-DITA-OT 3.6 introduces a new Store API with preview support for in-memory processing. The Cache Store can be activated by setting the store-type parameter to memory. In-memory processing provides performance advantages in I/O bound environments such as cloud computing platforms, where processing time depends primarily on how long it takes to read and write temporary files. For more information, see [Store API – Processing in memory](../reference/store-api.md).
+DITA-OT 3.6 introduces a new Store API with preview support for in-memory processing. The Cache Store can be activated by setting the **store-type** parameter to memory. In-memory processing provides performance advantages in I/O bound environments such as cloud computing platforms, where processing time depends primarily on how long it takes to read and write temporary files. For more information, see [Store API – Processing in memory](../reference/store-api.md).
 
 ## Caching DITA class instances
 
@@ -22,7 +22,7 @@ The DITA-OT Java code uses a new caching `DitaClass.getInstance(cls)` factory me
 
 For DITA-OT 3.4, the bundled Apache™ Formatting Objects Processor library was upgraded to version 2.4, which included support for changebars, but those features were not yet enabled in DITA-OT 3.4 pending further testing. DITA-OT 3.6 removes the FOP-specific overrides that disabled changebars in earlier versions, allowing the default PDF2 flagging routines to be applied when generating PDFs with FOP. For details, see [Generating revision bars](pdf2-creating-change-bars.md).
 
-Plug-ins that implemented custom FOP flagging by overriding the org.dita.pdf2.fop/xsl/fo/flagging\_fop.xsl stylesheet in prior versions will need to be updated, as this file is no longer available in DITA-OT 3.6. [\#3511](https://github.com/dita-ot/dita-ot/issues/3511), [\#3591](https://github.com/dita-ot/dita-ot/issues/3591)
+Plug-ins that implemented custom FOP flagging by overriding the `org.dita.pdf2.fop/xsl/fo/flagging_fop.xsl` stylesheet in prior versions will need to be updated, as this file is no longer available in DITA-OT 3.6. [\#3511](https://github.com/dita-ot/dita-ot/issues/3511), [\#3591](https://github.com/dita-ot/dita-ot/issues/3591)
 
 ## Dublin Core metadata removed from HTML5
 
@@ -33,14 +33,14 @@ Up to version 3.5, DITA-OT included the [Dublin Core Metadata Element Set](https
 To install the plug-in, run the following command:
 
 ```syntax-bash
-dita install org.dita.html5.dublin-core
+`dita install` org.dita.html5.dublin-core
 ```
 
 ## Legacy style attributes moved to CSS
 
 Remaining inline style attributes were removed from HTML5 code, which prevented custom plug-ins from overriding the presentation of the corresponding elements, including:
 
--   `line-through` and `overline` elements
+-   `<line-through>` and `<overline>` elements
 -   syntax diagrams
 -   long quote citations
 -   Boolean states

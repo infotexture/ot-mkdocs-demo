@@ -4,7 +4,7 @@ Ant is a Java-based, open-source tool that is provided by the Apache Foundation.
 
 DITA-OT uses Ant to manage the XSLT scripts that are used to perform the various transformation; it also uses Ant to manage intermediate steps that are written in Java.
 
-The most important Ant script is the build.xml file. This script defines and combines common pre-processing and output transformation routines; it also defines the DITA-OT extension points.
+The most important Ant script is the `build.xml` file. This script defines and combines common pre-processing and output transformation routines; it also defines the DITA-OT extension points.
 
 **Related information**  
 

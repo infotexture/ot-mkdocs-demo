@@ -2,30 +2,30 @@
 
 DITA-OT 3.2 supports a new plug-in registry that makes it easier to discover and install new plug-ins. The registry provides a searchable list of plug-ins at [dita-ot.org/plugins](https://www.dita-ot.org/plugins).
 
-In the past, installing plug-ins required you to either download a plug-in to your computer and provide the path to the plug-in archive \(.zip file\) or pass the URL of the plug-in distribution file to the dita command and let DITA-OT download the file. This required that you know the URL of the plug-in distribution package.
+In the past, installing plug-ins required you to either download a plug-in to your computer and provide the path to the plug-in archive \(.zip file\) or pass the URL of the plug-in distribution file to the `dita` command and let DITA-OT download the file. This required that you know the URL of the plug-in distribution package.
 
 ## Installing plug-ins from the registry
 
 With the registry, you can now search the list of available plug-ins at [dita-ot.org/plugins](https://www.dita-ot.org/plugins) and install new plug-ins by name and optional version.
 
-Search the registry for a plug-in and install it by providing the plug-in name to the dita command.
+Search the registry for a plug-in and install it by providing the plug-in name to the `dita` command.
 
 ```syntax-bash
-dita --install=&lt;plugin-name&gt;
+`dita` **--install**=*&lt;plugin-name&gt;*
 ```
 
 If the registry includes multiple versions of the same plug-in, you can specify the version to install as follows:
 
 ```syntax-bash
-dita --install=&lt;plugin-name&gt;@&lt;plugin-version&gt;
+`dita` **--install**=*&lt;plugin-name&gt;@&lt;plugin-version&gt;*
 ```
 
 If the plug-in requires other plug-ins, those are also installed recursively.
 
-For example, to revert PDF output to the legacy PDF2 layout that was the default in DITA-OT before 2.5, install the org.dita.pdf2.legacy plug-in as follows:
+For example, to revert PDF output to the legacy PDF2 layout that was the default in DITA-OT before 2.5, install the `org.dita.pdf2.legacy` plug-in as follows:
 
 ```syntax-bash
-dita --install=org.dita.pdf2.legacy
+`dita` **--install**=org.dita.pdf2.legacy
 ```
 
 If a matching plug-in cannot be found, an error message will appear. Possible reasons for failure include:
@@ -39,7 +39,7 @@ If a matching plug-in cannot be found, an error message will appear. Possible re
 
 The contents of the DITA Open Toolkit plug-in registry are stored in a Git repository at [github.com/dita-ot/registry](https://github.com/dita-ot/registry). New plug-ins or new versions can be added by sending a [pull request](https://help.github.com/articles/about-pull-requests/) that includes a single new plug-in entry in JavaScript Object Notation \(JSON\) format.
 
-**Note:** As for all other contributions to the project, pull requests to the registry must be signed off by passing the `--signoff` option to the git commit command to certify that you have the rights to submit this contribution. For more information on this process, see [signing your work](https://www.dita-ot.org/DCO).
+**Note:** As for all other contributions to the project, pull requests to the registry must be signed off by passing the `--signoff` option to the `git commit` command to certify that you have the rights to submit this contribution. For more information on this process, see [signing your work](https://www.dita-ot.org/DCO).
 
 The version entries for each plug-in are stored in a file that is named after the plug-in ID as `<plugin-name>.json`. The file contains an array of entries with a pre-defined structure. You should have one entry for each supported version of the plug-in.
 
@@ -55,7 +55,7 @@ The version entries for each plug-in are stored in a file that is named after th
 |`homepage`|no|Plug-in homepage URL|
 |`license`|no|License in [SPDX](https://spdx.org/licenses/) format|
 
-**Tip:** To calculate the SHA-256 checksum for the `cksum` key, use `shasum -a 256 &lt;plugin-file&gt;` on macOS or Linux. With Windows PowerShell, use `[Get-FileHash](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6) &lt;plugin-file&gt; | Format-List`.
+**Tip:** To calculate the SHA-256 checksum for the `cksum` key, use `shasum -a 256 *&lt;plugin-file&gt;*` on macOS or Linux. With Windows PowerShell, use `[Get-FileHash](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6) *&lt;plugin-file&gt;* | Format-List`.
 
 |Key|Mandatory|Description|
 |---|---------|-----------|
@@ -116,7 +116,7 @@ When you have multiple versions of a plug-in, include an entry for each version,
 
 In addition to the main plug-in registry at [dita-ot.org/plugins](https://www.dita-ot.org/plugins), you can create a registry of your own to store the custom plug-ins for your company or organization.
 
-A registry is just a directory that contains JSON files like the one above; each JSON file represents one entry in the registry. To add a custom registry location, edit the config/configuration.properties file in the DITA-OT installation directory and add the URL for your custom registry directory to the `registry` key value, separating each entry with a space.
+A registry is just a directory that contains JSON files like the one above; each JSON file represents one entry in the registry. To add a custom registry location, edit the `config/configuration.properties` file in the DITA-OT installation directory and add the URL for your custom registry directory to the `registry` key value, separating each entry with a space.
 
 **Tip:** Custom registry entries are a simple way to test your own plug-in entry file before submitting to a common registry.
 
@@ -125,8 +125,8 @@ A registry is just a directory that contains JSON files like the one above; each
 To test your plug-in entry with a custom registry:
 
 1.  Fork the plug-in registry, which creates a new repository under your GitHub username — for example, `https://github.com/USERNAME/registry.git`.
-2.  Create a new branch for your plug-in entry, and add the JSON file to the branch — for example, create org.example.newPlugin.json in the branch `addPlugin`.
-3.  As long as your repository is accessible, that branch now represents a working “custom registry” that can be added to the config/configuration.properties file. Edit the `registry` key and add the raw GitHub URL for the branch that contains the JSON file. With the example username and branch name above, you can add your registry with:
+2.  Create a new branch for your plug-in entry, and add the JSON file to the branch — for example, create `org.example.newPlugin.json` in the branch `addPlugin`.
+3.  As long as your repository is accessible, that branch now represents a working “custom registry” that can be added to the `config/configuration.properties` file. Edit the `registry` key and add the raw GitHub URL for the branch that contains the JSON file. With the example username and branch name above, you can add your registry with:
 
     ```language-properties
     registry=https://raw.githubusercontent.com/USERNAME/registry/addPlugin/ http://plugins.dita-ot.org/
@@ -135,7 +135,7 @@ To test your plug-in entry with a custom registry:
 4.  You can now test the plug-in installation with:
 
     ```
-    dita --install=org.example.newPlugin
+    `dita` **--install**=org.example.newPlugin
     ```
 
 5.  Once you’ve confirmed that the entry works, you can submit a pull request to have your entry added to the common registry.

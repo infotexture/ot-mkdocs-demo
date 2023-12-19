@@ -6,8 +6,8 @@ If you are working with large documents with extensive metadata or key reference
 
     |Platform|Command|
     |--------|-------|
-    |**Linux or macOS **|`export ANT_OPTS=$ANT_OPTS -Xmx1024M`|
-    |**Windows**|`set ANT_OPTS=%ANT_OPTS% -Xmx1024M`|
+    |**Linux or macOS **|`export ANT_OPTS=$ANT_OPTS -Xmx*1024*M`|
+    |**Windows**|`set ANT_OPTS=%ANT_OPTS% -Xmx*1024*M`|
 
     This increases the JVM memory allocation to 1024 megabytes. The amount of memory which can be allocated is limited by available system memory and the operating system.
 

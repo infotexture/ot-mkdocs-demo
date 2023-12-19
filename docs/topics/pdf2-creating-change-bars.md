@@ -1,15 +1,15 @@
 # Generating revision bars
 
-You can generate revision bars in your PDF output by using the `@changebar` and `@color` attributes of the DITAVAL `revprop` element.
+You can generate revision bars in your PDF output by using the `@changebar` and `@color` attributes of the DITAVAL `<revprop>` element.
 
-The DITA [specification](http://docs.oasis-open.org/dita/dita/v1.3/errata02/os/complete/part3-all-inclusive/langRef/ditaval/ditaval-revprop.html#ditaval-revprop) for the `@changebar` attribute of the `revprop` element simply says:
+The DITA [specification](http://docs.oasis-open.org/dita/dita/v1.3/errata02/os/complete/part3-all-inclusive/langRef/ditaval/ditaval-revprop.html#ditaval-revprop) for the `@changebar` attribute of the `<revprop>` element simply says:
 
 -   > **`@changebar`**
 
     > When flag has been set, specify a changebar color, style, or character, according to the changebar support of the target output format. If flag has not been set, this attribute is ignored.
 
 
-The current version of DITA Open Toolkit uses two `revprop` attribute values to define revision bars:
+The current version of DITA Open Toolkit uses two `<revprop>` attribute values to define revision bars:
 
 -   The `@changebar` attribute value defines the style to use for the line. The list of possible values is the same as for other XSL-FO rules \(see [@change-bar-style](http://www.w3.org/TR/xsl/#change-bar-style)\). The default value is groove.
 

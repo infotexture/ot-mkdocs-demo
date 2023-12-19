@@ -6,10 +6,10 @@ Debug logging prints considerably more additional information. The debug log inc
 
     |Application|Parameters|
     |-----------|----------|
-    |**dita command**|--debug, -debug, or -d|
+    |**`dita` command**|**--debug**, **-debug**, or **-d**|
     |**Ant**|`-v -Dargs.debug=yes`|
 
-    You also can add a `property` element to an Ant target in your build file, for example:
+    You also can add a `<property>` element to an Ant target in your build file, for example:
 
     ```language-xml
     <property name="args.debug" value="yes"/>

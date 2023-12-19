@@ -4,11 +4,11 @@ You can use these extension points to run an Ant target before or after the pre-
 
 **Tip:** For maximum compatibility with future versions of DITA-OT, most plug-ins should use the extension points that run **before** or **after** pre-processing.
 
--   **depend.preprocess.pre**
+-   **__depend.preprocess.pre__**
 
     Runs an Ant target before the pre-processing stage.
 
--   **depend.preprocess.post**
+-   **__depend.preprocess.post__**
 
     Runs an Ant target after the pre-processing stage.
 
@@ -21,75 +21,75 @@ CAUTION:
 
 The internal order of preprocessing steps is subject to change between versions of DITA-OT. New versions may remove, reorder, combine, or add steps to the process, so the extension points **within** the preprocessing stage should only be used if absolutely necessary.
 
--   **depend.preprocess.chunk.pre**
+-   **__depend.preprocess.chunk.pre__**
 
     Runs an Ant target before the `chunk` step in the pre-processing stage.
 
--   **depend.preprocess.coderef.pre**
+-   **__depend.preprocess.coderef.pre__**
 
     Runs an Ant target before the `coderef` step in the pre-processing stage.
 
--   **depend.preprocess.conref.pre**
+-   **__depend.preprocess.conref.pre__**
 
     Runs an Ant target before the `conref` step in the pre-processing stage.
 
--   **depend.preprocess.conrefpush.pre**
+-   **__depend.preprocess.conrefpush.pre__**
 
     Runs an Ant target before the `conrefpush` step in the pre-processing stage.
 
--   **depend.preprocess.clean-temp.pre**
+-   **__depend.preprocess.clean-temp.pre__**
 
     Runs an Ant target before the `clean-temp` step in the pre-processing stage.
 
--   **depend.preprocess.copy-files.pre**
+-   **__depend.preprocess.copy-files.pre__**
 
     Runs an Ant target before the `copy-files` step in the pre-processing stage.
 
--   **depend.preprocess.copy-flag.pre**
+-   **__depend.preprocess.copy-flag.pre__**
 
     Runs an Ant target before the `copy-flag` step in the pre-processing stage.
 
--   **depend.preprocess.copy-html.pre**
+-   **__depend.preprocess.copy-html.pre__**
 
     Runs an Ant target before the `copy-html` step in the pre-processing stage.
 
--   **depend.preprocess.copy-image.pre**
+-   **__depend.preprocess.copy-image.pre__**
 
     Runs an Ant target before the `copy-image` step in the pre-processing stage.
 
--   **depend.preprocess.copy-subsidiary.pre**
+-   **__depend.preprocess.copy-subsidiary.pre__**
 
     Runs an Ant target before the `copy-subsidiary` step in the pre-processing stage.
 
--   **depend.preprocess.debug-filter.pre**
+-   **__depend.preprocess.debug-filter.pre__**
 
     Runs an Ant target before the `debug-filter` step in the pre-processing stage.
 
--   **depend.preprocess.gen-list.pre**
+-   **__depend.preprocess.gen-list.pre__**
 
     Runs an Ant target before the `gen-list` step in the pre-processing stage.
 
--   **depend.preprocess.keyref.pre**
+-   **__depend.preprocess.keyref.pre__**
 
     Runs an Ant target before the `keyref` step in the pre-processing stage.
 
--   **depend.preprocess.maplink.pre**
+-   **__depend.preprocess.maplink.pre__**
 
     Runs an Ant target before the `maplink` step in the pre-processing stage.
 
--   **depend.preprocess.mappull.pre**
+-   **__depend.preprocess.mappull.pre__**
 
     Runs an Ant target before the `mappull` step in the pre-processing stage.
 
--   **depend.preprocess.mapref.pre**
+-   **__depend.preprocess.mapref.pre__**
 
     Runs an Ant target before the `mapref` step in the pre-processing stage.
 
--   **depend.preprocess.move-meta-entries.pre**
+-   **__depend.preprocess.move-meta-entries.pre__**
 
     Runs an Ant target before the `move-meta-entries` step in the pre-processing stage.
 
--   **depend.preprocess.topicpull.pre**
+-   **__depend.preprocess.topicpull.pre__**
 
     Runs an Ant target before the `topicpull` step in the pre-processing stage.
 

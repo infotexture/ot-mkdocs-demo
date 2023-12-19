@@ -1,18 +1,18 @@
 # Accessing help for the dita command
 
-You can access a list of subcommands and supported parameters for the dita command by passing the --help option on the command line.
+You can access a list of subcommands and supported parameters for the `dita` command by passing the **--help** option on the command line.
 
 1.  Open a command prompt or terminal session.
 
 2.  Issue the following command:
 
     ```
-    dita --help
+    ``dita`` **--help**
     ```
 
-3.  For details on the arguments and options available for each subcommand, pass the --help option after the subcommand name.
+3.  For details on the arguments and options available for each subcommand, pass the **--help** option after the subcommand name.
 
-    For example: dita install --help.
+    For example: `dita install` **--help**.
 
 
 A brief usage summary appears in the command-line window, along with a list of subcommands, arguments, and options.

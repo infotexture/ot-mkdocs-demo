@@ -2,47 +2,47 @@
 
 Certain extension points are specific to the PDF transformation \(formerly known as “PDF2”\). 
 
--   **depend.org.dita.pdf2.format**
+-   **__depend.org.dita.pdf2.format__**
 
     Formatting target
 
--   **depend.org.dita.pdf2.format.post**
+-   **__depend.org.dita.pdf2.format.post__**
 
     Formatting post-target
 
--   **depend.org.dita.pdf2.format.pre**
+-   **__depend.org.dita.pdf2.format.pre__**
 
     Formatting pre-target
 
--   **depend.org.dita.pdf2.index**
+-   **__depend.org.dita.pdf2.index__**
 
     Indexing target
 
--   **depend.org.dita.pdf2.init.pre**
+-   **__depend.org.dita.pdf2.init.pre__**
 
     Initialization pre-target
 
--   **dita.conductor.pdf2.formatter.check**
+-   **__dita.conductor.pdf2.formatter.check__**
 
     Formatter check
 
--   **dita.conductor.pdf2.param**
+-   **__dita.conductor.pdf2.param__**
 
     Pass parameters to the PDF transformation.
 
--   **dita.xsl.xslfo**
+-   **__dita.xsl.xslfo__**
 
     Overrides the default PDF transformation. The referenced XSL file is integrated directly into the XSLT step that generates the XSL-FO.
 
--   **dita.xsl.xslfo.i18n-postprocess**
+-   **__dita.xsl.xslfo.i18n-postprocess__**
 
     PDF I18N postprocess import
 
--   **org.dita.pdf2.catalog.relative**
+-   **__org.dita.pdf2.catalog.relative__**
 
     Adds the content of a catalog file to the main catalog file for the PDF plug-in.
 
--   **org.dita.pdf2.xsl.topicmerge**
+-   **__org.dita.pdf2.xsl.topicmerge__**
 
     PDF2 topic merge XSLT import
 

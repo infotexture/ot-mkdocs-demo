@@ -1,10 +1,10 @@
 # Sample theme file
 
-Theme files can be written in either [JSON](https://json.org) or [YAML](https://yaml.org) format. The docsrc/samples/themes folder in the DITA-OT installation directory provides several examples.
+Theme files can be written in either [JSON](https://json.org) or [YAML](https://yaml.org) format. The `docsrc/samples/themes` folder in the DITA-OT installation directory provides several examples.
 
 **Note:** The examples provided here are all in YAML format, which is generally more compact and readable than JSON.
 
-The YAML theme file used to produce the PDF output for the DITA-OT documentation is included in the installation directory as dita-ot-dir/docsrc/samples/themes/dita-ot-docs-theme.yaml.
+The YAML theme file used to produce the PDF output for the DITA-OT documentation is included in the installation directory as `*dita-ot-dir*/docsrc/samples``/themes/dita-ot-docs-theme.yaml`.
 
 The examples below include excerpts from this theme that show common customizations. You can adapt these examples for your own requirements.
 
@@ -28,6 +28,7 @@ brand:
         caution: '#f8d7da'
         info: '#dce4f0'
         tip: '#d1e7dd'
+    xml-domain: '#639'
 ```
 
 ## Defining custom font stacks
@@ -78,7 +79,7 @@ page:
   size: Letter
 ```
 
-When one of these theme extensions is passed to the dita command via the --theme option, the `page-size` value in the extending theme takes precedence over the original value in dita-ot-docs-theme.yaml.
+When one of these theme extensions is passed to the `dita` command via the **--theme** option, the `page-size` value in the extending theme takes precedence over the original value in `dita-ot-docs-theme.yaml`.
 
 If you add any new keys to a theme extension, they will be overlaid onto the keys from the extended theme.
 

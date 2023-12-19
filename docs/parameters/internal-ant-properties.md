@@ -26,6 +26,6 @@ DITA-OT uses these Ant properties in certain internal operations. They are not i
 
     This property can be used to place all output in an internal directory, so that a final step in the transform type can do some form of post-processing before the files are placed in the specified output directory.
 
-    For example, if a custom HTML5 transform sets the property to `zip_dir`, all output files \(including HTML, images, and CSS\) will be placed within the directory zip\_dir in the temporary processing directory. A final step can then be used to add more files, zip the directory, and return that zip to the designated output directory.
+    For example, if a custom HTML5 transform sets the property to `zip_dir`, all output files \(including HTML, images, and CSS\) will be placed within the directory `zip_dir` in the temporary processing directory. A final step can then be used to add more files, zip the directory, and return that zip to the designated output directory.
 
 

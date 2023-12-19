@@ -8,7 +8,7 @@ This online tool, developed and maintained by Jarno Elovirta, enables you to gen
 
 The application at [dita-generator.elovirta.com](http://dita-generator.elovirta.com/) walks you through the process of creating a custom PDF plug-in and allows you to adjust a variety of settings for your PDF output. For example, you can:
 
--   Define the target environment, selecting from the most current and two previous versions of DITA-OT
+-   Define the target environment by selecting a version of DITA-OT
 -   Select the XSL formatting engine \(FOP, Antenna House Formatter, or RenderX XEP\)
 -   Specify page size, columns, and margins
 -   Select from \(limited\) options for headers and footers

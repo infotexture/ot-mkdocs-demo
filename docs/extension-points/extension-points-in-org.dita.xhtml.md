@@ -2,27 +2,27 @@
 
 The `org.dita.xhtml` plug-in provides shared extension points that can be used to modify processing in HTML-based transformation types such as Eclipse help, HTML Help, and XHTML. 
 
--   **dita.conductor.html.param**
+-   **__dita.conductor.html.param__**
 
     Pass parameters to the HTML and HTML Help transformations.
 
--   **dita.conductor.xhtml.param**
+-   **__dita.conductor.xhtml.param__**
 
     Pass parameters to the XHTML and Eclipse Help transformations.
 
--   **dita.conductor.xhtml.toc.param**
+-   **__dita.conductor.xhtml.toc.param__**
 
     Pass parameters to the XSLT step that generates the XHTML table of contents \(TOC\).
 
--   **dita.xsl.html.cover**
+-   **__dita.xsl.html.cover__**
 
     Overrides the default HTML cover page generation process.
 
--   **dita.xsl.htmltoc**
+-   **__dita.xsl.htmltoc__**
 
     Overrides the default XSLT step that generates the HTML table of contents \(TOC\).
 
--   **dita.xsl.xhtml**
+-   **__dita.xsl.xhtml__**
 
     Overrides the default HTML or XHTML transformation, including HTML Help and Eclipse Help. The referenced file is integrated directly into the XSLT step that generates XHTML.
 

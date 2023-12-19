@@ -2,7 +2,7 @@
 
 These parameters enable you to reload style sheets that DITA-OT uses for specific pre-processing stages.
 
--   **dita.html5.reloadstylesheet dita.preprocess.reloadstylesheet dita.preprocess.reloadstylesheet.clean-map dita.preprocess.reloadstylesheet.conref dita.preprocess.reloadstylesheet.lag-module dita.preprocess.reloadstylesheet.mapref dita.preprocess.reloadstylesheet.mappull dita.preprocess.reloadstylesheet.maplink dita.preprocess.reloadstylesheet.topicpull dita.xhtml.reloadstylesheet**
+-   **__dita.html5.reloadstylesheet__ __dita.preprocess.reloadstylesheet__ __dita.preprocess.reloadstylesheet.clean-map__ __dita.preprocess.reloadstylesheet.conref__ __dita.preprocess.reloadstylesheet.lag-module__ __dita.preprocess.reloadstylesheet.mapref__ __dita.preprocess.reloadstylesheet.mappull__ __dita.preprocess.reloadstylesheet.maplink__ __dita.preprocess.reloadstylesheet.topicpull__ __dita.xhtml.reloadstylesheet__**
 
     Specifies whether DITA-OT reloads the XSL style sheets that are used for the transformation. The allowed values are true and false; the default value is false.
 

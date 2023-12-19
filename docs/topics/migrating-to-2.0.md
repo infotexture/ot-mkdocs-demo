@@ -1,6 +1,6 @@
 # Migrating to release 2.0
 
-In DITA-OT 2.0, XSLT templates were converted to XSLT 2.0, variable typing was implemented, and some older templates were refactored or removed. In addition, the dita command simplifies distribution of plugins by allowing installation from a URL.
+In DITA-OT 2.0, XSLT templates were converted to XSLT 2.0, variable typing was implemented, and some older templates were refactored or removed. In addition, the `dita` command simplifies distribution of plugins by allowing installation from a URL.
 
 **Note:** This topic provides a summary of changes in DITA-OT 2.0 that may require modifications to custom stylesheets or plug-ins. For more information on changes in this release, see the [DITA-OT 2.0 Release Notes](https://www.dita-ot.org/2.0/readme/changes/rel2.0.html).
 
@@ -30,5 +30,5 @@ A new HTML5 transformation type has been added. Customizations that previously m
 
 ## Plug-in installation and distribution
 
-Plug-ins can now be installed or uninstalled from a ZIP archive using the new dita command. Plug-ins can also be installed from a referenced URL. See [Arguments and options for the dita command](../parameters/dita-command-arguments.md).
+Plug-ins can now be installed or uninstalled from a ZIP archive using the new `dita` command. Plug-ins can also be installed from a referenced URL. See [Arguments and options for the dita command](../parameters/dita-command-arguments.md).
 

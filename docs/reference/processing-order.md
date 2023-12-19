@@ -2,7 +2,7 @@
 
 The order of processing is often significant when evaluating DITA content. Although the DITA specification does not mandate a specific order for processing, DITA-OT has determined that performing filtering before conref resolution best meets user expectations. Switching the order of processing, while legal, may give different results.
 
-The DITA-OT project has found that filtering first provides several benefits. Consider the following sample that contains a `note` element that both uses conref and contains a `@product` attribute:
+The DITA-OT project has found that filtering first provides several benefits. Consider the following sample that contains a `<note>` element that both uses conref and contains a `@product` attribute:
 
 ```language-xml
 <note conref="documentA.dita#doc/note" product="MyProd"/>
@@ -16,7 +16,7 @@ If the filtering is done first \(as in DITA-OT\), this element is discarded imme
 -   Additional time is saved case by not evaluating the `@conref` attribute; in fact, documentA does not even need to be parsed.
 -   Any user reproducing this build does not need documentA. If the content is sent to a translation team, that team can reproduce an error-free build without documentA; this means documentA can be kept back from translation, preventing accidental translation and increased costs.
 
-If the order of these two steps is reversed, so that conref is evaluated first, it is possible that results will differ. For example, in the code sample above, the `@product` attribute on the reference target will override the product setting on the referencing note. Assume that the referenced `note` element in documentA is defined as follows:
+If the order of these two steps is reversed, so that conref is evaluated first, it is possible that results will differ. For example, in the code sample above, the `@product` attribute on the reference target will override the product setting on the referencing note. Assume that the referenced `<note>` element in documentA is defined as follows:
 
 ```language-xml
 <note id="note" product="SomeOtherProduct">This is an important note!</note>

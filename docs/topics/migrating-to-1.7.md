@@ -2,7 +2,7 @@
 
 In DITA-OT 1.7, a new preprocessing step implements flagging for HTML-based output formats. PDF processing was corrected with regard to `shortdesc` handling, and a new XSLT template mode was introduced for HTML TOC processing. Several stylesheets were moved to plug-in specific folders and deprecated properties and XSLT variables were removed.
 
-A new job status file .job.xml has been introduced and replaces dita.list and dita.xml.properties as the normative source for job status. If you have custom processing which modifies the job properties, you should change your code to modify .job.xml instead.
+A new job status file `.job.xml` has been introduced and replaces `dita.list` and `dita.xml.properties` as the normative source for job status. If you have custom processing which modifies the job properties, you should change your code to modify `.job.xml` instead.
 
 Support for the following deprecated properties has been removed:
 
@@ -29,7 +29,7 @@ The preprocessing Ant dependency chain has been cleaned up. Tasks no longer depe
 
 ## HTML
 
-Core TOC generation has been moved to a separate XSLT stylesheet xsl/map2htmtoc/map2htmlImpl.xsl and the new templates use the mode `toc`. Plug-ins which override HTML TOC processing should change the map processing templates to `toc` mode.
+Core TOC generation has been moved to a separate XSLT stylesheet `xsl/map2htmtoc/map2htmlImpl.xsl` and the new templates use the mode `toc`. Plug-ins which override HTML TOC processing should change the map processing templates to `toc` mode.
 
 ## HTML and extended transformation types
 
@@ -46,7 +46,7 @@ The following deprecated XSLT variables have been removed:
 -   `page-margin-left`
 -   `page-margin-right`
 
-XSLT stylesheets have been split to separate specialization topic code and new `xsl:import` instructions have been added to topic2fo.xsl. Plug-ins which define their own shell stylesheet should be revised to import all the required stylesheet modules.
+XSLT stylesheets have been split to separate specialization topic code and new `xsl:import` instructions have been added to `topic2fo.xsl`. Plug-ins which define their own shell stylesheet should be revised to import all the required stylesheet modules.
 
 PDF processing used to replace topic `shortdesc` with map `shortdesc`, but this behavior was incorrect and was removed to comply with the DITA specification.
 

@@ -4,7 +4,7 @@ DITA-OT includes sample project files in [YAML](https://yaml.org) format that ca
 
 Project files can be designed in a modular fashion to create reusable configuration structures that allow you to define settings in one file and refer to them in other projects to publish multiple deliverables at once.
 
-For example, dita-ot-dir/docsrc/samples/project-files/html.yaml defines a single HTML deliverable.
+For example, `*dita-ot-dir*/docsrc/samples``/project-files/html.yaml` defines a single HTML deliverable.
 
 ```
 ---
@@ -30,21 +30,21 @@ deliverables:
           value: 'YES'
         - name: 'args.hdr'
           href: '../../resources/header.xml'
+        - name: 'args.rellinks'
+          value: 'noparent'
         - name: 'html5.toc.generate'
           value: 'no'
         - name: 'nav-toc'
           value: 'partial'
-        - name: 'processing-mode'
-          value: 'strict'
 ```
 
-This file can be used to generate the HTML version of the DITA-OT documentation by running the following command from the docsrc folder of the DITA-OT installation directory:
+This file can be used to generate the HTML version of the DITA-OT documentation by running the following command from the `docsrc` folder of the DITA-OT installation directory:
 
 ```
-dita --project=samples/project-files/html.yaml
+`dita` **--project**=*samples/project-files/html.yaml*
 ```
 
-The project file for HTML output imports the common `html` context from a shared project context defined in the dita-ot-dir/docsrc/samples/project-files/common.yaml file, which includes the input map file and the DITAVAL file used to filter the output.
+The project file for HTML output imports the common `html` context from a shared project context defined in the `*dita-ot-dir*/docsrc/samples``/project-files/common.yaml` file, which includes the input map file and the DITAVAL file used to filter the output.
 
 ```
 ---

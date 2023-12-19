@@ -12,7 +12,7 @@ In release 2.4, all dependencies between HTML5 and XHTML have been removed to en
 
     Customizations that extended the previous HTML5 output under the XHTML plug-in \(as provided in releases 2.0 and 2.1\) or the HTML5 plug-in that shipped with release 2.2 will need to be refactored to build on the new HTML5 plug-in.
 
--   Note title processing was revised in release 2.2 to include a common `note__title` class for note elements of all types. The legacy `\{$type\}title` classes \(such as `.notetitle`, `.cautiontitle`, `.tiptitle`, etc.\) were included in release 2.2 for backwards compatibility, but have now been removed in release 2.4.
+-   Note title processing was revised in release 2.2 to include a common `note__title` class for note elements of all types. The legacy `*\{$type\}*title` classes \(such as `.notetitle`, `.cautiontitle`, `.tiptitle`, etc.\) were included in release 2.2 for backwards compatibility, but have now been removed in release 2.4.
 
     Stylesheets that apply formatting overrides to note titles should be revised to replace the deprecated class selectors with the equivalent descendant selectors, for example:
 

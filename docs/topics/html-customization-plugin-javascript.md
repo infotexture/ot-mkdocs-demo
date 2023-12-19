@@ -4,13 +4,13 @@ JavaScript code can be bundled in a custom plug-in and automatically inserted in
 
 This scenario walks through the process of creating a very simple plug-in \(`com.example.html5-javascript`\) that creates a new transformation type: html5-javascript.
 
-The html5-javascript transformation includes a custom page footer file with a JavaScript tracking snippet and sets the args.ftr parameter to integrate the script content in the HTML5 `footer` element of the generated pages.
+The html5-javascript transformation includes a custom page footer file with a JavaScript tracking snippet and sets the **args.ftr** parameter to integrate the script content in the HTML5 `<footer>` element of the generated pages.
 
 **Note:** This example inserts a tracking snippet for Google Analytics, but the basic approach is the same for other analytics platforms or similar use cases that require custom JavaScript.
 
-1.  In the plugins directory, create a directory named com.example.html5-javascript.
+1.  In the `plugins` directory, create a directory named `com.example.html5-javascript`.
 
-2.  In the new com.example.html5-javascript directory, create a plug-in configuration file \(plugin.xml\) that declares the new html5-javascript transformation and its dependencies.
+2.  In the new `com.example.html5-javascript` directory, create a plug-in configuration file \(`plugin.xml`\) that declares the new html5-javascript transformation and its dependencies.
 
     ```
     <?xml version="1.0" encoding="UTF-8"?>
@@ -23,11 +23,11 @@ The html5-javascript transformation includes a custom page footer file with a Ja
     </plugin>
     ```
 
-    **Note:** This plug-in will extend the default HTML5 transformation, so the `require` element explicitly defines org.dita.html5 as a dependency.
+    **Note:** This plug-in will extend the default HTML5 transformation, so the `<require>` element explicitly defines `org.dita.html5` as a dependency.
 
-3.  In the com.example.html5-javascript directory, create a subdirectory named include.
+3.  In the `com.example.html5-javascript` directory, create a subdirectory named `include`.
 
-4.  In the new include subdirectory, create a file named javascript.ftr.xml with your custom JavaScript code.
+4.  In the new `include` subdirectory, create a file named `javascript.ftr.xml` with your custom JavaScript code.
 
     ```
     <div>
@@ -47,7 +47,7 @@ The html5-javascript transformation includes a custom page footer file with a Ja
     </div>
     ```
 
-    The division wrapper will be discarded when generating HTML files, and the contents will be inserted into the `footer` element of each page.
+    The division wrapper will be discarded when generating HTML files, and the contents will be inserted into the `<footer>` element of each page.
 
     The file contents must be well-formed XML. If your JavaScript snippets include attributes without values \(such as the `async` script attribute\), use valid XML syntax to define the empty attribute:
 
@@ -67,7 +67,7 @@ The html5-javascript transformation includes a custom page footer file with a Ja
     </script>
     ```
 
-5.  In the com.example.html5-javascript root directory, add an Ant script \(build\_html5-javascript.xml\) to define the transformation type and set the path to the JavaScript footer file created in the previous step.
+5.  In the `com.example.html5-javascript` root directory, add an Ant script \(`build_html5-javascript.xml`\) to define the transformation type and set the path to the JavaScript footer file created in the previous step.
 
     ```
     <?xml version='1.0' encoding='UTF-8'?>
@@ -83,10 +83,10 @@ The html5-javascript transformation includes a custom page footer file with a Ja
     </project>
     ```
 
-    **Note:** When defining the path to the footer file from the Ant script, use the plug-in directory property with the plugin-id as shown in the example above: `${dita.plugin.plugin-id.dir}`.
+    **Note:** When defining the path to the footer file from the Ant script, use the plug-in directory property with the *plugin-id* as shown in the example above: `${dita.plugin.*plugin-id*.dir}`.
 
 
-**Tip:** The files for this sample plug-in are included in the DITA-OT installation directory under docsrc/samples/plugins/com.example.html5-javascript/ and on [GitHub](https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.html5-javascript).
+**Tip:** The files for this sample plug-in are included in the DITA-OT installation directory under `docsrc/samples/plugins/com.example.html5-javascript/` and on [GitHub](https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.html5-javascript).
 
 The plug-in directory has the following layout and files:
 
@@ -98,17 +98,20 @@ com.example.html5-javascript
 └── plugin.xml
 ```
 
-1.  Run dita --install to install the plug-in and make the html5-javascript transformation available.
+1.  Use the `dita install` subcommand to install the plug-in.
+
+    **Note:** For more information, see [Installing plug-ins](plugins-installing.md).
+
 2.  Build output with the new transformation type to verify that the plug-in works as intended.
 
     ```
-    dita --input=my.ditamap --format=html5-javascript
+    ``dita`` **--input**=*my.ditamap* **--format**=html5-javascript
     ```
 
-3.  Open one of the generated HTML topic files in a modern web browser and check the JavaScript **Console**. When the page is loaded, Adding Google Analytics tracker will appear on the console to verify that the sample script is loaded.
+3.  Open one of the generated HTML topic files in a modern web browser and check the JavaScript **Console**. When the page is loaded, `Adding Google Analytics tracker` will appear on the console to verify that the sample script is loaded.
 4.  Remove the `console.log` debugging message from the sample JavaScript code, and replace the `'UA-XXXXX-Y'` placeholder string with the tracking ID of the Google Analytics property you wish to track.
 
-**Tip:** This example places the JavaScript code in the page footer to ensure that page display is not delayed while the script is loaded. If your JavaScript code supports pre-loading and your application targets modern browsers that recognize the `async` script attribute, you may prefer to insert the JavaScript snippet in the `head` element of the generated HTML files using the args.hdf parameter instead.
+**Tip:** This example places the JavaScript code in the page footer to ensure that page display is not delayed while the script is loaded. If your JavaScript code supports pre-loading and your application targets modern browsers that recognize the `async` script attribute, you may prefer to insert the JavaScript snippet in the `<head>` element of the generated HTML files using the **args.hdf** parameter instead.
 
 **Related information**  
 

@@ -12,7 +12,7 @@ The Saxon project has announced plans to remove XSLT 1.0 support from the Saxon-
 
 > [**https://www.xml.com/news/release-saxon-98/**](https://www.xml.com/news/release-saxon-98/)
 
-DITA-OT 3.0 and 3.0.1 included Saxon-HE 9.8.0.5, which rejects XSLT stylesheets that specify `version="1.0"`. Plug-ins with XSLT templates specifying version 1.0 will fail with the message “XSLT 1.0 compatibility mode is not available in this configuration.”
+DITA-OT 3.0 and 3.0.1 included Saxon-HE 9.8.0.5, which rejects XSLT stylesheets that specify `version="1.0"`. Plug-ins with XSLT templates specifying version 1.0 will fail with the message “`XSLT 1.0 compatibility mode is not available in this configuration`.”
 
 To resolve this issue, change any occurrences of `<xsl:stylesheet version="1.0">` in custom plug-in stylesheets to at least `<xsl:stylesheet version="2.0">`.
 
@@ -31,7 +31,7 @@ DITA-OT 3.0 no longer includes the following legacy transformation plug-ins in t
 To re-install the JavaHelp plug-in, run the following command:
 
 ```
-dita --install=https://github.com/dita-ot/org.dita.javahelp/archive/2.5.zip
+`dita` **--install**=`https://github.com/dita-ot/org.dita.javahelp/archive/2.5.zip`
 ```
 
 ## Map-first preprocessing

@@ -15,7 +15,7 @@ You want to ensure that PDFs generated for internal review have the following ch
 -   Print the file names of the graphics underneath figures, so that graphic artists can more quickly respond to requested changes
 
 
-To accomplish this, you can create a new plug-in. In the Ant script that defines the transformation type, specify the DITA-OT parameters. For example, to render draft comments and art labels, add `property` elements to specify the DITA-OT parameters:
+To accomplish this, you can create a new plug-in. In the Ant script that defines the transformation type, specify the DITA-OT parameters. For example, to render draft comments and art labels, add `<property>` elements to specify the DITA-OT parameters:
 
 ```
 <?xml version='1.0' encoding='UTF-8'?>

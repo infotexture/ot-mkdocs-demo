@@ -4,22 +4,24 @@ As of DITA-OT 3.0, the `ant.import` extension point can be used to make new targ
 
 1.  Create an Ant project file that contains the new target\(s\).
 
-2.  Create the plugin.xml file:
+2.  Create the `plugin.xml` file:
 
     ```
-    <plugin id="plugin-id">
-      <feature extension="ant.import" file="build-file"/>
+    <plugin id="*plugin-id*">
+      <feature extension="ant.import" file="*build-file*"/>
     </plugin>
     ```
 
     where:
 
-    -   plugin-id is the plug-in identifier, for example, `com.example.ant`.
-    -   build-file is the Ant project file that contains the new build target\(s\).
-3.  Install the plug-in.
+    -   *plugin-id* is the plug-in identifier, for example, `com.example.ant`.
+    -   *build-file* is the Ant project file that contains the new build target\(s\).
+3.  Use the `dita install` subcommand to install the plug-in.
+
+    **Note:** For more information, see [Installing plug-ins](plugins-installing.md).
 
 
-The targets from the project \(build-file\) are copied into the build.xml file, using the correct path. This makes the new Ant targets available to other processes.
+The targets from the project \(*build-file*\) are copied into the `build.xml` file, using the correct path. This makes the new Ant targets available to other processes.
 
 **Tip:** Earlier versions of DITA-OT use the `dita.conductor.target.relative` to call a wrapper file with a dummy task that imports the Ant project file. This approach is still supported for backwards compatibility, but the simpler `ant.import` approach described above should be used for all new customizations.
 

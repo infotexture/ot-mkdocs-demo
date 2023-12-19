@@ -30,7 +30,7 @@ Instead of typing the DITA-OT parameters at the command prompt, you might want t
 
         If the build script is invoked without specifying a target, this target will be run.
 
-3.  Set the value of the dita.dir property to the location of the DITA-OT installation.
+3.  Set the value of the **dita.dir** property to the location of the DITA-OT installation.
 
     This can be a fully qualified path, or you can specify it relative to the location of the Ant build script that you are writing.
 
@@ -38,9 +38,9 @@ Instead of typing the DITA-OT parameters at the command prompt, you might want t
 
     1.  Set the value of the `@name` attribute.
 
-    2.  Specify the value for the args.input property.
+    2.  Specify the value for the **args.input** property.
 
-    3.  Specify the value of the transtype property.
+    3.  Specify the value of the **transtype** property.
 
 5.  Save the build script.
 
@@ -72,16 +72,16 @@ The following Ant build script generates CHM and PDF output for the sample DITA 
 </project>
 ```
 
-In addition to the mandatory parameters \(args.input and transtype\), the `chm` and `pdf` targets each specify some optional parameters:
+In addition to the mandatory parameters \(**args.input** and **transtype**\), the `chm` and `pdf` targets each specify some optional parameters:
 
--   The args.gen.task.lbl property is set to YES, which ensures that headings are automatically generated for the sections of task topics.
--   The output.dir property specifies where DITA-OT writes the output of the transformations.
+-   The **args.gen.task.lbl** property is set to YES, which ensures that headings are automatically generated for the sections of task topics.
+-   The **output.dir** property specifies where DITA-OT writes the output of the transformations.
 
-The pdf target also specifies that related links should be generated in the PDF, but only those links that are created by relationship tables and `link` elements.
+The pdf target also specifies that related links should be generated in the PDF, but only those links that are created by relationship tables and `<link>` elements.
 
 Finally, the all target simply specifies that both the chm and pdf target should be run.
 
-Another resource for learning about Ant scripts are the files in the dita-ot-dir/docsrc/samples/ant\_sample/ directory. This directory contains sample Ant build files for common output formats, as well as templates that you can use to create your own Ant scripts.
+Another resource for learning about Ant scripts are the files in the `*dita-ot-dir*/docsrc/samples``/ant_sample/` directory. This directory contains sample Ant build files for common output formats, as well as templates that you can use to create your own Ant scripts.
 
 **Related information**  
 

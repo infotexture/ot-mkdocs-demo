@@ -42,7 +42,7 @@ A dedicated subject scheme map defines several series of permissible values for 
 
 ## Branch filtering: re-using profiled content
 
-**Installing DITA-OT** pulls a subset of the build description from **using the dita command**, filtered to display only content deemed suitable for novice users under [Building output](../topics/first-build-using-dita-command.md):
+**Installing DITA-OT** pulls a subset of the build description from **using the `dita` command**, filtered to display only content deemed suitable for novice users under [Building output](../topics/first-build-using-dita-command.md):
 
 ```
 <topicref href="using-dita-command.dita"
@@ -106,7 +106,7 @@ This key definition defines the maintenance release version:
 <keydef keys="maintenance-version">
   <topicmeta>
     <keywords>
-      <keyword>4.0.2</keyword>
+      <keyword>4.1.2</keyword>
     </keywords>
   </topicmeta>
 </keydef>
@@ -133,6 +133,6 @@ The docs use the [XML mention domain](http://docs.oasis-open.org/dita/dita/v1.3/
 
 When the toolkit generates output for the sample above:
 
--   the XML element name is wrapped in angle brackets as `table`
+-   the XML element name is wrapped in angle brackets as `<table>`
 -   the attribute name is prefixed with an “at” sign as `@orient`
 

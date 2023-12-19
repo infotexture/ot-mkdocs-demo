@@ -1,4 +1,4 @@
-# Running the dita command from a GitHub Action
+# Running the `dita` command from a GitHub Action
 
 [GitHub Actions](https://github.com/features/actions) are a CI/CD workflow mechanism attached to GitHub. Each action is an individual unit of functionality that can be combined with other GitHub Actions to create workflows, which are triggered in response to certain GitHub events. As of version 3.6.1, the DITA-OT project provides an official [dita-ot-action](https://github.com/dita-ot/dita-ot-action) that can be used as a step within a GitHub workflow to publish documentation as part of your CI/CD pipeline.
 
@@ -10,7 +10,7 @@ Each step is an individual atomic task that can run commands in a job. A step ca
 
 1.  In your GitHub repository, create the `.github/workflows/` directory to store your workflow files.
 
-2.  In the `.github/workflows/` directory, create a new file called dita-ot-build-actions.yml and add the following code.
+2.  In the `.github/workflows/` directory, create a new file called `dita-ot-build-actions.yml` and add the following code.
 
     ```
     name: CI
@@ -42,13 +42,13 @@ Each step is an individual atomic task that can run commands in a job. A step ca
 
     This action specifies the following:
 
-    -   name defines the name of the action to be displayed within the GitHub repository
-    -   uses specifies the name and version of the GitHub Action to run. Use `dita-ot/dita-ot-action@master` to run the latest version.
-    -   input specifies the name and location of the input map file within the GitHub repository \(relative to the repository root\)
-    -   transtype sets the output format to PDF, and
-    -   output-path writes the output to the out folder within the running action
+    -   **name** defines the name of the action to be displayed within the GitHub repository
+    -   **uses** specifies the name and version of the GitHub Action to run. Use `dita-ot/dita-ot-action@master` to run the latest version.
+    -   **input** specifies the name and location of the input map file within the GitHub repository \(relative to the repository root\)
+    -   **transtype** sets the output format to PDF, and
+    -   **output-path** writes the output to the `out` folder within the running action
 
-The docsrc/samples folder in the DITA-OT installation directory contains several complete examples. The following GitHub Action generates styled HTML and PDF outputs.
+The `docsrc/samples` folder in the DITA-OT installation directory contains several complete examples. The following GitHub Action generates styled HTML and PDF outputs.
 
 ```
 name: CI
@@ -103,9 +103,9 @@ jobs:
           FOLDER: out # The folder the action should deploy.
 ```
 
-The **Build HTML5 + Bootstrap** step reuses the input, transtype and output-path settings. In addition, additional DITA-OT plug-ins can be loaded using the plugins parameter, with each plug-in separated by a comma or new line separator.
+The **Build HTML5 + Bootstrap** step reuses the **input**, **transtype** and **output-path** settings. In addition, additional DITA-OT plug-ins can be loaded using the **plugins** parameter, with each plug-in separated by a comma or new line separator.
 
-The **Build PDF** step uses an alternative syntax where the install and build parameters are used to run arbitrary commands from the command line.
+The **Build PDF** step uses an alternative syntax where the **install** and **build** parameters are used to run arbitrary commands from the command line.
 
-See the docsrc/samples/github-actions folder in the DITA-OT installation directory for additional examples of GitHub Actions for different scenarios.
+See the `docsrc/samples/github-actions` folder in the DITA-OT installation directory for additional examples of GitHub Actions for different scenarios.
 

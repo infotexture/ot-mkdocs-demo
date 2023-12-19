@@ -1,8 +1,8 @@
-# The local.properties file
+# The `local.properties` file
 
-A local.properties file in the root directory of the DITA-OT installation can be used to override the default values of various DITA-OT parameters.
+A `local.properties` file in the root directory of the DITA-OT installation can be used to override the default values of various DITA-OT parameters.
 
-For example, if you always use the same rendering engine to produce PDF output for all of your projects, you could create a local.properties file in the root directory of your DITA-OT installation to set the pdf.formatter parameter and additional options for the XSL processor:
+For example, if you always use the same rendering engine to produce PDF output for all of your projects, you could create a `local.properties` file in the root directory of your DITA-OT installation to set the **pdf.formatter** parameter and additional options for the XSL processor:
 
 ```
 # Use RenderX XEP Engine for PDF output

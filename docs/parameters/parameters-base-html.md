@@ -2,147 +2,147 @@
 
 Certain parameters apply to all HTML-based transformation types: HTML5, XHTML, HTML Help, and Eclipse help. 
 
--   **args.artlbl**
+-   **__args.artlbl__**
 
     Specifies whether to generate a label for each image; the label will contain the image file name. The allowed values are yes and no; the default value is no.
 
--   **args.copycss**
+-   **__args.copycss__**
 
     Specifies whether to copy the custom .css file to the output directory. The allowed values are yes and no; the default value is no.
 
     If an external process will copy your custom .css file to the output directory, leave this parameter unset \(or set it to no\). If DITA-OT should copy the file when generating output, set it to yes.
 
--   **args.css**
+-   **__args.css__**
 
     Specifies the name of a custom .css file.
 
-    The value of this parameter should be only the file name. The absolute path to the parent directory should be specified with args.cssroot.
+    The value of this parameter should be only the file name. The absolute path to the parent directory should be specified with **args.cssroot**.
 
--   **args.csspath**
+-   **__args.csspath__**
 
     Specifies the **destination** directory to which .css files are copied \(relative to the output directory\).
 
-    Corresponds to the XSLT parameter CSSPATH.
+    Corresponds to the XSLT parameter **CSSPATH**.
 
     DITA-OT will copy the file **to** this location.
 
-    **Tip:** If args.csspath is not set, the custom CSS file \(and the default CSS files\) will be copied to the root level of the output folder. To copy CSS files to an output subfolder named css, set args.csspath to css.
+    **Tip:** If **args.csspath** is not set, the custom CSS file \(and the default CSS files\) will be copied to the root level of the output folder. To copy CSS files to an output subfolder named `css`, set **args.csspath** to css.
 
--   **args.cssroot**
+-   **__args.cssroot__**
 
     Specifies the **source** directory that contains the custom .css file.
 
     DITA-OT will copy the file **from** this location.
 
-    **Important:** Enter the absolute path to the parent directory of the custom CSS file specified with args.css.
+    **Important:** Enter the absolute path to the parent directory of the custom CSS file specified with **args.css**.
 
--   **args.dita.locale**
+-   **__args.dita.locale__**
 
     Specifies the language locale file to use for sorting index entries.
 
     **Note:** This parameter is not available for the XHTML transformation.
 
--   **args.eclipse.provider**
+-   **__args.eclipse.provider__**
 
     Specifies the name of the person or organization that provides the Eclipse help.
 
--   **args.eclipse.symbolic.name**
+-   **__args.eclipse.symbolic.name__**
 
     Specifies the symbolic name \(aka plugin ID\) in the output for an Eclipse Help project.
 
--   **args.eclipse.version**
+-   **__args.eclipse.version__**
 
     Specifies the version number to include in the output.
 
--   **args.eclipsehelp.country**
+-   **__args.eclipsehelp.country__**
 
     Specifies the region for the language that is specified by the args.
 
--   **args.eclipsehelp.jar.name**
+-   **__args.eclipsehelp.jar.name__**
 
     Specifies that the output should be zipped and returned using this name.
 
--   **args.eclipsehelp.language**
+-   **__args.eclipsehelp.language__**
 
     Specifies the base language for translated content, such as en for English.
 
--   **args.ftr**
+-   **__args.ftr__**
 
     Specifies an XML file that contains content for a running footer.
 
-    Corresponds to the XSLT parameter FTR.
+    Corresponds to the XSLT parameter **FTR**.
 
-    **Note:** The footer file should be specified using an absolute path and must contain valid XML. A common practice is to place all content into a `div` element. In HTML5 output, the footer file contents will be wrapped in an HTML5 `footer` element with the `@role` attribute set to contentinfo.
+    **Note:** The footer file should be specified using an absolute path and must contain valid XML. A common practice is to place all content into a `<div>` element. In HTML5 output, the footer file contents will be wrapped in an HTML5 `<footer>` element with the `@role` attribute set to contentinfo.
 
--   **args.gen.default.meta**
+-   **__args.gen.default.meta__**
 
     Generate metadata for parental control scanners, meta elements with name="security" and name="Robots". The allowed values are yes and no; the default value is no.
 
-    Corresponds to the XSLT parameter genDefMeta.
+    Corresponds to the XSLT parameter **genDefMeta**.
 
--   **args.hdf**
+-   **__args.hdf__**
 
     Specifies an XML file that contains content to be placed in the document head.
 
-    The contents of the header file will be inserted in the `head` element of the generated HTML files.
+    The contents of the header file will be inserted in the `<head>` element of the generated HTML files.
 
-    **Tip:** The header file should be specified using an absolute path and must contain valid XML. If you need to insert more than one element into the HTML page head, wrap the content in a `div` element. The division wrapper in the header file will be discarded when generating HTML files, and the contents will be inserted into each page head.
+    **Tip:** The header file should be specified using an absolute path and must contain valid XML. If you need to insert more than one element into the HTML page head, wrap the content in a `<div>` element. The division wrapper in the header file will be discarded when generating HTML files, and the contents will be inserted into each page head.
 
--   **args.hdr**
+-   **__args.hdr__**
 
     Specifies an XML file that contains content for a running header.
 
-    Corresponds to the XSLT parameter HDR.
+    Corresponds to the XSLT parameter **HDR**.
 
-    **Note:** The header file should be specified using an absolute path and must contain valid XML. A common practice is to place all content into a `div` element. In HTML5 output, the contents of the header file will be wrapped in an HTML5 `header` element with the `@role` attribute set to banner.
+    **Note:** The header file should be specified using an absolute path and must contain valid XML. A common practice is to place all content into a `<div>` element. In HTML5 output, the contents of the header file will be wrapped in an HTML5 `<header>` element with the `@role` attribute set to banner.
 
--   **args.hide.parent.link**
+-   **__args.hide.parent.link__**
 
     Specifies whether to hide links to parent topics in the HTML or XHTML output. The allowed values are yes and no; the default value is no.
 
-    Corresponds to the XSLT parameter NOPARENTLINK.
+    Corresponds to the XSLT parameter **NOPARENTLINK**.
 
-    **Note:** This parameter is deprecated in favor of the args.rellinks parameter.
+    **Note:** This parameter is deprecated in favor of the **args.rellinks** parameter.
 
--   **args.htmlhelp.includefile**
+-   **__args.htmlhelp.includefile__**
 
     Specifies the name of a file that you want included in the HTML Help.
 
--   **args.indexshow**
+-   **__args.indexshow__**
 
     Specifies whether the content of &lt;indexterm&gt; elements are rendered in the output. The allowed values are yes and no; the default value is no.
 
--   **args.outext**
+-   **__args.outext__**
 
     Specifies the file extension for HTML or XHTML output.
 
-    Corresponds to the XSLT parameter OUTEXT.
+    Corresponds to the XSLT parameter **OUTEXT**.
 
--   **args.xhtml.classattr**
+-   **__args.xhtml.classattr__**
 
     Specifies whether to include the DITA class ancestry inside the XHTML elements. The allowed values are yes and no; the default value is yes.
 
-    For example, the `prereq` element \(which is specialized from `section`\) would generate `class="section prereq"`. Corresponds to the XSLT parameter PRESERVE-DITA-CLASS.
+    For example, the `<prereq>` element \(which is specialized from `<section>`\) would generate `class="section prereq"`. Corresponds to the XSLT parameter **PRESERVE-DITA-CLASS**.
 
     **Note:** Beginning with DITA-OT release 1.5.2, the default value is yes. For release 1.5 and 1.5.1, the default value was no.
 
--   **args.xhtml.contenttarget**
+-   **__args.xhtml.contenttarget__**
 
     Specifies the value of the @target attribute on the &lt;base&gt; element in the TOC file.
 
--   **args.xhtml.toc**
+-   **__args.xhtml.toc__**
 
     Specifies the base name of the TOC file.
 
--   **args.xhtml.toc.class**
+-   **__args.xhtml.toc.class__**
 
     Specifies the value of the @class attribute on the &lt;body&gt; element in the TOC file.
 
--   **args.xhtml.toc.xsl**
+-   **__args.xhtml.toc.xsl__**
 
     Specifies a custom XSL file to be used for TOC generation.
 
--   **args.xsl**
+-   **__args.xsl__**
 
     Specifies a custom XSL file to be used instead of the default XSL transformation.
 

@@ -2,12 +2,12 @@
 
 Certain extension points are specific to the HTML Help transformation. 
 
--   **dita.xsl.htmlhelp.map2hhc**
+-   **__dita.xsl.htmlhelp.map2hhc__**
 
-    Overrides the default XSLT step that generates the HTML Help contents \(.hhc\) file.
+    Overrides the default XSLT step that generates the HTML Help contents \(`.hhc`\) file.
 
--   **dita.xsl.htmlhelp.map2hhp**
+-   **__dita.xsl.htmlhelp.map2hhp__**
 
-    Overrides the default XSLT step that generates the HTML Help project \(.hhp\) file.
+    Overrides the default XSLT step that generates the HTML Help project \(`.hhp`\) file.
 
 

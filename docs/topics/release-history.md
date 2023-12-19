@@ -9,6 +9,8 @@ When migrating customizations, identify the version of the toolkit you're curren
 
 [Migrating customizations](../topics/migration.md)
 
+[DITA-OT 4.1 Release Notes](https://www.dita-ot.org/4.1/release-notes/)
+
 [DITA-OT 4.0 Release Notes](https://www.dita-ot.org/4.0/release-notes/)
 
 [DITA-OT 3.7 Release Notes](https://www.dita-ot.org/3.7/release-notes/)

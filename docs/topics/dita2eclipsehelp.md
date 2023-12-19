@@ -2,25 +2,25 @@
 
 The eclipsehelp transformation generates XHTML output, CSS files, and the control files that are needed for Eclipse help.
 
-In addition to the XHTML output and CSS files, this transformation returns the following files, where mapname is the name of the root map.
+In addition to the XHTML output and CSS files, this transformation returns the following files, where *mapname* is the name of the root map.
 
 |File name|Description|
 |---------|-----------|
-|plugin.xml|Control file for the Eclipse plug-in|
-|mapname.xml|Table of contents|
-|index.xml|Index file|
-|plugin.properties| |
-|META-INF/MANIFEST.MF| |
+|`plugin.xml`|Control file for the Eclipse plug-in|
+|`*mapname*.xml`|Table of contents|
+|`index.xml`|Index file|
+|`plugin.properties`| |
+|`META-INF/MANIFEST.MF`| |
 
-To run the Eclipse help transformation, set the transtype parameter to eclipsehelp, or pass the --format=eclipsehelp option to the dita command line.
+To run the Eclipse help transformation, set the **transtype** parameter to eclipsehelp, or pass the **--format**=eclipsehelp option to the `dita` command line.
 
 ```
-dita --input=input-file --format=eclipsehelp
+``dita`` **--input**=*input-file* **--format**=eclipsehelp
 ```
 
 where:
 
--   input-file is the DITA map or DITA file that you want to process.
+-   *input-file* is the DITA map or DITA file that you want to process.
 
 **Related information**  
 

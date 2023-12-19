@@ -6,13 +6,13 @@ You can build output by using an Ant build script to provide the DITA-OT paramet
 
 2.  Issue the following command:
 
-        |**Linux or macOS **|bin/ant -f `build-script target`|
-    |**Windows**|bin\\ant -f `build-script target`|
+        |**Linux or macOS **|`bin/ant` -f `*build-script* *target*`|
+    |**Windows**|`bin\ant` -f `*build-script* *target*`|
 
     where:
 
-    -   build-script is name of the Ant build script.
-    -   target is an optional switch that specifies the name of the Ant target that you want to run.
+    -   *build-script* is name of the Ant build script.
+    -   *target* is an optional switch that specifies the name of the Ant target that you want to run.
 
         If you do not specify a target, the value of the `@default` attribute for the Ant project is used.
 

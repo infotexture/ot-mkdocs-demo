@@ -2,7 +2,7 @@
 
 Certain parameters are specific to the Eclipse help transformation.
 
--   **args.eclipse.provider**
+-   **__args.eclipse.provider__**
 
     Specifies the name of the person or organization that provides the Eclipse help.
 
@@ -10,7 +10,7 @@ Certain parameters are specific to the Eclipse help transformation.
 
     **Tip:** The toolkit ignores the value of this parameter when it processes an Eclipse map.
 
--   **args.eclipse.symbolic.name**
+-   **__args.eclipse.symbolic.name__**
 
     Specifies the symbolic name \(aka plugin ID\) in the output for an Eclipse Help project.
 
@@ -18,7 +18,7 @@ Certain parameters are specific to the Eclipse help transformation.
 
     **Tip:** The toolkit ignores the value of this parameter when it processes an Eclipse map.
 
--   **args.eclipse.version**
+-   **__args.eclipse.version__**
 
     Specifies the version number to include in the output.
 
@@ -26,21 +26,21 @@ Certain parameters are specific to the Eclipse help transformation.
 
     **Tip:** The toolkit ignores the value of this parameter when it processes an Eclipse map.
 
--   **args.eclipsehelp.country**
+-   **__args.eclipsehelp.country__**
 
     Specifies the region for the language that is specified by the args.
 
-    For example, us, ca, and gb would clarify a value of en set for the args.eclipsehelp.language parameter. The content will be moved into the appropriate directory structure for an Eclipse fragment.
+    For example, us, ca, and gb would clarify a value of en set for the **args.eclipsehelp.language** parameter. The content will be moved into the appropriate directory structure for an Eclipse fragment.
 
--   **args.eclipsehelp.jar.name**
+-   **__args.eclipsehelp.jar.name__**
 
     Specifies that the output should be zipped and returned using this name.
 
--   **args.eclipsehelp.language**
+-   **__args.eclipsehelp.language__**
 
     Specifies the base language for translated content, such as en for English.
 
-    This parameter is a prerequisite for the args.eclipsehelp.country parameter. The content will be moved into the appropriate directory structure for an Eclipse fragment.
+    This parameter is a prerequisite for the **args.eclipsehelp.country** parameter. The content will be moved into the appropriate directory structure for an Eclipse fragment.
 
 
 **Related information**  

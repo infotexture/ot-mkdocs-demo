@@ -10,7 +10,7 @@ The Store API is extendable using Java’s [Resource Loader](https://docs.oracle
 
 This Store could also be a File Store, since it uses disk and local files for temporary resources. This is the traditional DITA-OT implementation, where temporary XML files are stored under the `dita.temp.dir` path.
 
-The Stream Store is activated by setting the store-type parameter to file.
+The Stream Store is activated by setting the **store-type** parameter to file.
 
 **Note:** To ensure backwards compatibility, the file Store is the default setting in DITA-OT 3.6.
 
@@ -20,7 +20,7 @@ This Store is an in-memory Store, that keeps all temporary resources in memory. 
 
 While the Store doesn't write anything to the temporary directory, it will still use URIs where the resources are under the temporary directory. The URIs are simply used for addressing, similarly to URNs. Future releases of DITA-OT may use some other method of addressing, such as a `tmp` URI scheme.
 
-**Tip:** As of DITA-OT 3.6, the Cache Store can be activated by setting the store-type parameter to memory.
+**Tip:** As of DITA-OT 3.6, the Cache Store can be activated by setting the **store-type** parameter to memory.
 
 ## Benefits
 
@@ -34,5 +34,5 @@ The Store API also makes the Saxon S9api easier to use. It offers an XML documen
 
 Not all custom plug-ins will work with the Cache Store, because they may assume files are used and expect direct file access for resource operations.
 
-**Important:** To take advantage of the Store API, custom plug-ins must use DITA-OT XSLT modules in custom `pipeline` elements instead of Ant’s built-in `xslt` tasks as recommended in [Plug-in coding conventions](../topics/plugin-coding-conventions.md).
+**Important:** To take advantage of the Store API, custom plug-ins must use DITA-OT XSLT modules in custom `<pipeline>` elements instead of Ant’s built-in `<xslt>` tasks as recommended in [Plug-in coding conventions](../topics/plugin-coding-conventions.md).
 

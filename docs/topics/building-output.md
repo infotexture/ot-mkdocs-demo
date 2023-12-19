@@ -1,6 +1,6 @@
 # Building output
 
-You can use the dita command-line tool, Ant, or the Java API to transform DITA content to the various output formats that DITA Open Toolkit supports.
+You can use the `dita` command-line tool, Ant, or the Java API to transform DITA content to the various output formats that DITA Open Toolkit supports.
 
 **Related information**  
 

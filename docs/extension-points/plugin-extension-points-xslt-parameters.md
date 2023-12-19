@@ -1,24 +1,24 @@
 # XSLT-parameter extension points
 
-You can use these extension points to pass parameters into existing XSLT steps in both the pre-processing pipeline and DITA-OT transformation. The parameters generally will be available as global `xsl:param` values with XSLT overrides.
+You can use these extension points to pass parameters into existing XSLT steps in both the pre-processing pipeline and DITA-OT transformation. The parameters generally will be available as global `<xsl:param>` values with XSLT overrides.
 
 ## Pre-processing
 
 You can use the following extension points to pass parameters to modules in the pre-processing pipeline:
 
--   **dita.preprocess.conref.param**
+-   **__dita.preprocess.conref.param__**
 
     Pass parameters to the `conref` module in the pre-processing pipeline
 
--   **dita.preprocess.mappull.param**
+-   **__dita.preprocess.mappull.param__**
 
     Pass parameters to the `mappull` module in the pre-processing pipeline
 
--   **dita.preprocess.mapref.param**
+-   **__dita.preprocess.mapref.param__**
 
     Pass parameters to the `mapref` module in the pre-processing pipeline
 
--   **dita.preprocess.topicpull.param**
+-   **__dita.preprocess.topicpull.param__**
 
     Pass parameters to the `topicpull` module in the pre-processing pipeline
 
@@ -27,38 +27,38 @@ You can use the following extension points to pass parameters to modules in the 
 
 You can use the following extension points to pass parameters to modules in DITA-OT transformations:
 
--   **dita.conductor.eclipse.toc.param**
+-   **__dita.conductor.eclipse.toc.param__**
 
     Pass parameters to the XSLT step that generates the Eclipse Help table of contents \(TOC\).
 
--   **dita.conductor.html.param**
+-   **__dita.conductor.html.param__**
 
     Pass parameters to the HTML and HTML Help transformations.
 
--   **dita.conductor.html5.param**
+-   **__dita.conductor.html5.param__**
 
     Pass parameters to the HTML5 transformation.
 
--   **dita.conductor.html5.toc.param**
+-   **__dita.conductor.html5.toc.param__**
 
     Pass parameters to the XSLT step that generates the HTML5 table of contents \(TOC\).
 
--   **dita.conductor.pdf2.param**
+-   **__dita.conductor.pdf2.param__**
 
     Pass parameters to the PDF transformation.
 
--   **dita.conductor.xhtml.param**
+-   **__dita.conductor.xhtml.param__**
 
     Pass parameters to the XHTML and Eclipse Help transformations.
 
--   **dita.conductor.xhtml.toc.param**
+-   **__dita.conductor.xhtml.toc.param__**
 
     Pass parameters to the XSLT step that generates the XHTML table of contents \(TOC\).
 
 
 ## Example
 
-The following two files represent a complete \(albeit simple\) plug-in that passes the parameters defined in the insertParameters.xml file to the XHTML transformation process.
+The following two files represent a complete \(albeit simple\) plug-in that passes the parameters defined in the `insertParameters.xml` file to the XHTML transformation process.
 
 ```
 <plugin id="com.example.newparam">

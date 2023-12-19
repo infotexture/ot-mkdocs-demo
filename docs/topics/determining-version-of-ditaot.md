@@ -7,13 +7,13 @@ You can determine the DITA Open Toolkit version number from a command prompt.
 2.  Issue the following command:
 
     ```
-    dita --version
+    ``dita`` **--version**
     ```
 
 
 The DITA-OT version number appears on the console:
 
 ```
-DITA-OT version 4.0.2
+`DITA-OT version 4.1.2`
 ```
 

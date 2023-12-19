@@ -2,9 +2,9 @@
 
 A DITA-OT plug-in can be dependent on other plug-ins. Prerequisite plug-ins are installed first, which ensures that DITA-OT handles XSLT overrides correctly.
 
-The `require` element in the plugin.xml file specifies whether the plug-in has dependencies. Use `require` elements to specify prerequisite plug-ins, in order from most general to most specific.
+The `<require>` element in the `plugin.xml` file specifies whether the plug-in has dependencies. Use `<require>` elements to specify prerequisite plug-ins, in order from most general to most specific.
 
-If a prerequisite plug-in is missing, DITA-OT prints a warning during installation. To suppress the warning but keep the installation order if both plug-ins are present, add `importance="optional"` to the `require` element.
+If a prerequisite plug-in is missing, DITA-OT prints a warning during installation. To suppress the warning but keep the installation order if both plug-ins are present, add `importance="optional"` to the `<require>` element.
 
 If a plug-in can depend on any one of several optional plug-ins, separate the plug-in IDs with a vertical bar. This is most useful when combined with `importance="optional"`.
 

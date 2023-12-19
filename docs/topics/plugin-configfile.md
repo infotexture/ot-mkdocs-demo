@@ -1,16 +1,16 @@
 # Plug-in descriptor file
 
-The plug-in descriptor file \(plugin.xml\) controls all aspects of a plug-in, making each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and then integrates those changes into the core DITA-OT code.
+The plug-in descriptor file \(`plugin.xml`\) controls all aspects of a plug-in, making each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and then integrates those changes into the core DITA-OT code.
 
 ## Validating plug-ins
 
-DITA-OT includes a RELAX NG schema file that can be used to validate the plugin.xml files that define the capabilities of each plug-in.
+DITA-OT includes a RELAX NG schema file that can be used to validate the `plugin.xml` files that define the capabilities of each plug-in.
 
-To ensure the syntax of your custom plug-in is correct, include an `xml-model` processing instruction at the beginning of the plugin.xml file, immediately after the XML prolog:
+To ensure the syntax of your custom plug-in is correct, include an `xml-model` processing instruction at the beginning of the `plugin.xml` file, immediately after the XML prolog:
 
 `xml-model href="https://www.dita-ot.org/rng/plugin.rnc" type="application/relax-ng-compact-syntax"`
 
-If your authoring environment does not apply this schema automatically, point your editor to dita-ot-dir/resources/plugin.rnc to associate the schema with your plug-in file.
+If your authoring environment does not apply this schema automatically, point your editor to `*dita-ot-dir*/resources/plugin.rnc` to associate the schema with your plug-in file.
 
 ## Plug-in identifiers
 
@@ -26,9 +26,9 @@ Each token can include only the following characters:
 -   Underscores \(\_\)
 -   Hyphens \(-\)
 
-## `plugin`
+## `<plugin>`
 
-The root element of the plugin.xml file is `plugin`, which has a required `@id` attribute set to the unique plug-in identifier.
+The root element of the `plugin.xml` file is `<plugin>`, which has a required `@id` attribute set to the unique plug-in identifier.
 
 ```language-xml
 <plugin id="com.example.html5-javascript">
@@ -36,9 +36,9 @@ The root element of the plugin.xml file is `plugin`, which has a required `@id` 
 
 ## Plug-in elements
 
-The `plugin` element can contain the following child elements:
+The `<plugin>` element can contain the following child elements:
 
--   **`extension-point`**
+-   **`<extension-point>`**
 
     An optional element that defines a new extension point that can be used by other DITA-OT plug-ins.
 
@@ -57,7 +57,7 @@ The `plugin` element can contain the following child elements:
     <extension-point id="dita.xsl.html5" name="HTML5 XSLT import"/>
     ```
 
--   **`feature`**
+-   **`<feature>`**
 
     An optional element that supplies values to a DITA-OT extension point.
 
@@ -67,12 +67,12 @@ The `plugin` element can contain the following child elements:
     |---------|-----------|---------|
     |**extension**|Identifier of the DITA-OT extension point|Yes|
     |**value**|Comma separated string value of the extension|Either the `@value` or `@file` attribute must be specified|
-    |**file**|Name and path of a file containing data for the extension point. Depending on the extension point, this might be specified as an absolute path, a path relative to the plugin.xml file, or a path relative to the DITA-OT root.
+    |**file**|Name and path of a file containing data for the extension point. Depending on the extension point, this might be specified as an absolute path, a path relative to the `plugin.xml` file, or a path relative to the DITA-OT root.
 
 |Either the `@value` or `@file` attribute must be specified|
     |**type**|Type of the `@value` attribute|No|
 
-    If more than one `feature` element supplies values to the same extension point, the values are additive. For example, the following are equivalent:
+    If more than one `<feature>` element supplies values to the same extension point, the values are additive. For example, the following are equivalent:
 
     ```language-xml
     <feature extension="org.dita.example.extension-point" value="a,b,c"/>
@@ -84,7 +84,7 @@ The `plugin` element can contain the following child elements:
     <feature extension="org.dita.example.extension-point" value="c"/>
     ```
 
--   **`metadata`**
+-   **`<metadata>`**
 
     An optional element that defines metadata.
 
@@ -99,7 +99,7 @@ The `plugin` element can contain the following child elements:
     <metadata type="foo" value="bar"/>
     ```
 
--   **`require`**
+-   **`<require>`**
 
     An optional element that defines plug-in dependencies.
 
@@ -116,23 +116,23 @@ The `plugin` element can contain the following child elements:
     <require plugin="org.dita.html5"/>
     ```
 
--   **`template`**
+-   **`<template>`**
 
     An optional element that defines files that should be treated as templates.
 
-    Template files can be used to integrate DITA-OT extensions. Templates typically extend the default transformation-type-specific build files via `dita:extension` elements. When the plug-in installation process runs, template files are used to recreate build files, and the specified extension points are replaced with references to the appropriate plug-ins.
+    Template files can be used to integrate DITA-OT extensions. Templates typically extend the default transformation-type-specific build files via `<dita:extension>` elements. When the plug-in installation process runs, template files are used to recreate build files, and the specified extension points are replaced with references to the appropriate plug-ins.
 
     The following attributes are supported:
 
     |Attribute|Description|Required?|
     |---------|-----------|---------|
-    |**file**|Name and path to the template file, relative to the plugin.xml file|Yes|
+    |**file**|Name and path to the template file, relative to the `plugin.xml` file|Yes|
 
     ```language-xml
     <template file="build_dita2html5_template.xml"/>
     ```
 
--   **`transtype`**
+-   **`<transtype>`**
 
     An optional element that defines a new output format \(transformation type\).
 
@@ -161,9 +161,9 @@ The `plugin` element can contain the following child elements:
     
     ```
 
-    The `transtype` element may define additional parameters for the transformation type using the following child elements.
+    The `<transtype>` element may define additional parameters for the transformation type using the following child elements.
 
-    -   **`param`**
+    -   **`<param>`**
 
         An optional element that specifies a parameter for the transformation type.
 
@@ -177,24 +177,24 @@ The `plugin` element can contain the following child elements:
         |**deprecated**|When true, identifies this parameter as deprecated|No|
         |**required**|When true, identifies this parameter as required|No|
 
-    -   **`val`**
+    -   **`<val>`**
 
-        A child of `param` \(when `@type`=enum\) that specifies an enumeration value.
+        A child of `<param>` \(when `@type`=enum\) that specifies an enumeration value.
 
         The following attributes are supported:
 
         |Attribute|Description|Required?|
         |---------|-----------|---------|
-        |**default**|When true, sets the enumeration value as the default value of the parent `param`|Only for the default `val`|
+        |**default**|When true, sets the enumeration value as the default value of the parent `<param>`|Only for the default `<val>`|
 
 
-Any extension that is not recognized by DITA-OT is ignored. Since DITA-OT version 1.5.3, you can combine multiple extension definitions within a single plugin.xml file; in older versions, only the last extension definition was used.
+Any extension that is not recognized by DITA-OT is ignored. Since DITA-OT version 1.5.3, you can combine multiple extension definitions within a single `plugin.xml` file; in older versions, only the last extension definition was used.
 
-## Example plugin.xml file
+## Example `plugin.xml` file
 
-The following is a sample of a plugin.xml file. This file adds support for a new set of specialized DTDs, and includes an override for the XHTML output processor.
+The following is a sample of a `plugin.xml` file. This file adds support for a new set of specialized DTDs, and includes an override for the XHTML output processor.
 
-This plugin.xml file would go into a directory such as DITA-OT/plugins/music/ and referenced supporting files would also exist in that directory. A more extensive sample using these values is available in the actual music plug-in, available on [SourceForge](https://sourceforge.net/projects/dita-ot/files/Plug-in_%20Music/).
+This `plugin.xml` file would go into a directory such as `DITA-OT/plugins/music/` and referenced supporting files would also exist in that directory. A more extensive sample using these values is available in the actual music plug-in, available on [SourceForge](https://sourceforge.net/projects/dita-ot/files/Plug-in_%20Music/).
 
 ```
 <plugin id="org.metadita.specialization.music">

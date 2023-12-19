@@ -4,7 +4,7 @@ The `gen-list` step examines the input files and creates lists of topics, images
 
 For example, one list includes all topics that make use of the conref attribute; only those files are processed during the conref stage of the build. The list file name name is derived from the list file property. For example, the `conref.list` file is generated for “conreffile” and a corresponding list property is provided for each generated list, in this case “conreflist”.
 
-The result of this step is a set of several list files in the temporary directory, including dita.list and dita.xml.properties.
+The result of this step is a set of several list files in the temporary directory, including `dita.list` and `dita.xml.properties`.
 
 |List file property|List file|Usage|
 |------------------|---------|-----|

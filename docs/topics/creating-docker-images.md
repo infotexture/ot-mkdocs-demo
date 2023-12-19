@@ -1,17 +1,17 @@
 # Installing plug-ins in a Docker image
 
-To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own Dockerfile and specify the official DITA-OT image as the basis for your image.
+To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own `Dockerfile` and specify the official DITA-OT image as the basis for your image.
 
 Each subsequent declaration in the Dockerfile modifies this parent image, so you can start with the official image, and add custom plug-ins or other commands as required to create a custom Docker image that includes everything you need to publish your content.
 
-1.  Create a new Dockerfile and specify the official DITA-OT image in the FROM directive.
+1.  Create a new `Dockerfile` and specify the official DITA-OT image in the `FROM` directive.
 
     ```
     # Use the latest DITA-OT image ↓ as parent:
-    FROM ghcr.io/dita-ot/dita-ot:4.0.2
+    FROM ghcr.io/dita-ot/dita-ot:4.1.2
     ```
 
-2.  You can extend your image with a `RUN` declaration that runs the dita command from the container to install a custom plug-in, and specify the filename or URL of the plug-in’s distribution ZIP file.
+2.  You can extend your image with a `RUN` declaration that runs the `dita` command from the container to install a custom plug-in, and specify the filename or URL of the plug-in’s distribution ZIP file.
 
     ```
     # Install a custom plug-in from a remote location:
@@ -26,11 +26,11 @@ Each subsequent declaration in the Dockerfile modifies this parent image, so you
     ```
 
 
-The docsrc/samples folder in the DITA-OT installation directory contains a complete example:
+The `docsrc/samples` folder in the DITA-OT installation directory contains a complete example:
 
 ```
 # Use the latest DITA-OT image ↓ as parent:
-FROM ghcr.io/dita-ot/dita-ot:4.0.2
+FROM ghcr.io/dita-ot/dita-ot:4.1.2
 
 # Install a custom plug-in from a remote location:
 RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip
@@ -41,18 +41,18 @@ RUN dita --install org.dita-community.pdf-page-break
 
 ## Building a new image
 
-You can build a Docker image from this example by running the following command from the dita-ot-dir/docsrc/samples directory:
+You can build a Docker image from this example by running the following command from the `*dita-ot-dir*/docsrc/samples` directory:
 
 ```syntax-bash
-$ docker image build -t sample-docker-image:1.0 docker/
+$ `docker` image build -t sample-docker-image:1.0 docker/
 [+] Building 81.5s (4/6)                                                                                                                                                           
  => [internal] load build definition from Dockerfile                                                                                                                          0.0s
  => => transferring dockerfile: 367B                                                                                                                                          0.0s
  => [internal] load .dockerignore                                                                                                                                             0.0s
  => => transferring context: 2B                                                                                                                                               0.0s
- => [internal] load metadata for ghcr.io/dita-ot/dita-ot:4.0.2
- => [1/3] FROM ghcr.io/dita-ot/dita-ot:4.0.2@sha256:&lt;hash&gt;
- => => resolve ghcr.io/dita-ot/dita-ot:4.0.2@sha256:&lt;hash&gt;
+ => [internal] load metadata for ghcr.io/dita-ot/dita-ot:4.1.2
+ => [1/3] FROM ghcr.io/dita-ot/dita-ot:4.1.2@sha256:*&lt;hash&gt;*
+ => => resolve ghcr.io/dita-ot/dita-ot:4.1.2@sha256:*&lt;hash&gt;*
 Step 2/3 : RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip
  ---> Running in d510f874cae0
 Added net.infotexture.dita-bootstrap
@@ -68,14 +68,14 @@ Successfully tagged sample-docker-image:1.0
 
 ```
 
-Docker steps through each instruction in the Dockerfile to build the sample image. In this case, the dita command provides feedback on each installed plug-in.
+Docker steps through each instruction in the Dockerfile to build the sample image. In this case, the `dita` command provides feedback on each installed plug-in.
 
 ## Running the new container
 
 You can then start a container based on your new image:
 
 ```syntax-bash
-$ docker container run -it \
+$ `docker` container run -it \
   -v /path/to/dita-ot-dir/docsrc:/src sample-docker-image:1.0 \
   -i /src/userguide.ditamap \
   -o /src/out/dita-bootstrap \
@@ -84,11 +84,11 @@ $ docker container run -it \
 
 This command sequence specifies the following options:
 
--   -v mounts the docsrc subfolder of the DITA-OT directory on your host machine and binds it to the /src volume in the container
--   -i specifies dita-ot-dir/docsrc/userguide.ditamap as the input map file
--   -o writes the output to dita-ot-dir/docsrc/out/dita-bootstrap
+-   -v mounts the `docsrc` subfolder of the DITA-OT directory on your host machine and binds it to the `/src` volume in the container
+-   -i specifies `*dita-ot-dir*/docsrc``/userguide.ditamap` as the input map file
+-   -o writes the output to `*dita-ot-dir*/docsrc``/out/dita-bootstrap`
 -   -f sets the output format to the Bootstrap template, and
 -   -v displays build progress messages with verbose logging
 
-When the build is finished, you should find a copy of the DITA-OT documentation under dita-ot-dir/docsrc/out/dita-bootstrap, styled with the basic Bootstrap template from the custom plug-in.
+When the build is finished, you should find a copy of the DITA-OT documentation under `*dita-ot-dir*/docsrc``/out/dita-bootstrap`, styled with the basic Bootstrap template from the custom plug-in.
 

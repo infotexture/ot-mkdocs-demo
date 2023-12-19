@@ -2,19 +2,19 @@
 
 Certain extension points are specific to the Eclipse Help transformation. 
 
--   **dita.conductor.eclipse.toc.param**
+-   **__dita.conductor.eclipse.toc.param__**
 
     Pass parameters to the XSLT step that generates the Eclipse Help table of contents \(TOC\).
 
--   **dita.map.eclipse.index.pre**
+-   **__dita.map.eclipse.index.pre__**
 
     Runs an Ant target before the Eclipse index extraction process.
 
--   **dita.xsl.eclipse.plugin**
+-   **__dita.xsl.eclipse.plugin__**
 
-    Overrides the default XSLT step that generates the plugin.xml file for Eclipse Help.
+    Overrides the default XSLT step that generates the `plugin.xml` file for Eclipse Help.
 
--   **dita.xsl.eclipse.toc**
+-   **__dita.xsl.eclipse.toc__**
 
     Overrides the default XSLT step that generates the Eclipse Help table of contents \(TOC\).
 

@@ -8,9 +8,9 @@ The `mappull` step pulls content from referenced topics into maps, and then casc
 
 The `mappull` step makes the following changes to the DITA map:
 
--   Titles are pulled from referenced DITA topics. Unless the `@locktitle` attribute is set to "yes", the pulled titles replace the navigation titles specified on the `topicref` elements.
--   The `linktext` element is set based on the title of the referenced topic, unless it is already specified locally.
--   The `shortdesc` element is set based on the short description of the referenced topic, unless it is already specified locally.
--   The `@type` attribute is set on `topicref` elements that reference local DITA topics. The value of the `@type` attribute is set to value of the root element of the topic; for example, a `topicref` element that references a task topic is given a `@type` attribute set to "task"".
--   Attributes that cascade, such as `@toc` and `@print`, are made explicit on any child `topicref` elements. This allows future steps to work with the attributes directly, without reevaluating the cascading behavior.
+-   Titles are pulled from referenced DITA topics. Unless the `@locktitle` attribute is set to "yes", the pulled titles replace the navigation titles specified on the `<topicref>` elements.
+-   The `<linktext>` element is set based on the title of the referenced topic, unless it is already specified locally.
+-   The `<shortdesc>` element is set based on the short description of the referenced topic, unless it is already specified locally.
+-   The `@type` attribute is set on `<topicref>` elements that reference local DITA topics. The value of the `@type` attribute is set to value of the root element of the topic; for example, a `<topicref>` element that references a task topic is given a `@type` attribute set to "task"".
+-   Attributes that cascade, such as `@toc` and `@print`, are made explicit on any child `<topicref>` elements. This allows future steps to work with the attributes directly, without reevaluating the cascading behavior.
 

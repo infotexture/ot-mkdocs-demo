@@ -52,13 +52,13 @@ To implement a custom collation URI resolver:
 
 1.  Add your plugin’s JAR file in the DITA-OT class path as described in [Adding a Java library to the classpath](plugin-javalib.md).
 2.  Implement an instance of `org.dita.dost.module.saxon.DelegatingCollationUriResolver` as described above.
-3.  Include a file named org.dita.dost.module.saxon.DelegatingCollationUriResolver in the directory META-INF/services in the compiled JAR that your plug-in provides. Each line of the file must be the name of a class that implements `org.dita.dost.module.saxon.DelegatingCollationUriResolver`:
+3.  Include a file named `org.dita.dost.module.saxon.DelegatingCollationUriResolver` in the directory `META-INF/services` in the compiled JAR that your plug-in provides. Each line of the file must be the name of a class that implements `org.dita.dost.module.saxon.DelegatingCollationUriResolver`:
 
     ```
     org.example.i18n.saxon.MyCollationUriResolver
     ```
 
-    You can create the services file using `service` elements in an Ant `jar` task:
+    You can create the services file using `<service>` elements in an Ant `<jar>` task:
 
     ```language-xml
     <jar destfile="${basedir}/target/lib/example-saxon.jar">

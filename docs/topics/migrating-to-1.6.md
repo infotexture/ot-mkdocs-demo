@@ -1,20 +1,20 @@
 # Migrating to release 1.6
 
-In DITA-OT 1.6, various demo plug-ins were removed along with many deprecated properties, targets, templates and modes. The PDF2 transformation no longer supports the beta version of DITA from IBM, the "bkinfo" demo plug-in, or layout-masters.xml configuration.
+In DITA-OT 1.6, various `demo` plug-ins were removed along with many deprecated properties, targets, templates and modes. The PDF2 transformation no longer supports the beta version of DITA from IBM, the "bkinfo" demo plug-in, or `layout-masters.xml` configuration.
 
 Support for the old DITAVAL format \(used before OASIS added DITAVAL to the standard in 2007\) has been removed.
 
-The demo folder has been deprecated and the following plug-ins have been moved to the plugins folder:
+The `demo` folder has been deprecated and the following plug-ins have been moved to the `plugins` folder:
 
 |old path|new path|
 |--------|--------|
-|demo/dita11|plugins/org.dita.specialization.dita11|
-|demo/dita132|plugins/org.dita.specialization.dita132|
-|demo/eclipsemap|plugins/org.dita.specialization.eclipsemap|
-|demo/fo|plugins/org.dita.pdf2|
-|demo/tocjs|plugins/com.sophos.tocjs|
-|demo/h2d|plugins/h2d|
-|demo/legacypdf|plugins/legacypdf|
+|`demo/dita11`|`plugins/org.dita.specialization.dita11`|
+|`demo/dita132`|`plugins/org.dita.specialization.dita132`|
+|`demo/eclipsemap`|`plugins/org.dita.specialization.eclipsemap`|
+|`demo/fo`|`plugins/org.dita.pdf2`|
+|`demo/tocjs`|`plugins/com.sophos.tocjs`|
+|`demo/h2d`|`plugins/h2d`|
+|`demo/legacypdf`|`plugins/legacypdf`|
 
 The remaining plug-ins in the demo folder have been moved to a separate repository at [github.com/dita-ot/ext-plugins](https://github.com/dita-ot/ext-plugins).
 
@@ -52,13 +52,13 @@ The following deprecated items are no longer supported in the PDF transform:
 
 -   Support for the beta version of DITA, available from IBM before the OASIS standard was created in 2005.
 -   Support for the "bkinfo" demo plug-in, used to support book metadata before OASIS created the BookMap format in 2007.
--   Support for layout-masters.xml configuration. Plug-ins should use the `createDefaultLayoutMasters` template instead.
+-   Support for `layout-masters.xml` configuration. Plug-ins should use the `createDefaultLayoutMasters` template instead.
 
 The following extension-points have been added:
 
 -   `dita.conductor.pdf2.param` to add XSLT parameters to XSL FO transformation.
 
-Custom PDF2 shell stylesheets need to be revised to not include separate IBM and OASIS DITA stylesheets. The \*\_1.0.xsl stylesheets have been removed and their imports must be removed from shell stylesheets.
+Custom PDF2 shell stylesheets need to be revised to not include separate IBM and OASIS DITA stylesheets. The `*\**_1.0.xsl` stylesheets have been removed and their imports must be removed from shell stylesheets.
 
 The following template modes have been deprecated:
 

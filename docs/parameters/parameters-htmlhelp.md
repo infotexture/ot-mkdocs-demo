@@ -2,7 +2,7 @@
 
 Certain parameters are specific to the Microsoft Compiled HTML Help \(.chm\) transformation.
 
--   **args.htmlhelp.includefile**
+-   **__args.htmlhelp.includefile__**
 
     Specifies the name of a file that you want included in the HTML Help.
 

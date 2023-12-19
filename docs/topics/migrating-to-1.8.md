@@ -14,7 +14,7 @@ Stylesheets for the following transformation types have moved to plug-in specifi
 
 The following deprecated Ant properties have been removed:
 
--   `dita.script.dir`, use `${dita.plugin.id.dir}` instead
+-   `dita.script.dir`, use `${dita.plugin.*id*.dir}` instead
 -   `dita.resource.dir`, use `${dita.plugin.org.dita.base.dir}/resource` instead
 -   `dita.empty`
 -   `args.message.file`
@@ -27,8 +27,8 @@ XSLT Java extension `ImgUtils` has been removed from stylesheets and been replac
 
 The following deprecated XSLT stylesheets have been removed:
 
--   artwork-preprocessor.xsl
--   otdita2fo\_frontend.xsl
+-   `artwork-preprocessor.xsl`
+-   `otdita2fo_frontend.xsl`
 
 The following deprecated XSLT templates have been removed:
 
@@ -55,8 +55,8 @@ A call to a named template `pullPrologIndexTerms.end-range` has been added to `p
 
 The following deprecated XSLT stylesheets have been removed:
 
--   dita2fo-shell\_template.xsl
--   topic2fo-shell.xsl
+-   `dita2fo-shell_template.xsl`
+-   `topic2fo-shell.xsl`
 
 ## ODT
 

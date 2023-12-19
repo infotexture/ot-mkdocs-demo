@@ -1,31 +1,33 @@
-# Adding a Java library to the classpath
+# Adding a Java library to the **classpath**
 
-You can use the `dita.conductor.lib.import` extension point to add an additional Java library to the DITA-OT classpath parameter.
+You can use the `dita.conductor.lib.import` extension point to add an additional Java library to the DITA-OT **classpath** parameter.
 
 As of DITA-OT 3.1, the Java class path is managed automatically, meaning you do not \(and should not\) use explicit references to Java class paths in your build scripts. In particular, the old `dost.class.path` property has been deprecated and should not be used. If you are migrating older plug-ins that manage their class path directly, you should remove any explicit class path configuration. If your plug-in was not already using the `dita.conductor.lib.import` extension point to integrate its JAR dependencies you must add it.
 
-The effective DITA-OT class path is the combination of the JAR files in the main lib/ directory and the plug-in-contributed JARs, which are listed in config/env.sh. The env.sh file is updated automatically when plug-ins are installed or removed.
+The effective DITA-OT class path is the combination of the JAR files in the main `lib/` directory and the plug-in-contributed JARs, which are listed in `config/env.sh`. The `env.sh` file is updated automatically when plug-ins are installed or removed.
 
 1.  If necessary, compile the Java code into a JAR file.
 
-2.  Create a plugin.xml file that contains the following code:
+2.  Create a `plugin.xml` file that contains the following code:
 
     ```
-    <plugin id="plugin-id">
-      <feature extension="dita.conductor.lib.import" file="file"/>
+    <plugin id="*plugin-id*">
+      <feature extension="dita.conductor.lib.import" file="*file*"/>
     </plugin>
     ```
 
     where:
 
-    -   plugin-id is the plug-in identifier, for example, `com.example.addjar`.
-    -   file is the name of the JAR file, for example, myJavaLibrary.jar.
-3.  Install the plug-in.
+    -   *plugin-id* is the plug-in identifier, for example, `com.example.addjar`.
+    -   *file* is the name of the JAR file, for example, `myJavaLibrary.jar`.
+3.  Use the `dita install` subcommand to install the plug-in.
+
+    **Note:** For more information, see [Installing plug-ins](plugins-installing.md).
 
 
 The Ant or XSLT code now can make use of the Java code.
 
-In the following extended example, the myJavaLibrary.jar file performs a validation step during processing, and you want it to run immediately before the `conref`step.
+In the following extended example, the `myJavaLibrary.jar` file performs a validation step during processing, and you want it to run immediately before the `conref`step.
 
 To accomplish this, you will need to use several features:
 

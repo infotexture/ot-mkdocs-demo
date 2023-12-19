@@ -1,13 +1,13 @@
 # Customizing generated text
 
-Generated text is the term for strings that are automatically added by the build process, such as the word **“Note”** before the contents of a `note` element.
+Generated text is the term for strings that are automatically added by the build process, such as the word **“Note”** before the contents of a `<note>` element.
 
 -   **`dita.xsl.strings`**
 
     Add new strings to generated text file.
 
 
-The generated text extension point is used to add new strings to the default set of generated text from **org.dita.base** for any non-PDF transformation type and from **org.dita.pdf2** for PDF. It also creates the `gentext` element in the intermediate files used by the toolkit. There are several reasons you may want to use the dita.strings.xsl extension point:
+The generated text extension point is used to add new strings to the default set of generated text from **org.dita.base** for any non-PDF transformation type and from **org.dita.pdf2** for PDF. It also creates the `<gentext>` element in the intermediate files used by the toolkit. There are several reasons you may want to use the **dita.strings.xsl** extension point:
 
 -   It can be used to add new text for your own processing extensions; for example, it could be used to add localized versions of the string **“User response”** to aid in rendering troubleshooting information.
 -   It can be used to override the default strings in the toolkit; for example, it could be used to reset the English string **“Figure”** to **“Fig.”**
@@ -17,7 +17,7 @@ If two plug-ins define the same string or add support for the same language usin
 
 Generated strings are available to the `getVariable` template used in many DITA-OT XSLT files.
 
-Prior to DITA-OT 3.7, there were two different XML structures for adding or modifying generated text \(gentext\). The base plug-in **org.dita.base** and any custom overrides defined via the dita.strings.xsl extension point used a root element `strings`, with individual strings in `str` elements with `@name` attributes. This format was previously used for HTML, and all other output formats except PDF.
+Prior to DITA-OT 3.7, there were two different XML structures for adding or modifying generated text \(gentext\). The base plug-in **org.dita.base** and any custom overrides defined via the **dita.strings.xsl** extension point used a root element `<strings>`, with individual strings in `<str>` elements with `@name` attributes. This format was previously used for HTML, and all other output formats except PDF.
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -26,7 +26,7 @@ Prior to DITA-OT 3.7, there were two different XML structures for adding or modi
 </strings>
 ```
 
-The PDF plug-in **org.dita.pdf2** used a root element `vars` with an XML namespace, and strings in `variable` elements with `@id` attributes.
+The PDF plug-in **org.dita.pdf2** used a root element `<vars>` with an XML namespace, and strings in `<variable>` elements with `@id` attributes.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -35,7 +35,7 @@ The PDF plug-in **org.dita.pdf2** used a root element `vars` with an XML namespa
 </vars>
 ```
 
-Starting with DITA-OT 3.7, these structures have been deprecated and replaced with a new unified format. All files now use `variables` as the root element, with the `variable` elements previously used in PDF strings. The new format supports the XSL parameters used by the earlier PDF strings format to pass dynamic information such as chapter numbers or figure titles.
+Starting with DITA-OT 3.7, these structures have been deprecated and replaced with a new unified format. All files now use `<variables>` as the root element, with the `<variable>` elements previously used in PDF strings. The new format supports the XSL parameters used by the earlier PDF strings format to pass dynamic information such as chapter numbers or figure titles.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>

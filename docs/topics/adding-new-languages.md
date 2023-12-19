@@ -4,9 +4,9 @@ Extend the toolkit’s generated text capabilities by adding new language files.
 
 1.  Copy this file to your plug-in.
 
-    -   non-PDF output: plugins/org.dita.base/xsl/common/strings.xml
-    -   PDF output: plugins/org.dita.pdf2/cfg/common/vars/strings.xml
-2.  In your plug-in, edit strings.xml to contain references to the language files for which you are providing custom strings.
+    -   non-PDF output: `plugins/org.dita.base/xsl/common/strings.xml`
+    -   PDF output: `plugins/org.dita.pdf2/cfg/common/vars/strings.xml`
+2.  In your plug-in, edit `strings.xml` to contain references to the language files for which you are providing custom strings.
 
     ```
     <?xml version="1.0" encoding="UTF-8"?>
@@ -21,9 +21,9 @@ Extend the toolkit’s generated text capabilities by adding new language files.
 
 3.  Copy this file to your plug-in into the same directory as step [1](adding-new-languages.md#copy-strings-xml).
 
-    -   non-PDF output: plugins/org.dita.base/xsl/common/strings-en-us.xml
-    -   PDF output: plugins/org.dita.pdf2/cfg/common/vars/en.xml
-4.  Rename the file to match the language you wish to add \(for instance, strings-vi-vn.xml\).
+    -   non-PDF output: `plugins/org.dita.base/xsl/common/strings-en-us.xml`
+    -   PDF output: `plugins/org.dita.pdf2/cfg/common/vars/en.xml`
+4.  Rename the file to match the language you wish to add \(for instance, `strings-vi-vn.xml`\).
 
 5.  Without changing the `@id` value, replace the generated text string for each variable.
 
@@ -40,7 +40,7 @@ Extend the toolkit’s generated text capabilities by adding new language files.
 
 6.  Repeat step [3](adding-new-languages.md#copy-strings) to step [5](adding-new-languages.md#replace-strings) for each language.
 
-7.  Update your plugin.xml file to extend the strings available.
+7.  Update your `plugin.xml` file to extend the strings available.
 
     ```
     <plugin id="com.example.your-plugin">

@@ -18,7 +18,7 @@ Eclipse uses multiple files to control the plug-in behavior. Some of these contr
 
 -   **`dita.map.eclipse.plugin`**
 
-    Creates the plugin.xml file that controls the behavior of an Eclipse plug-in
+    Creates the `plugin.xml` file that controls the behavior of an Eclipse plug-in
 
 -   **`dita.map.eclipse.plugin.properties`**
 
@@ -26,7 +26,7 @@ Eclipse uses multiple files to control the plug-in behavior. Some of these contr
 
 -   **`dita.map.eclipse.manifest.file`**
 
-    Creates a MANIFEST.MF file that contains additional information used by Eclipse
+    Creates a `MANIFEST.MF` file that contains additional information used by Eclipse
 
 -   **`copy-plugin-files`**
 

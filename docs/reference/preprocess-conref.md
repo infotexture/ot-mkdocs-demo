@@ -23,7 +23,7 @@ If an element is pulled into a new context along with a cross reference that ref
 </topic>
 ```
 
-When the section is referenced using a `@conref` attribute, the value of the `@id` attribute on the `fig` element is modified to ensure that it remains unique in the new context. At the same time, the `xref` element is also modified so that it remains valid as a local reference. For example, if the referencing topic has an `@id` set to "new\_topic", then the conrefed element may look like this in the intermediate document `section`.
+When the section is referenced using a `@conref` attribute, the value of the `@id` attribute on the `<fig>` element is modified to ensure that it remains unique in the new context. At the same time, the `<xref>` element is also modified so that it remains valid as a local reference. For example, if the referencing topic has an `@id` set to "new\_topic", then the conrefed element may look like this in the intermediate document `<section>`.
 
 ```
 <section id="sect">
@@ -37,5 +37,5 @@ When the section is referenced using a `@conref` attribute, the value of the `@i
 </section>
 ```
 
-In this case, the value of the `@id` attribute on the `fig` element has been changed to a generated value of "d1e25". At the same time, the `xref` element has been updated to use that new generated ID, so that the cross reference remains valid.
+In this case, the value of the `@id` attribute on the `<fig>` element has been changed to a generated value of "d1e25". At the same time, the `<xref>` element has been updated to use that new generated ID, so that the cross reference remains valid.
 

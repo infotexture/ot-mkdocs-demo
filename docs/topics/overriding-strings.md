@@ -4,9 +4,9 @@ Override the default strings in the toolkit when you want to replace an existing
 
 1.  Copy this file to your plug-in.
 
-    -   non-PDF output: plugins/org.dita.base/xsl/common/strings.xml
-    -   PDF output: plugins/org.dita.pdf2/cfg/common/vars/strings.xml
-2.  In your plug-in, edit strings.xml to contain references to the language files you want to override.
+    -   non-PDF output: `plugins/org.dita.base/xsl/common/strings.xml`
+    -   PDF output: `plugins/org.dita.pdf2/cfg/common/vars/strings.xml`
+2.  In your plug-in, edit `strings.xml` to contain references to the language files you want to override.
 
     ```
     <?xml version="1.0" encoding="UTF-8"?>
@@ -20,12 +20,12 @@ Override the default strings in the toolkit when you want to replace an existing
     </langlist>
     ```
 
-3.  Copy the language file from you want to override. Paste it into your plug-in's xsl/common or cfg/common/vars directory.
+3.  Copy the language file from you want to override. Paste it into your plug-in's `xsl/common` or `cfg/common/vars` directory.
 
     Language files are found in:
 
-    -   non-PDF output: plugins/org.dita.base/xsl/common/
-    -   PDF output: plugins/org.dita.pdf2/cfg/common/vars/
+    -   non-PDF output: `plugins/org.dita.base/xsl/common/`
+    -   PDF output: `plugins/org.dita.pdf2/cfg/common/vars/`
 4.  Open the language file. Remove all of the variables except those you want to override.
 
     By removing the variables you will not override, you limit where variables are defined in the toolkit while making your file easier to maintain.
@@ -40,7 +40,7 @@ Override the default strings in the toolkit when you want to replace an existing
     </variables>
     ```
 
-6.  Update your plugin.xml file to extend the strings available.
+6.  Update your `plugin.xml` file to extend the strings available.
 
     ```
     <plugin id="com.example.your-plugin">

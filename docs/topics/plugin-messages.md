@@ -7,7 +7,7 @@ Use the `dita.xsl.messages` extension point to add plug-in-specific messages to 
     ```
     <messages>
       *&lt;!-- See resources/messages.xml for the details. --&gt;*
-      <message id="PrefixNumberLetter" type="error-severity">
+      <message id="*Prefix**Number**Letter*" type="*error-severity*">
         <reason>Message text</reason>
         <response>How to resolve</response>
       </message>
@@ -16,16 +16,16 @@ Use the `dita.xsl.messages` extension point to add plug-in-specific messages to 
 
     where:
 
-    -   Prefix is a sequence of four capital letters.
+    -   *Prefix* is a sequence of four capital letters.
 
         **Note:** By convention, the toolkit messages use `DOTX` but any sequence can be used by plug-in developers.
 
-    -   Number is a three-digit integer.
-    -   Letter is one of the following upper-case letters: I, W, E, F. It should match the value that is specified for the `@type` attribute.
+    -   *Number* is a three-digit integer.
+    -   *Letter* is one of the following upper-case letters: I, W, E, F. It should match the value that is specified for the `@type` attribute.
 
         **Note:** As the `@id` attribute is used as a whole and not decomposed by recent versions of the toolkit, you could use any sequence as the message identifier. Nevertheless, to facilitate reuse of the plug-in and make it more readable by other users, we recommend following these guidelines.
 
-    -   error-severity specifies the severity of the error. It must be one of the following values:
+    -   *error-severity* specifies the severity of the error. It must be one of the following values:
 
         -   **Info \(I\)**
 
@@ -47,26 +47,28 @@ Use the `dita.xsl.messages` extension point to add plug-in-specific messages to 
 
         **Tip:** If the `@id` attribute of your message is equal to the `@id` of a default DITA-OT message, your message will override the default one. An override cannot change the severity of the overridden message.
 
-2.  Create a plugin.xml file that contains the following content:
+2.  Create a `plugin.xml` file that contains the following content:
 
     ```
-    <plugin id="plugin-id">
-      <feature extension="dita.xsl.messages" file="file"/>
+    <plugin id="*plugin-id*">
+      <feature extension="dita.xsl.messages" file="*file*"/>
     </plugin>
     ```
 
     where:
 
-    -   plugin-id is the plug-in identifier, for example, `com.example.newmsg`.
-    -   file is the name of the new XML file containing the messages created in step [1](plugin-messages.md#step_create-message-xml), for example, myMessages.xml.
-3.  Install the plug-in.
+    -   *plugin-id* is the plug-in identifier, for example, `com.example.newmsg`.
+    -   *file* is the name of the new XML file containing the messages created in step [1](plugin-messages.md#step_create-message-xml), for example, `myMessages.xml`.
+3.  Use the `dita install` subcommand to install the plug-in.
+
+    **Note:** For more information, see [Installing plug-ins](plugins-installing.md).
 
 
 Add the following call in XSLT modules to generate a message when a specific condition occurs:
 
 ```
 <xsl:call-template name="output-message">
-  <xsl:with-param name="id">prefixnumberletter</xsl:with-param>
+  <xsl:with-param name="id">*prefix**number**letter*</xsl:with-param>
   <xsl:with-param name="msg">Message text and parameters.</xsl:with-param>
 </xsl:call-template>
 ```
@@ -75,8 +77,8 @@ You can also pass custom parameters to the template by using the `@msgparams` pa
 
 ```
 <xsl:call-template name="output-message">
-  <xsl:with-param name="id">prefixnumberletter</xsl:with-param>
-  <xsl:with-param name="msgparams">%1=MyFirstValue;%2=MySecondValue</xsl:with-param>
+  <xsl:with-param name="id">*prefix**number**letter*</xsl:with-param>
+  <xsl:with-param name="msgparams">*%1=MyFirstValue**;**%2=MySecondValue*</xsl:with-param>
 </xsl:call-template>
 ```
 

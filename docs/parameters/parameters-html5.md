@@ -2,125 +2,125 @@
 
 The HTML5 transformation shares common parameters with other HTML-based transformations and provides additional parameters that are specific to HTML5 output. 
 
--   **args.artlbl**
+-   **__args.artlbl__**
 
     Specifies whether to generate a label for each image; the label will contain the image file name. The allowed values are yes and no; the default value is no.
 
--   **args.copycss**
+-   **__args.copycss__**
 
     Specifies whether to copy the custom .css file to the output directory. The allowed values are yes and no; the default value is no.
 
     If an external process will copy your custom .css file to the output directory, leave this parameter unset \(or set it to no\). If DITA-OT should copy the file when generating output, set it to yes.
 
--   **args.css**
+-   **__args.css__**
 
     Specifies the name of a custom .css file.
 
-    The value of this parameter should be only the file name. The absolute path to the parent directory should be specified with args.cssroot.
+    The value of this parameter should be only the file name. The absolute path to the parent directory should be specified with **args.cssroot**.
 
--   **args.csspath**
+-   **__args.csspath__**
 
     Specifies the **destination** directory to which .css files are copied \(relative to the output directory\).
 
-    Corresponds to the XSLT parameter CSSPATH.
+    Corresponds to the XSLT parameter **CSSPATH**.
 
     DITA-OT will copy the file **to** this location.
 
-    **Tip:** If args.csspath is not set, the custom CSS file \(and the default CSS files\) will be copied to the root level of the output folder. To copy CSS files to an output subfolder named css, set args.csspath to css.
+    **Tip:** If **args.csspath** is not set, the custom CSS file \(and the default CSS files\) will be copied to the root level of the output folder. To copy CSS files to an output subfolder named `css`, set **args.csspath** to css.
 
--   **args.cssroot**
+-   **__args.cssroot__**
 
     Specifies the **source** directory that contains the custom .css file.
 
     DITA-OT will copy the file **from** this location.
 
-    **Important:** Enter the absolute path to the parent directory of the custom CSS file specified with args.css.
+    **Important:** Enter the absolute path to the parent directory of the custom CSS file specified with **args.css**.
 
--   **args.dita.locale**
+-   **__args.dita.locale__**
 
     Specifies the language locale file to use for sorting index entries.
 
--   **args.ftr**
+-   **__args.ftr__**
 
     Specifies an XML file that contains content for a running footer.
 
-    Corresponds to the XSLT parameter FTR.
+    Corresponds to the XSLT parameter **FTR**.
 
-    **Note:** The footer file should be specified using an absolute path and must contain valid XML. A common practice is to place all content into a `div` element. In HTML5 output, the footer file contents will be wrapped in an HTML5 `footer` element with the `@role` attribute set to contentinfo.
+    **Note:** The footer file should be specified using an absolute path and must contain valid XML. A common practice is to place all content into a `<div>` element. In HTML5 output, the footer file contents will be wrapped in an HTML5 `<footer>` element with the `@role` attribute set to contentinfo.
 
--   **args.gen.default.meta**
+-   **__args.gen.default.meta__**
 
     Generate metadata for parental control scanners, meta elements with name="security" and name="Robots". The allowed values are yes and no; the default value is no.
 
-    Corresponds to the XSLT parameter genDefMeta.
+    Corresponds to the XSLT parameter **genDefMeta**.
 
--   **args.hdf**
+-   **__args.hdf__**
 
     Specifies an XML file that contains content to be placed in the document head.
 
-    The contents of the header file will be inserted in the `head` element of the generated HTML files.
+    The contents of the header file will be inserted in the `<head>` element of the generated HTML files.
 
-    **Tip:** The header file should be specified using an absolute path and must contain valid XML. If you need to insert more than one element into the HTML page head, wrap the content in a `div` element. The division wrapper in the header file will be discarded when generating HTML files, and the contents will be inserted into each page head.
+    **Tip:** The header file should be specified using an absolute path and must contain valid XML. If you need to insert more than one element into the HTML page head, wrap the content in a `<div>` element. The division wrapper in the header file will be discarded when generating HTML files, and the contents will be inserted into each page head.
 
--   **args.hdr**
+-   **__args.hdr__**
 
     Specifies an XML file that contains content for a running header.
 
-    Corresponds to the XSLT parameter HDR.
+    Corresponds to the XSLT parameter **HDR**.
 
-    **Note:** The header file should be specified using an absolute path and must contain valid XML. A common practice is to place all content into a `div` element. In HTML5 output, the contents of the header file will be wrapped in an HTML5 `header` element with the `@role` attribute set to banner.
+    **Note:** The header file should be specified using an absolute path and must contain valid XML. A common practice is to place all content into a `<div>` element. In HTML5 output, the contents of the header file will be wrapped in an HTML5 `<header>` element with the `@role` attribute set to banner.
 
--   **args.hide.parent.link**
+-   **__args.hide.parent.link__**
 
     Specifies whether to hide links to parent topics in the HTML5 output. The allowed values are yes and no; the default value is no.
 
-    Corresponds to the XSLT parameter NOPARENTLINK.
+    Corresponds to the XSLT parameter **NOPARENTLINK**.
 
-    **Note:** This parameter is deprecated in favor of the args.rellinks parameter.
+    **Note:** This parameter is deprecated in favor of the **args.rellinks** parameter.
 
--   **args.html5.classattr**
+-   **__args.html5.classattr__**
 
     Specifies whether to include the DITA class ancestry inside the HTML5 elements. The allowed values are yes and no; the default value is yes.
 
--   **args.html5.contenttarget**
+-   **__args.html5.contenttarget__**
 
     Specifies the value of the @target attribute on the &lt;base&gt; element in the TOC file.
 
--   **args.html5.toc**
+-   **__args.html5.toc__**
 
     Specifies the base name of the TOC file.
 
--   **args.html5.toc.class**
+-   **__args.html5.toc.class__**
 
     Specifies the value of the @class attribute on the &lt;body&gt; element in the TOC file.
 
--   **args.html5.toc.xsl**
+-   **__args.html5.toc.xsl__**
 
     Specifies a custom XSL file to be used for TOC generation.
 
--   **args.indexshow**
+-   **__args.indexshow__**
 
     Specifies whether the content of &lt;indexterm&gt; elements are rendered in the output. The allowed values are yes and no; the default value is no.
 
--   **args.outext**
+-   **__args.outext__**
 
     Specifies the file extension for HTML5 output.
 
-    Corresponds to the XSLT parameter OUTEXT.
+    Corresponds to the XSLT parameter **OUTEXT**.
 
--   **args.xsl**
+-   **__args.xsl__**
 
     Specifies a custom XSL file to be used instead of the default XSL transformation.
 
     The parameter must specify a fully qualified file name.
 
--   **html5.toc.generate**
+-   **__html5.toc.generate__**
 
     Generate TOC file from the DITA map. The allowed values are yes and no; the default value is yes.
 
--   **nav-toc**
+-   **__nav-toc__**
 
-    Specifies whether to generate a table of contents \(ToC\) in the HTML5 `nav` element of each page. The navigation can then be rendered in a sidebar or menu via CSS.
+    Specifies whether to generate a table of contents \(ToC\) in the HTML5 `<nav>` element of each page. The navigation can then be rendered in a sidebar or menu via CSS.
 
     The following values are supported:
 

@@ -10,7 +10,7 @@ XDITA is the LwDITA authoring format that uses XML to structure information. XDI
 
 The XDITA parser included in the `org.lwdita` plug-in provides preliminary support for XDITA maps and XDITA topics.
 
-To apply XDITA-specific processing to topics in an XDITA map or a full DITA 1.3 map, set the `@format` attribute on a `topicref` to `xdita`:
+To apply XDITA-specific processing to topics in an XDITA map or a full DITA 1.3 map, set the `@format` attribute on a `<topicref>` to `xdita`:
 
 ```
 <map>
@@ -18,7 +18,7 @@ To apply XDITA-specific processing to topics in an XDITA map or a full DITA 1.3 
 </map>
 ```
 
-**Tip:** For examples of cross-format content sharing between topics in XDITA, HDITA, extended-profile MDITA, and DITA 1.3, see the LwDITA sample files in the DITA-OT installation directory under plugins/org.oasis-open.xdita.v0\_2\_2/samples.
+**Tip:** For examples of cross-format content sharing between topics in XDITA, HDITA, extended-profile MDITA, and DITA 1.3, see the LwDITA sample files in the DITA-OT installation directory under `plugins/org.oasis-open.xdita.v0_2_2/samples`.
 
 ## MDITA
 
@@ -29,9 +29,9 @@ Recent proposals for LwDITA include two profiles for authoring MDITA topics:
 -   The “Core profile” is based on [GitHub-Flavored Markdown](https://github.github.com/gfm/) and includes elements that are common to many other Markdown implementations.
 -   The “Extended profile” borrows additional features from other flavors of Markdown to represent a broader range of DITA content with existing plain-text syntax conventions.
 
-The Markdown DITA parser included in the `org.lwdita` plug-in provides preliminary support for these profiles and additional Markdown constructs as described in the syntax reference.
+The MDITA parser included in the `org.lwdita` plug-in provides preliminary support for these profiles and additional Markdown constructs as described in the [MDITA syntax](../reference/markdown/MDITA-syntax.md).
 
-To apply LwDITA-specific processing to Markdown topics, set the `@format` attribute to `mdita`:
+To apply the stricter LwDITA-specific processing to Markdown topics, set the `@format` attribute to `mdita`:
 
 ```
 <map>
@@ -41,9 +41,7 @@ To apply LwDITA-specific processing to Markdown topics, set the `@format` attrib
 
 In this case, the first paragraph in the topic will be treated as a short description, for example, and additional metadata can be specified for the topic via a YAML front matter block.
 
-**Note:** Setting the `@format` attribute to `mdita` triggers stricter parsing than the more lenient document parsing approach that is applied to `markdown` documents.
-
-**Attention:** The MDITA map format is not yet supported. To include Markdown content in publications, use an XDITA map or a DITA 1.3 map.
+**Tip:** For details on the differences in [Markdown formats](../reference/markdown-formats.md), see [Markdown DITA syntax](../resources/../reference/markdown/Markdown-DITA-syntax.md), [MDITA syntax](../resources/../reference/markdown/MDITA-syntax.md), and [Format comparison](../reference/markdown/Format-comparison.md).
 
 ## HDITA
 
@@ -61,11 +59,20 @@ To apply LwDITA-specific processing to HTML topics, set the `@format` attribute 
 
 **Attention:** The HDITA map format is not yet supported. To include HDITA content, use an XDITA map or a DITA 1.3 map.
 
+## Using conditional processing in MDITA and HDITA
+
+When you set up conditional processing in MDITA and HDITA, use the `@data-props` attribute in the element that will have the conditional processing applied. In the `.ditaval` file, however, use the `@props` attribute.
+
 ## Converting lightweight formats to DITA XML
 
 When you add LwDITA topics to a DITA publication, the content is temporarily converted to DITA in the background when generating other output formats like HTML or PDF, but the source files remain unchanged.
 
-If you prefer to maintain this content in DITA in the future, you can generate DITA output by passing the --format=dita option on the command line.
+If you prefer to maintain this content in DITA in the future, you can generate DITA output by passing the **--format**=dita option on the command line.
 
 This converts all input files \(both LwDITA formats and DITA XML\) to [Normalized DITA](dita2dita.md). You can then copy the generated DITA files from the output folder to your project and replace references to the lightweight topics with their DITA equivalents.
+
+**Targetonly**  
+
+
+[MDITA syntax](../reference/markdown/MDITA-syntax.md)
 

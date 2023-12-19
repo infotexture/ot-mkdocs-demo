@@ -14,13 +14,13 @@ Common CSS files are now generated using separate modules for each DITA domain, 
 
 The XSLT `tm-area` named template, which used to toggle rendering of trademark symbols in US English and Asian languages \(Japanese, Korean, and both Chinese\) but ignore them in all other languages, has been deprecated. Trademark symbols are now rendered uniformly for all languages and the template will be removed in an upcoming release.
 
-In previous releases, short descriptions in `abstract` elements were rendered as division elements \(`div`\), rather than paragraphs \(`p`\). Processing has been revised to ensure that short descriptions are consistently rendered as paragraphs, regardless of whether they appear in `abstract` elements. Users who have previously implemented custom CSS rules to style `div.shortdesc` like paragraphs should be able to remove these rules.
+In previous releases, short descriptions in `<abstract>` elements were rendered as division elements \(`<div>`\), rather than paragraphs \(`<p>`\). Processing has been revised to ensure that short descriptions are consistently rendered as paragraphs, regardless of whether they appear in `<abstract>` elements. Users who have previously implemented custom CSS rules to style `div.shortdesc` like paragraphs should be able to remove these rules.
 
 ## PDF
 
-The `antiquewhite` background color has been removed from table heads and key column contents in `simpletable` and `properties` tables to synchronize presentation with `choicetable` and provide a more uniform customization baseline between PDF output and HTML-based formats.
+The `antiquewhite` background color has been removed from table heads and key column contents in `<simpletable>` and `<properties>` tables to synchronize presentation with `<choicetable>` and provide a more uniform customization baseline between PDF output and HTML-based formats.
 
-PDF: The I18N Java and XSLT processing code has been merged into single task. This eliminated the need for a stage3.fo file in the temporary directory; instead, topic.fo is generated directly from stage2.fo. If custom plug-ins were implemented to handle stage3.fo, they would need to be updated.
+PDF: The I18N Java and XSLT processing code has been merged into single task. This eliminated the need for a `stage3.fo` file in the temporary directory; instead, `topic.fo` is generated directly from `stage2.fo`. If custom plug-ins were implemented to handle `stage3.fo`, they would need to be updated.
 
 Localization variables that are no longer used in PDF processing have been deprecated and will be removed in an upcoming release. PDF customization plug-ins that make use of these variables should plan to refactor accordingly:
 
@@ -58,12 +58,12 @@ Localization variables that are no longer used in PDF processing have been depre
 
 The following Ant properties have been deprecated:
 
--   conreffile
+-   **conreffile**
 
 The following preprocessing targets have been deprecated:
 
--   conref-check
--   coderef
+-   **conref-check**
+-   **coderef**
 
 ## Pre-processing
 

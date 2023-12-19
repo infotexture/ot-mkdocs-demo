@@ -6,11 +6,12 @@ The print-pdf transformation has the following characteristics:
 
 -   Uses A4 paper
 -   Renders figures with a title at the top and a description at the bottom
+-   Removes the period after the number for an ordered-list item
 -   Use em dashes as the symbols for unordered lists
 
-1.  In the plugins directory, create a directory named com.example.print-pdf.
+1.  In the `plugins` directory, create a directory named `com.example.print-pdf`.
 
-2.  In the new com.example.print-pdf directory, create a plug-in configuration file \(plugin.xml\) that declares the new print-pdf transformation and its dependencies.
+2.  In the new `com.example.print-pdf` directory, create a plug-in configuration file \(`plugin.xml`\) that declares the new print-pdf transformation and its dependencies.
 
     ```
     <?xml version="1.0" encoding="UTF-8"?>
@@ -24,7 +25,7 @@ The print-pdf transformation has the following characteristics:
     </plugin>
     ```
 
-3.  Add an Ant script \(integrator.xml\) to define the transformation type.
+3.  Add an Ant script \(`integrator.xml`\) to define the transformation type.
 
     ```
     <?xml version='1.0' encoding='UTF-8'?>
@@ -39,7 +40,7 @@ The print-pdf transformation has the following characteristics:
     </project>
     ```
 
-4.  In the new plug-in directory, add a cfg/catalog.xml file that specifies the custom XSLT style sheets.
+4.  In the new plug-in directory, add a `cfg/catalog.xml` file that specifies the custom XSLT style sheets.
 
     ```
     <?xml version="1.0" encoding="UTF-8"?>
@@ -50,7 +51,7 @@ The print-pdf transformation has the following characteristics:
     </catalog>
     ```
 
-5.  Create the cfg/fo/attrs/custom.xsl file, and add attribute and variable overrides to it.
+5.  Create the `cfg/fo/attrs/custom.xsl` file, and add attribute and variable overrides to it.
 
     For example, add the following variables to change the page size to A4.
 
@@ -64,9 +65,9 @@ The print-pdf transformation has the following characteristics:
     </xsl:stylesheet>
     ```
 
-6.  Create the cfg/fo/xsl/custom.xsl file, and add XSLT overrides to it.
+6.  Create the `cfg/fo/xsl/custom.xsl` file, and add XSLT overrides to it.
 
-    For example, the following code changes the rendering of `figure` elements.
+    For example, the following code changes the rendering of `<figure>` elements.
 
     ```
     <?xml version="1.0" encoding="UTF-8"?>
@@ -91,7 +92,7 @@ The print-pdf transformation has the following characteristics:
     </xsl:stylesheet>
     ```
 
-7.  Create an English-language variable-definition file \(cfg/common/vars/en.xml\) and make any necessary modifications to it.
+7.  Create an English-language variable-definition file \(`cfg/common/vars/en.xml`\) and make any necessary modifications to it.
 
     For example, the following code removes the period after the number for an ordered-list item; it also specifies that the bullet for an unordered list item should be an em dash.
 
@@ -99,16 +100,16 @@ The print-pdf transformation has the following characteristics:
     <?xml version="1.0" encoding="UTF-8"?>
     <variables>
       <!-- Remove dot from list number -->
-      <variable id="Ordered List Number">
+      <variable id="Ordered List Number 1">
         <param ref-name="number"/>
       </variable>
       <!-- Change unordered list bullet to an em dash -->
-      <variable id="Unordered List bullet">&#x2014;</variable>
+      <variable id="Unordered List bullet 1">&#x2014;</variable>
     </variables>
     ```
 
 
-**Tip:** The files for this sample plug-in are included in the DITA-OT installation directory under docsrc/samples/plugins/com.example.print-pdf/ and on [GitHub](https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.print-pdf).
+**Tip:** The files for this sample plug-in are included in the DITA-OT installation directory under `docsrc/samples/plugins/com.example.print-pdf/` and on [GitHub](https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.print-pdf).
 
 The plug-in directory has the following layout and files:
 
@@ -128,11 +129,14 @@ com.example.print-pdf
 └── plugin.xml
 ```
 
-1.  Run dita --install to install the plug-in and make the print-pdf transformation available.
+1.  Use the `dita install` subcommand to install the plug-in.
+
+    **Note:** For more information, see [Installing plug-ins](plugins-installing.md).
+
 2.  Build output with the new transformation type to verify that the plug-in works as intended.
 
     ```
-    dita --input=my.ditamap --format=print-pdf
+    ``dita`` **--input**=*my.ditamap* **--format**=print-pdf
     ```
 
 

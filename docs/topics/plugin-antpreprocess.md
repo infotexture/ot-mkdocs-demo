@@ -8,27 +8,29 @@ You can use the `depend.preprocess.pre` and `depend.preprocess.post` extension p
 
 1.  Define and integrate the new Ant target.
 
-2.  Create the following plugin.xml file:
+2.  Create the following `plugin.xml` file:
 
     ```
-    <plugin id="plugin-id">
-      <feature extension="extension-point" value="Ant-target"/>
+    <plugin id="*plugin-id*">
+      <feature extension="*extension-point*" value="*Ant-target*"/>
     </plugin>
     ```
 
     where
 
-    -   plugin-id is the plug-in identifier.
-    -   extension-point is a pre-processing extension point.
-    -   Ant-target is the name of the Ant target.
-3.  Install the plug-in.
+    -   *plugin-id* is the plug-in identifier.
+    -   *extension-point* is a pre-processing extension point.
+    -   *Ant-target* is the name of the Ant target.
+3.  Use the `dita install` subcommand to install the plug-in.
+
+    **Note:** For more information, see [Installing plug-ins](plugins-installing.md).
 
 
 The new target is added to the Ant dependency list. The new target is now always run in conjunction with the specified step in the pre-processing pipeline.
 
 ## Example
 
-The following plugin.xml file specifies that the myAntTargetBeforeChunk target is always run before the `chunk` step in the pre-processing stage.
+The following `plugin.xml` file specifies that the **myAntTargetBeforeChunk** target is always run before the `chunk` step in the pre-processing stage.
 
 ```
 <plugin id="com.example.extendchunk">
@@ -37,7 +39,7 @@ The following plugin.xml file specifies that the myAntTargetBeforeChunk target i
 </plugin>
 ```
 
-It assumes that the myAntTargetBeforeChunk target has already been defined and integrated.
+It assumes that the **myAntTargetBeforeChunk** target has already been defined and integrated.
 
 CAUTION:
 

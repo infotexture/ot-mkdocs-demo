@@ -4,7 +4,7 @@ DITA-OT provides additional processing support beyond that which is mandated by 
 
 ## Character set definition
 
-For `coderef` elements, DITA-OT supports defining the code reference target file encoding using the `@format` attribute. The supported format is:
+For `<coderef>` elements, DITA-OT supports defining the code reference target file encoding using the `@format` attribute. The supported format is:
 
 ```
 format (";" space* "charset=" charset)?
@@ -16,7 +16,7 @@ If a character set is not defined, the system default character set will be used
 <coderef href="unicode.txt" format="txt; charset=UTF-8"/>
 ```
 
-As of DITA-OT 3.3, the default character set for code references can be changed by adding the default.coderef-charset key to the [configuration.properties](../parameters/configuration-properties-file.md) file:
+As of DITA-OT 3.3, the default character set for code references can be changed by adding the **default.coderef-charset** key to the [configuration.properties](../parameters/configuration-properties-file.md) file:
 
 ```language-properties
 default.coderef-charset = ISO-8859-1
@@ -76,7 +76,7 @@ uri ("#token=" start? ("," end)? )?
 
 Lines identified using start and end tokens are exclusive: the lines that contain the start token and end token will be not be included. If the start token is omitted, the range starts from the first line in the file; if the end token is omitted, the range ends on the last line of the file.
 
-Given a Haskell source file named fact.hs with the following content,
+Given a Haskell source file named `fact.hs` with the following content,
 
 ```
 -- START-FACT
@@ -93,7 +93,7 @@ a range of lines can be referenced as:
 <coderef href="fact.hs#token=START-FACT,END-FACT"/>
 ```
 
-to include the range of lines that follows the `START-FACT` token on Line 1, up to \(but not including\) the line that contains the `END-FACT` token \(Line 5\). The resulting `codeblock` would contain lines 2–4:
+to include the range of lines that follows the `START-FACT` token on Line 1, up to \(but not including\) the line that contains the `END-FACT` token \(Line 5\). The resulting `<codeblock>` would contain lines 2–4:
 
 ```language-haskell
 fact :: Int -> Int
@@ -114,7 +114,7 @@ DITA-OT can adjust the leading whitespace in code blocks to remove excess indent
 ··</subjectdef>
 ```
 
-DITA-OT can remove the leading whitespace that is common to all lines in the code block. To trim the excess space, set the `@outputclass` attribute on the `codeblock` element to include the `normalize-space` keyword.
+DITA-OT can remove the leading whitespace that is common to all lines in the code block. To trim the excess space, set the `@outputclass` attribute on the `<codeblock>` element to include the `normalize-space` keyword.
 
 In this case, two spaces \(“··”\) would be removed from the beginning of each line, shifting content to the left by two characters, while preserving the indentation of lines that contain additional whitespace \(beyond the common indent\):
 
@@ -129,7 +129,7 @@ In this case, two spaces \(“··”\) would be removed from the beginning of e
 
 DITA-OT can be set to display the whitespace characters in code blocks to visualize indentation in PDF output.
 
-To enable this feature, set the `@outputclass` attribute on the `codeblock` element to include the `show-whitespace` keyword.
+To enable this feature, set the `@outputclass` attribute on the `<codeblock>` element to include the `show-whitespace` keyword.
 
 When PDF output is generated, space characters in the code will be replaced with a middle dot or “interpunct” character \( `·` \); tab characters are replaced with a rightwards arrow and three spaces \( `→   ` \).
 
@@ -143,7 +143,7 @@ When PDF output is generated, space characters in the code will be replaced with
 
 DITA-OT can be set to add line numbers to code blocks to make it easier to distinguish specific lines.
 
-To enable this feature, set the `@outputclass` attribute on the `codeblock` element to include the `show-line-numbers` keyword.
+To enable this feature, set the `@outputclass` attribute on the `<codeblock>` element to include the `show-line-numbers` keyword.
 
 ```
 	for i in 0..10 {

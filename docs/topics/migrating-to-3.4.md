@@ -6,9 +6,9 @@ DITA-OT 3.4 includes an official Docker container image, a separate plug-in for 
 
 ## New indexing plug-in
 
-DITA-OT 3.4 extracts the PDF indexing code to a separate org.dita.index plug-in, and adds a new `depend.org.dita.pdf2.index` extension point that can be used to add custom index processing targets to PDF output.
+DITA-OT 3.4 extracts the PDF indexing code to a separate `org.dita.index` plug-in, and adds a new `depend.org.dita.pdf2.index` extension point that can be used to add custom index processing targets to PDF output.
 
-The built-in index processing has been disabled and deprecated. If you have overridden index processing via the `transform.topic2fo` target in the past, you can set the new org.dita.index.skip property to yes and re-enable the `transform.topic2fo.index` target with `feature extension="depend.org.dita.pdf2.index" value="transform.topic2fo.index"/` in your plug-in configuration.
+The built-in index processing has been disabled and deprecated. If you have overridden index processing via the `transform.topic2fo` target in the past, you can set the new **org.dita.index.skip** property to yes and re-enable the `transform.topic2fo.index` target with `<feature extension="depend.org.dita.pdf2.index" value="transform.topic2fo.index"/>` in your plug-in configuration.
 
 |Plug-in|Source code location|
 |-------|--------------------|
@@ -28,7 +28,7 @@ DITA-OT 3.4 no longer includes the following legacy transformation plug-ins in t
 To re-install the plug-in\(s\) from the plug-in registry at [dita-ot.org/plugins](https://www.dita-ot.org/plugins), run the following command\(s\):
 
 ```syntax-bash
-dita --install=com.sophos.tocjs
-dita --install=org.dita.troff
+`dita` **--install**=`com.sophos.tocjs`
+`dita` **--install**=`org.dita.troff`
 ```
 

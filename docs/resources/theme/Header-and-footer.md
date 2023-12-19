@@ -5,19 +5,12 @@ The `content` key in `header` or `footer` can be used to add text to running hea
 The following variable fields are currently supported:
 
 -   `title`: Map title
-
 -   `chapter`: Map chapter title
-
 -   `folio`: current page number
-
 -   `folio-with-total`: current page number with total number of pages
-
 -   `page-number`: current page number
-
 -   `page-count`: total number of pages
-
 -   `year`: current year
-
 
 ```yaml
 header:

@@ -6,41 +6,41 @@ Beginning with DITA-OT 1.7, flagging support is implemented as a common `flag-mo
 
 Flagging is implemented as a reusable module during the preprocess stage. If a DITAVAL file is not used with a build, this step is skipped with no change to the file.
 
-When a flag is active, relevant sections of the DITAVAL itself are copied into the topic as a sub-element of the current topic. The active flags are enclosed in a pseudo-specialization of the `foreign` element \(referred to as a pseudo-specialization because it is used only under the covers, with all topic types; it is not integrated into any shipped document types\).
+When a flag is active, relevant sections of the DITAVAL itself are copied into the topic as a sub-element of the current topic. The active flags are enclosed in a pseudo-specialization of the `<foreign>` element \(referred to as a pseudo-specialization because it is used only under the covers, with all topic types; it is not integrated into any shipped document types\).
 
--   **`ditaval-startprop`**
+-   **`<ditaval-startprop>`**
 
-    When any flag is active on an element, a `ditaval-startprop` element will be created as the first child of the flagged element:
+    When any flag is active on an element, a `<ditaval-startprop>` element will be created as the first child of the flagged element:
 
     ```language-xml
     <ditaval-startprop class="+ topic/foreign ditaot-d/ditaval-startprop ">
     ```
 
-    The `ditaval-startprop` element will contain the following:
+    The `<ditaval-startprop>` element will contain the following:
 
     -   If the active flags should create a new style, that style is included using standard CSS markup on the `@outputclass` attribute. Output types that make use of CSS, such as XHTML, can use this value as-is.
-    -   If styles conflict, and a `style-conflict` element exists in the DITAVAL, it will be copied as a child of `ditaval-startprop`.
-    -   Any `prop` or `revprop` elements that define active flags will be copied in as children of the `ditaval-startprop` element. Any `startflag` children of the properties will be included, but `endflag` children will not.
--   **`ditaval-endprop`**
+    -   If styles conflict, and a `<style-conflict>` element exists in the DITAVAL, it will be copied as a child of `<ditaval-startprop>`.
+    -   Any `<prop>` or `<revprop>` elements that define active flags will be copied in as children of the `<ditaval-startprop>` element. Any `<startflag>` children of the properties will be included, but `<endflag>` children will not.
+-   **`<ditaval-endprop>`**
 
-    When any flag is active on an element, a `ditaval-endprop` element will be created as the last child of the flagged element:
+    When any flag is active on an element, a `<ditaval-endprop>` element will be created as the last child of the flagged element:
 
     ```language-xml
     <ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
     ```
 
-    CSS values and `style-conflict` elements are not included on this element.
+    CSS values and `<style-conflict>` elements are not included on this element.
 
-    Any `prop` or `revprop` elements that define active flags will be copied in as children of `ditaval-prop`. Any `startflag` children of the properties will be included, but `endflag` children will not.
+    Any `<prop>` or `<revprop>` elements that define active flags will be copied in as children of `<ditaval-prop>`. Any `<startflag>` children of the properties will be included, but `<endflag>` children will not.
 
 
 ## Supporting flags in overrides or custom transformation types
 
-For most transformation types, the `foreign` element should be ignored by default, because arbitrary non-DITA content may not mix well unless coded for ahead of time. If the `foreign` element is ignored by default, or if a rule is added to specifically ignore `ditaval-startprop` and `ditaval-endprop`, then the added elements will have no impact on a transform. If desired, flagging support may be integrated at any time in the future.
+For most transformation types, the `<foreign>` element should be ignored by default, because arbitrary non-DITA content may not mix well unless coded for ahead of time. If the `<foreign>` element is ignored by default, or if a rule is added to specifically ignore `<ditaval-startprop>` and `<ditaval-endprop>`, then the added elements will have no impact on a transform. If desired, flagging support may be integrated at any time in the future.
 
-The processing described above runs as part of the common preprocess, so any transform that uses the default preprocess will get the topic updates. To support generating flags as images, XSLT-based transforms can use default fallthrough processing in most cases. For example, if a paragraph is flagged, the first child of `p` will contain the start flag information; adding a rule to handle images in `ditaval-startprop` will cause the image to appear at the start of the paragraph content.
+The processing described above runs as part of the common preprocess, so any transform that uses the default preprocess will get the topic updates. To support generating flags as images, XSLT-based transforms can use default fallthrough processing in most cases. For example, if a paragraph is flagged, the first child of `<p>` will contain the start flag information; adding a rule to handle images in `<ditaval-startprop>` will cause the image to appear at the start of the paragraph content.
 
-In some cases fallthrough processing will not result in valid output; for those cases, the flags must be explicitly processed. This is done in the XHTML transform for elements like `ol`, because fallthrough processing would place images in between `ol` and `li`. To handle this, the code processes `ditaval-startprop` before starting the element, and `ditaval-endprop` at the end. Fallthrough processing is then disabled for those elements as children of `ol`.
+In some cases fallthrough processing will not result in valid output; for those cases, the flags must be explicitly processed. This is done in the XHTML transform for elements like `<ol>`, because fallthrough processing would place images in between `<ol>` and `<li>`. To handle this, the code processes `<ditaval-startprop>` before starting the element, and `<ditaval-endprop>` at the end. Fallthrough processing is then disabled for those elements as children of `<ol>`.
 
 ## Example DITAVAL
 
@@ -84,7 +84,7 @@ Now assume the following paragraph exists in a topic. Class attributes are inclu
 <p audience="user">Simple user; includes style but no images</p>
 ```
 
-Based on the DITAVAL above, audience="user" results in a style with underlining and with a green background. The interpreted CSS value is added to `@outputclass` on `ditaval-startprop`, and the actual property definition is included at the start and end of the element. The output from the flagging step looks like this \(with newlines added for clarity, and class attributes added as they would appear in the temporary file\):
+Based on the DITAVAL above, audience="user" results in a style with underlining and with a green background. The interpreted CSS value is added to `@outputclass` on `<ditaval-startprop>`, and the actual property definition is included at the start and end of the element. The output from the flagging step looks like this \(with newlines added for clarity, and class attributes added as they would appear in the temporary file\):
 
 The resulting file after the flagging step looks like this; for clarity, newlines are added, while `@xtrf` and `@xtrc` are removed:
 
@@ -107,13 +107,13 @@ The resulting file after the flagging step looks like this; for clarity, newline
 
 ## Content example 2: Conflicting styles
 
-This example includes a paragraph with conflicting styles. When the audience and platform attributes are both evaluated, the DITAVAL indicates that the background color is both green and blue. In this situation, the `style-conflict` element is evaluated to determine how to style the content.
+This example includes a paragraph with conflicting styles. When the audience and platform attributes are both evaluated, the DITAVAL indicates that the background color is both green and blue. In this situation, the `<style-conflict>` element is evaluated to determine how to style the content.
 
 ```language-xml
 <p audience="user" platform="win">Conflicting styles (still no images)</p>
 ```
 
-The `style-conflict` element results in a background color of red, so this value is added to `@outputclass` on `ditaval-startprop`. As above, active properties are copied into the generated elements; the `style-conflict` element itself is also copied into the generated `ditaval-startprop` element.
+The `<style-conflict>` element results in a background color of red, so this value is added to `@outputclass` on `<ditaval-startprop>`. As above, active properties are copied into the generated elements; the `<style-conflict>` element itself is also copied into the generated `<ditaval-startprop>` element.
 
 The resulting file after the flagging step looks like this; for clarity, newlines are added, while `@xtrf` and `@xtrc` are removed:
 
@@ -143,7 +143,7 @@ The resulting file after the flagging step looks like this; for clarity, newline
 
 ## Content example 3: Adding image flags
 
-This example includes image flags for both `@platform` and `@rev`, which are defined in DITAVAL `prop` and `revprop` elements.
+This example includes image flags for both `@platform` and `@rev`, which are defined in DITAVAL `<prop>` and `<revprop>` elements.
 
 ```
 <ol platform="linux" rev="rev2">
@@ -151,7 +151,7 @@ This example includes image flags for both `@platform` and `@rev`, which are def
 </ol>
 ```
 
-As above, the `ditaval-startprop` and `ditaval-endprop` nest the active property definitions, with the calculated CSS value on `@outputclass`. The `ditaval-startprop` drops the ending image, and `ditaval-endprop` drops the starting image. To make document-order processing more consistent, property flags are always included before revisions in `ditaval-startprop`, and the order is reversed for `ditaval-endprop`.
+As above, the `<ditaval-startprop>` and `<ditaval-endprop>` nest the active property definitions, with the calculated CSS value on `@outputclass`. The `<ditaval-startprop>` drops the ending image, and `<ditaval-endprop>` drops the starting image. To make document-order processing more consistent, property flags are always included before revisions in `<ditaval-startprop>`, and the order is reversed for `<ditaval-endprop>`.
 
 The resulting file after the flagging step looks like this; for clarity, newlines are added, while `@xtrf` and `@xtrc` are removed:
 

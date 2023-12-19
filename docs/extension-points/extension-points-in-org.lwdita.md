@@ -2,7 +2,7 @@
 
 The `org.lwdita` plug-in provides extension points to modify Markdown processing.
 
--   **dita.xsl.markdown**
+-   **__dita.xsl.markdown__**
 
     Markdown overrides XSLT import
 

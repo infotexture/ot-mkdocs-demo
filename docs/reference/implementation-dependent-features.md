@@ -29,7 +29,7 @@ Error recovery:
 
 Error recovery:
 
--   When there are multiple `revprop` elements with the same `@val` attribute, no error or warning is thrown
+-   When there are multiple `<revprop>` elements with the same `@val` attribute, no error or warning is thrown
 -   When multiple prop elements define a duplicate attribute and value combination, attribute default, or fall-back behavior, the DOTJ007W warning is thrown.
 
 ## Debugging attributes
@@ -57,7 +57,7 @@ If the scale attribute is not an unsigned integer, no error or warning is thrown
 
 ## Map processing
 
-When a `topicref` element that references a map contains child `topicref` elements, the DOTX068W error is thrown and the child `topicref` elements are ignored.
+When a `<topicref>` element that references a map contains child `<topicref>` elements, the DOTX068W error is thrown and the child `<topicref>` elements are ignored.
 
 ## Link processing
 
@@ -65,9 +65,9 @@ When the value of a hyperlink reference in the `@href` attribute is not a valid 
 
 ## Copy-to processing
 
-When the `@copy-to` attribute is specified on a `topicref`, the content of the `shortdesc` element is not used to override the short description of the topic.
+When the `@copy-to` attribute is specified on a `<topicref>`, the content of the `<shortdesc>` element is not used to override the short description of the topic.
 
 ## Coderef processing
 
-When `coderef` elements are used within code blocks to reference external files with literal code samples, the system default character set is used as the target file encoding unless a different character set is explicitly defined via the mechanisms described under [Character set definition](extended-functionality.md#coderef-charset).
+When `<coderef>` elements are used within code blocks to reference external files with literal code samples, the system default character set is used as the target file encoding unless a different character set is explicitly defined via the mechanisms described under [Character set definition](extended-functionality.md#coderef-charset).
 

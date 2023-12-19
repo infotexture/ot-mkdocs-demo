@@ -1,6 +1,6 @@
 # Migrating customizations
 
-If you have XSL transformation overrides, plug-ins or other customizations written prior to DITA-OT 4.0, you may need to make changes to ensure your overrides work properly with the latest toolkit versions.
+If you have XSL transformation overrides, plug-ins or other customizations written prior to DITA-OT 4.1, you may need to make changes to ensure your overrides work properly with the latest toolkit versions.
 
 In some cases, you may be able to remove old code that is no longer needed. In other cases, you may need to refactor your code to point to the modified extension points, templates or modes in recent toolkit versions.
 
@@ -8,9 +8,9 @@ When migrating customizations, identify the version of the toolkit you're curren
 
 **Note:**
 
-DITA-OT releases follow [semantic versioning](https://semver.org) guidelines. Version numbers use the `major.minor.patch` syntax, where major versions may include incompatible API changes, minor versions add functionality in a backwards-compatible manner and patch versions are maintenance releases that include backwards-compatible bug fixes.
+DITA-OT releases follow [semantic versioning](https://semver.org) guidelines. Version numbers use the *major.minor.patch* syntax, where *major* versions may include incompatible API changes, *minor* versions add functionality in a backwards-compatible manner and *patch* versions are maintenance releases that include backwards-compatible bug fixes.
 
-Custom plug-ins developed for a previous major version may require changes to work correctly with recent toolkit versions. Most plug-ins should be compatible with subsequent minor and patch versions of the major release for which they were originally developed.
+Custom plug-ins developed for a previous *major* version may require changes to work correctly with recent toolkit versions. Most plug-ins should be compatible with subsequent *minor* and *patch* versions of the *major* release for which they were originally developed.
 
 **Related information**  
 

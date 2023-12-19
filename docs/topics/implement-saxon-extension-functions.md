@@ -8,14 +8,14 @@ To implement extension functions, you must do the following:
 
 1.  Add your plug-in’s JAR file in the DITA-OT class path as described in [Adding a Java library to the classpath](plugin-javalib.md).
 2.  For each function, implement a class that extends `net.sf.saxon.lib.ExtensionFunctionDefinition`. This class provides the namespace name and function name for the function as well as details about its arguments and so on. See [Integrated extension functions](http://www.saxonica.com/html/documentation9.8/extensibility/integratedfunctions) in the Saxon documentation.
-3.  Include a file named net.sf.saxon.lib.ExtensionFunctionDefinition in the directory META-INF/services in the compiled JAR that your plug-in provides. Each line of the file must be the name of a class that implements `net.sf.saxon.lib.ExtensionFunctionDefinition`:
+3.  Include a file named `net.sf.saxon.lib.ExtensionFunctionDefinition` in the directory `META-INF/services` in the compiled JAR that your plug-in provides. Each line of the file must be the name of a class that implements `net.sf.saxon.lib.ExtensionFunctionDefinition`:
 
     ```
     com.example.saxon.functions.Add
     com.example.saxon.functions.Substract
     ```
 
-    You can create the file using `service` elements in an Ant `jar` task:
+    You can create the file using `<service>` elements in an Ant `<jar>` task:
 
     ```language-xml
     <jar destfile="${basedir}/target/lib/example-saxon.jar">

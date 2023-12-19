@@ -1,27 +1,27 @@
-# Migrating Ant builds to use the dita command
+# Migrating Ant builds to use the `dita` command
 
-Although DITA Open Toolkit still supports Ant builds, switching to the dita command offers a simpler command interface, sets all required environment variables and allows you to run DITA-OT without setting up anything beforehand.
+Although DITA Open Toolkit still supports Ant builds, switching to the `dita` command offers a simpler command interface, sets all required environment variables and allows you to run DITA-OT without setting up anything beforehand.
 
-Building output with the dita command is often easier than using Ant. In particular, you can use .properties files to specify sets of DITA-OT parameters for each build.
+Building output with the `dita` command is often easier than using Ant. In particular, you can use `.properties` files to specify sets of DITA-OT parameters for each build.
 
-You can include the dita command in shell scripts to perform multiple builds.
+You can include the `dita` command in shell scripts to perform multiple builds.
 
-**Tip:** Add the absolute path for the bin folder of the DITA-OT installation directory to the [PATH environment variable](https://en.wikipedia.org/wiki/PATH_(variable)) to run the dita command from any location on the file system without typing the path.
+**Tip:** Add the absolute path for the `bin` folder of the DITA-OT installation directory to the [PATH environment variable](https://en.wikipedia.org/wiki/PATH_(variable)) to run the `dita` command from any location on the file system without typing the path.
 
 1.  In your Ant build file, identify the properties set in each build target.
 
     **Note:** Some build parameters might be specified as properties of the project as a whole. You can refer to a build log to see a list of all properties that were set for the build.
 
-2.  Create a .properties file for each build and specify the needed build parameters, one per line, in the format `name = value`.
+2.  Create a `.properties` file for each build and specify the needed build parameters, one per line, in the format `name = value`.
 
-3.  Use the dita command to perform each build, referencing your .properties with the --propertyfile=file option.
+3.  Use the `dita` command to perform each build, referencing your `.properties` with the **--propertyfile**=*file* option.
 
 
 ## Example: Ant build
 
 Prior to DITA-OT 2.0, an Ant build like this was typically used to define the properties for each target.
 
-Sample build file: dita-ot-dir/docsrc/samples/ant\_sample/build-chm-pdf.xml
+Sample build file: `*dita-ot-dir*/docsrc/samples``/ant_sample/build-chm-pdf.xml`
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -48,18 +48,18 @@ Sample build file: dita-ot-dir/docsrc/samples/ant\_sample/build-chm-pdf.xml
 </project>
 ```
 
-## Example: .properties files with dita command
+## Example: `.properties` files with `dita` command
 
-The following .properties files and dita commands are equivalent to the example Ant build.
+The following `.properties` files and `dita` commands are equivalent to the example Ant build.
 
-Sample .properties file: dita-ot-dir/docsrc/samples/properties/chm.properties
+Sample `.properties` file: `*dita-ot-dir*/docsrc/samples``/properties/chm.properties`
 
 ```
 output.dir = out/chm
 args.gen.task.lbl = YES
 ```
 
-Sample .properties file: dita-ot-dir/docsrc/samples/properties/pdf.properties
+Sample `.properties` file: `*dita-ot-dir*/docsrc/samples``/properties/pdf.properties`
 
 ```
 output.dir = out/pdf
@@ -67,20 +67,20 @@ args.gen.task.lbl = YES
 args.rellinks = nofamily
 ```
 
-Run from dita-ot-dir/docsrc/samples:
+Run from `*dita-ot-dir*/docsrc/samples`:
 
 ```
-dita --input=sequence.ditamap --format=htmlhelp \
-     --propertyfile=properties/chm.properties
-dita --input=taskbook.ditamap --format=pdf \
-     --propertyfile=properties/pdf.properties
+`dita` **--input**=`sequence.ditamap` **--format**=htmlhelp \
+     **--propertyfile**=`properties/chm.properties`
+`dita` **--input**=`taskbook.ditamap` **--format**=pdf \
+     **--propertyfile**=`properties/pdf.properties`
 ```
 
-## Example: Call the dita command from an Ant build
+## Example: Call the `dita` command from an Ant build
 
-In some cases, you might still want to use an Ant build to implement some pre- or post-processing steps, but also want the convenience of using the dita command with .properties files to define the parameters for each build. This can be accomplished with Ant’s `exec` task.
+In some cases, you might still want to use an Ant build to implement some pre- or post-processing steps, but also want the convenience of using the `dita` command with `.properties` files to define the parameters for each build. This can be accomplished with Ant’s `<exec>` task.
 
-This example uses a `dita-cmd` Ant macro defined in the dita-ot-dir/docsrc/samples/ant\_sample/dita-cmd.xml file:
+This example uses a `<dita-cmd>` Ant macro defined in the `*dita-ot-dir*/docsrc/samples``/ant_sample/dita-cmd.xml` file:
 
 ```
 <macrodef name="dita-cmd">
@@ -106,17 +106,17 @@ This example uses a `dita-cmd` Ant macro defined in the dita-ot-dir/docsrc/sampl
 </macrodef>
 ```
 
-You can use this macro in your Ant build to call the dita command and pass the input, format and propertyfile parameters as follows:
+You can use this macro in your Ant build to call the `dita` command and pass the **input**, **format** and **propertyfile** parameters as follows:
 
 ```language-xml
 <dita-cmd input="sample.ditamap" format="pdf" propertyfile="sample.properties"/>
 ```
 
-This approach allows you to use Ant builds to perform additional tasks at build time while allowing the dita command to set the classpath and ensure that all necessary JAR libraries are available.
+This approach allows you to use Ant builds to perform additional tasks at build time while allowing the `dita` command to set the classpath and ensure that all necessary JAR libraries are available.
 
-**Note:** The attributes defined in the Ant macro are required and must be supplied each time the task is run. To set optional parameters in one build \(but not another\), use different .properties files for each build.
+**Note:** The attributes defined in the Ant macro are required and must be supplied each time the task is run. To set optional parameters in one build \(but not another\), use different `.properties` files for each build.
 
-Sample build file: dita-ot-dir/docsrc/samples/ant\_sample/build-chm-pdf-hybrid.xml
+Sample build file: `*dita-ot-dir*/docsrc/samples``/ant_sample/build-chm-pdf-hybrid.xml`
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>

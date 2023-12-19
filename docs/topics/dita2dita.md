@@ -20,15 +20,15 @@ Normalized output may be useful in situations where post-processing of DITA cont
 
 ## Generating normalized DITA output
 
-Run the dita command and set the value of the output --format option to dita:
+Run the `dita` command and set the value of the output **--format** option to dita:
 
 ```
-dita --input=input-file --format=dita
+``dita`` **--input**=*input-file* **--format**=dita
 ```
 
 where:
 
--   input-file is the DITA map or DITA file that you want to process.
+-   *input-file* is the DITA map or DITA file that you want to process.
 
 **Related information**  
 

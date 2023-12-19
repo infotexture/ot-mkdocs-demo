@@ -1,88 +1,88 @@
 # XSLT-import extension points
 
-You can use these extension points to override XSLT processing steps in pre-processing and certain transformation types. The value of the `@file` attribute in the `feature` element specifies a relative path to an XSL file in the current plug-in. The plug-in installer adds a XSL import statement to the default DITA-OT code, so that the XSL override becomes part of the normal build.
+You can use these extension points to override XSLT processing steps in pre-processing and certain transformation types. The value of the `@file` attribute in the `<feature>` element specifies a relative path to an XSL file in the current plug-in. The plug-in installer adds a XSL import statement to the default DITA-OT code, so that the XSL override becomes part of the normal build.
 
 ## Pre-processing
 
 You can use the following extension points to add XSLT processing to modules in the pre-processing pipeline:
 
--   **dita.xsl.conref**
+-   **__dita.xsl.conref__**
 
     Overrides the pre-processing step that resolves conref.
 
--   **dita.xsl.maplink**
+-   **__dita.xsl.maplink__**
 
     Overrides the `maplink` step in the pre-processing pipeline. This is the step that generates map-based links.
 
--   **dita.xsl.mappull**
+-   **__dita.xsl.mappull__**
 
     Overrides the `mappull` step in the pre-processing pipeline. This is the step that updates navigation titles in maps and causes attributes to cascade.
 
--   **dita.xsl.mapref**
+-   **__dita.xsl.mapref__**
 
     Overrides the `mapref` step in the pre-processing pipeline. This is the step that resolves references to other maps.
 
--   **dita.xsl.topicpull**
+-   **__dita.xsl.topicpull__**
 
-    Overrides the `topicpull` step in the pre-processing pipeline. This is the step that pulls text into `xref` elements, as well as performing other tasks.
+    Overrides the `topicpull` step in the pre-processing pipeline. This is the step that pulls text into `<xref>` elements, as well as performing other tasks.
 
 
 ## Transformations
 
 You can use the following extension points to add XSLT processing to modules in DITA-OT transformations:
 
--   **dita.map.eclipse.index.pre**
+-   **__dita.map.eclipse.index.pre__**
 
     Runs an Ant target before the Eclipse index extraction process.
 
--   **dita.xsl.eclipse.plugin**
+-   **__dita.xsl.eclipse.plugin__**
 
-    Overrides the default XSLT step that generates the plugin.xml file for Eclipse Help.
+    Overrides the default XSLT step that generates the `plugin.xml` file for Eclipse Help.
 
--   **dita.xsl.eclipse.toc**
+-   **__dita.xsl.eclipse.toc__**
 
     Overrides the default XSLT step that generates the Eclipse Help table of contents \(TOC\).
 
--   **dita.xsl.html.cover**
+-   **__dita.xsl.html.cover__**
 
     Overrides the default HTML cover page generation process.
 
--   **dita.xsl.htmltoc**
+-   **__dita.xsl.htmltoc__**
 
     Overrides the default XSLT step that generates the HTML table of contents \(TOC\).
 
--   **dita.xsl.html5**
+-   **__dita.xsl.html5__**
 
     Overrides the default HTML5 transformation. The referenced file is integrated directly into the XSLT step that generates HTML5.
 
--   **dita.xsl.html5.cover**
+-   **__dita.xsl.html5.cover__**
 
     Overrides the default HTML5 cover page generation process.
 
--   **dita.xsl.html5.toc**
+-   **__dita.xsl.html5.toc__**
 
     Overrides the default XSLT step that generates the HTML5 table of contents \(TOC\).
 
--   **dita.xsl.htmlhelp.map2hhc**
+-   **__dita.xsl.htmlhelp.map2hhc__**
 
-    Overrides the default XSLT step that generates the HTML Help contents \(.hhc\) file.
+    Overrides the default XSLT step that generates the HTML Help contents \(`.hhc`\) file.
 
--   **dita.xsl.htmlhelp.map2hhp**
+-   **__dita.xsl.htmlhelp.map2hhp__**
 
-    Overrides the default XSLT step that generates the HTML Help project \(.hhp\) file.
+    Overrides the default XSLT step that generates the HTML Help project \(`.hhp`\) file.
 
--   **dita.xsl.xhtml**
+-   **__dita.xsl.xhtml__**
 
     Overrides the default HTML or XHTML transformation, including HTML Help and Eclipse Help. The referenced file is integrated directly into the XSLT step that generates XHTML.
 
--   **dita.xsl.xslfo**
+-   **__dita.xsl.xslfo__**
 
     Overrides the default PDF transformation. The referenced XSL file is integrated directly into the XSLT step that generates the XSL-FO.
 
 
 ## Example
 
-The following two files represent a complete \(albeit simple\) plug-in that adds a company banner to the XHTML output. The plugin.xml file declares an XSLT file that extends the XHTML processing; the xsl/header.xsl file overrides the default header processing to provide a company banner.
+The following two files represent a complete \(albeit simple\) plug-in that adds a company banner to the XHTML output. The `plugin.xml` file declares an XSLT file that extends the XHTML processing; the `xsl/header.xsl` file overrides the default header processing to provide a company banner.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
