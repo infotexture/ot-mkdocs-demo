@@ -37,6 +37,6 @@ jobs:
           path: .cache
       - run: pip install \
                mkdocs-material \
-               mkdocs-section-index \
-               mkdocs-literate-nav
+               mkdocs-literate-nav \
+               mkdocs-section-index
       - run: mkdocs gh-deploy --force
